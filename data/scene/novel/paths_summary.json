@@ -1,0 +1,44 @@
+{
+  "trajectory": {
+    "frames": 120,
+    "description": "smoothed captured path (interpolation)",
+    "min_visible": 0.1710613648705726,
+    "mean_visible": 0.31114312435889696
+  },
+  "shift_up": {
+    "frames": 90,
+    "description": "captured path moved up by 0.15 x scene depth",
+    "min_visible": 0.16430338502383396,
+    "mean_visible": 0.31075645125605905
+  },
+  "shift_down": {
+    "frames": 90,
+    "description": "captured path moved down by 0.15 x scene depth",
+    "min_visible": 0.1764315452844989,
+    "mean_visible": 0.31083958513512605
+  },
+  "spiral": {
+    "frames": 120,
+    "description": "captured path + circular offset of 0.08 x scene depth",
+    "min_visible": 0.12025583780848367,
+    "mean_visible": 0.3067534544138056
+  },
+  "dolly": {
+    "frames": 90,
+    "description": "mid-path camera moving +-0.35 x scene depth along the viewing axis",
+    "min_visible": 0.20231702166173898,
+    "mean_visible": 0.3540403735661082
+  },
+  "orbit": {
+    "frames": 120,
+    "description": "+-30 deg arc around the scene centre, looking at it",
+    "min_visible": 0.3004284076509986,
+    "mean_visible": 0.3689590498602144
+  },
+  "look_around": {
+    "frames": 90,
+    "description": "mid-path camera panning +-20 deg / tilting +-12 deg",
+    "min_visible": 0.3225125203644482,
+    "mean_visible": 0.38259954276366515
+  }
+}

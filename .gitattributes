@@ -1,0 +1,6 @@
+# keep Unix line endings everywhere (bash scripts break with CRLF)
+* text=auto eol=lf
+*.jpg binary
+*.png binary
+*.bin binary
+*.ply binary

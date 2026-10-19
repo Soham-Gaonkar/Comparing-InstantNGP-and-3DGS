@@ -1,0 +1,25 @@
+# --- raw capture and intermediate files (large / regenerable) ---
+raw/
+data/candidates/
+data/scene/distorted/
+data/scene/stereo/
+data/scene/run-colmap-*.sh
+data/scene/_ngp_stage_*
+
+# --- third-party repos: clone fresh on the GPU machine ---
+repos/
+
+# --- training / rendering outputs (produced on the GPU machine) ---
+outputs/
+logs/
+*.ingp
+*.msgpack
+*.mp4
+*.ply
+!results/colmap_sparse.ply
+
+# --- python / editor junk ---
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.vscode/
