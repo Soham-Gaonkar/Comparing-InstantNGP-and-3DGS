@@ -23,3 +23,8 @@ __pycache__/
 *.pyc
 .ipynb_checkpoints/
 .vscode/
+
+# --- local-only notes and trained models (not part of the submission) ---
+CLAUDE.md
+PLAN.md
+models/

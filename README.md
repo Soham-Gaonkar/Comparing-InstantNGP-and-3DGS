@@ -63,8 +63,7 @@ All figures are in [`results/figures/`](results/figures/); all numbers are in
 ## Setup
 
 Requires an NVIDIA GPU and Linux. On Windows, use WSL2 with **Ubuntu 22.04** (its gcc 11 works
-with CUDA 11.8). The step-by-step guide with checks and troubleshooting is
-[CLAUDE.md](CLAUDE.md); the short version:
+with CUDA 11.8); work inside the Linux home directory, not under `/mnt/c`.
 
 ```bash
 # 1. this repository and the two model repositories at the tested commits
