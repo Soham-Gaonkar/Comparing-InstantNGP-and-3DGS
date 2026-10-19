@@ -1,0 +1,15 @@
+{
+  "method": "3dgs",
+  "iteration": 30000,
+  "n_gaussians": 1148987,
+  "width": 701,
+  "height": 1249,
+  "n_views": 8,
+  "repeats": 20,
+  "warmup": 10,
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "ms_mean": 17.357586687489857,
+  "ms_std": 1.6560113828840448,
+  "ms_median": 17.389514000115014,
+  "fps_mean": 57.61169556599309
+}

@@ -1,8 +1,54 @@
 # Assignment 2 – InstantNGP vs 3D Gaussian Splatting: Step-by-Step Plan
 
-> Due: **Oct 25, 2026**. Laptop (Windows, no NVIDIA GPU) = data prep + coding + report.
-> University server (GPU, Linux) = building, training, rendering, timing.
+> Due: **Oct 25, 2026**. Data prep + coding done on Windows.
+> **GPU work now runs on the laptop itself** (NVIDIA GeForce RTX 4060 Laptop GPU, 8 GB, compute capability 8.9)
+> inside **WSL2 Ubuntu 22.04** — not on a university server. Step-by-step GPU instructions: `CLAUDE.md`.
 > Anything marked **⚠ VERIFY** depends on repo version — check `--help` / README on your clone before relying on it.
+
+## Status & corrections (updated Oct 19)
+
+**Done (§1–7, frozen):** 62 frames, undistorted to **701×1249**; COLMAP 4.2, PINHOLE, 62/62 registered,
+16,573 points, 0.40 px reprojection error; `transforms*.json` recentred (similarity transform), **aabb_scale 4**;
+split every 8th sorted image → **54 train / 8 test**; 7 novel camera paths shared by both models.
+
+**Where the plan below differs from what was actually built** (the scripts are authoritative, see `scripts/README.md`):
+
+| Plan section said | Actually |
+|---|---|
+| §8 university server + sshfs | laptop GPU under WSL2; repo cloned to `~/assignment2` inside Ubuntu |
+| §6 `--aabb_scale 16` | 4 (`prepare_ngp.py`) |
+| §7 `make_split.py`, 96 images → 12/84 | `prepare_ngp.py`, 62 images → 8 test / 54 train |
+| §11 run `train.py` / `run.py` by hand | `run_gs.sh` / `run_ngp.sh` (`train_ngp.py` replaces `run.py`; one run, snapshots at every checkpoint) |
+| §12 copy renders into `outputs/eval/{gt,gs,ngp}` | `render_gs.py` / `render_ngp.py` write `outputs/eval/<method>/<checkpoint>/`; GT read straight from `data/scene/images` |
+| §14 `time_gs.py` / `time_ngp.py` | `render_gs.py --bench` / `render_ngp.py --bench` |
+| §11.2 extra runs for NGP convergence | not needed: one run saves 1k/3k/7k/15k/35k |
+
+**Training budget — each method to convergence on its own standard schedule, NOT equal iteration counts.**
+An iteration means different work in each method (3DGS: one full training image per iteration, 30k ≈ 555 passes
+over the 54 images; InstantNGP: a batch of ~262k random rays per step, 35k ≈ 190 passes over all pixels), so equal
+iteration counts would not be equal compute. Both are therefore trained to their paper schedules (3DGS 30k,
+InstantNGP 35k) and compared on **wall-clock training time on the same GPU**. Convergence is shown, not assumed:
+checkpoints 1k/3k/7k/15k/final are each rendered and scored with the same metric script, and plotted against
+training seconds (`05_convergence.png`); the curves must flatten over the last checkpoints.
+
+**Outcome (Oct 19 run):** 3DGS plateaued (15k→30k: +0.08 dB). InstantNGP at 35k was still rising (15k→35k:
++1.1 dB), so it was re-trained in one run to **100k steps** with the 35k checkpoint kept (35k→100k: +0.13 dB →
+converged). Final InstantNGP model = 100k; the 35k paper-schedule numbers come from the same run.
+3DGS ran ~3 min on battery mid-training (≈1–2 % added to its training time); everything else on AC.
+
+**What gets measured (all automatic in `run_all.sh`):**
+
+| Quantity | How | Where |
+|---|---|---|
+| PSNR, SSIM, LPIPS (VGG + AlexNet) | one script for both (`eval_metrics.py`), 8 test views, every checkpoint, per-view + mean | `results/metrics/`, `summary.md` |
+| Visual quality | GT / NGP / 3DGS grids, zoom crops, error maps, novel-path videos | `results/figures/`, `results/videos/` |
+| Training time | wall clock incl. data loading (both); NGP pure loop time also logged; time to reach each checkpoint | `logs/*_train_time.json`, `summary.md` |
+| Rendering time | 10 warm-up + 20 timed passes over the 8 test views at 701×1249, CUDA sync (3DGS) / host copy (NGP); NGP at spp 1 (headline) and spp 8 (= spp of the quality images) | `results/timing/`, `summary.json` |
+| Model size | 3DGS `.ply` bytes + #Gaussians; NGP `.ingp` (compressed) + uncompressed + #params | `summary.md` |
+| Peak GPU memory | nvidia-smi sampled every 1 s during training (per-process is usually unavailable under WSL2 → whole-GPU value) | `logs/*_gpumem.csv` |
+
+Report both NGP render speeds: spp 1 is the fair "one sample per pixel" speed, spp 8 is the cost of the images
+whose quality is reported.
 
 ---
 
@@ -42,7 +88,7 @@ video ──ffmpeg──► frames ──blur filter──► input/ ──COLMA
                               │                                                │ split
                               │                                  transforms_train.json / _test.json
                               ▼                                                ▼
-                     train.py (30k it)                          instant-ngp run.py (35k steps)
+                     train.py (30k it)                     train_ngp.py → pyngp (35k steps)
                               │                                                │
                       render test views                               render test views
                               └──────────────► SAME GT, SAME names, SAME res ◄─┘
@@ -463,16 +509,14 @@ Script to write: `scripts/make_figures.py` (matplotlib + numpy + PIL).
 
 ---
 
-## 18. Schedule (today = Oct 19)
+## 18. Schedule (revised Oct 19)
 
 | Day | Tasks |
 |---|---|
-| **Oct 19 (laptop)** | §1–4: setup, ffprobe, extract, filter, manual pass. Start COLMAP (§5) and let it run. |
-| **Oct 20 (laptop → server)** | §5–7: validate COLMAP, transforms.json, split. Copy data to server. Start §9–10 env setup (biggest risk – start early!). |
-| **Oct 21 (server)** | Finish envs, smoke tests, full training runs (§11). Write render/eval/timing scripts meanwhile. |
-| **Oct 22** | §12–15: renders, metrics (validate vs 3DGS metrics.py), timing, size. Convergence snapshots. |
-| **Oct 23** | §16 figures; start report. |
-| **Oct 24** | Finish report; re-run anything suspicious. |
+| ~~Oct 19–20~~ | §1–7 done (capture, frames, COLMAP, transforms, split, novel paths, all scripts). |
+| **Oct 19–20 (laptop, WSL2)** | WSL2 + envs + builds + smoke tests (CLAUDE.md steps 1–7), then `run_all.sh` (§11–16 in one go, ~1–1.5 h). Verify (CLAUDE.md step 9). |
+| **Oct 21–23** | Write the report from `results/summary.md`, figures and videos; re-run anything suspicious. |
+| **Oct 24** | Finish report. |
 | **Oct 25** | Buffer + submit. |
 
 ---
@@ -501,10 +545,11 @@ Script to write: `scripts/make_figures.py` (matplotlib + numpy + PIL).
 ## 20. Final checklist
 
 - [ ] Own capture only; capture conditions documented
-- [ ] Same COLMAP poses, same undistorted images, same split, same resolution for both models
-- [ ] 3DGS trained 30k iterations, NGP 35k steps; convergence plot shows plateau
+- [x] Same COLMAP poses, same undistorted images, same split, same resolution for both models
+- [x] 3DGS trained 30k iterations, NGP 100k steps (35k checkpoint kept); convergence plot (vs wall-clock time) shows plateau
 - [ ] PSNR / SSIM / LPIPS from ONE script; validated against 3DGS metrics.py
-- [ ] Render time measured with sync + warm-up, same GPU, stated resolution/spp
+- [ ] Render time measured with sync + warm-up, same GPU, stated resolution/spp (NGP: spp 1 and 8)
+- [ ] Peak GPU memory during training
 - [ ] Model sizes (+ #Gaussians / params)
 - [ ] Training wall-clock times, same GPU
 - [ ] Qualitative grids, zoom crops, error maps

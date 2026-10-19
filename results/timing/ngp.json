@@ -1,0 +1,26 @@
+{
+  "method": "instant-ngp",
+  "snapshot": "/home/soham/assignment2/outputs/ngp/step_100000.ingp",
+  "training_step": 100000,
+  "width": 701,
+  "height": 1249,
+  "n_views": 8,
+  "repeats": 20,
+  "warmup": 10,
+  "n_params": 12865536,
+  "spp": {
+    "1": {
+      "ms_mean": 20.319969731254872,
+      "ms_std": 1.6274945687127524,
+      "ms_median": 19.67715549994864,
+      "fps_mean": 49.21267173256977
+    },
+    "8": {
+      "ms_mean": 155.77668347499696,
+      "ms_std": 12.519920044749055,
+      "ms_median": 149.21867350000184,
+      "fps_mean": 6.419445951039943
+    }
+  },
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU"
+}

@@ -1,0 +1,2273 @@
++ conda activate gs
+GPU status before timing-sensitive work:
+index, name, utilization.gpu [%], memory.used [MiB], memory.total [MiB]
+0, NVIDIA GeForce RTX 4060 Laptop GPU, 0 %, 8 MiB, 8188 MiB
++ python /home/soham/assignment2/repos/gaussian-splatting/train.py -s /home/soham/assignment2/data/scene -m /home/soham/assignment2/outputs/gs --eval -r 1 --iterations 30000 --save_iterations 1000 3000 7000 15000 30000 --test_iterations 30000 --disable_viewer  > /home/soham/assignment2/logs/gs_train.log
+  gs training finished in 2593.6 s
++ python scripts/render_gs.py --gs_root /home/soham/assignment2/repos/gaussian-splatting -m /home/soham/assignment2/outputs/gs --iteration 1000 --out /home/soham/assignment2/outputs/eval/gs/iter_001000
+Looking for config file in /home/soham/assignment2/outputs/gs/cfg_args
+Config file found: /home/soham/assignment2/outputs/gs/cfg_args
+Loading trained model at iteration 1000 [19/10 21:35:59]
+------------LLFF HOLD------------- [19/10 21:35:59]
+
+Reading camera 1/62
+Reading camera 2/62
+Reading camera 3/62
+Reading camera 4/62
+Reading camera 5/62
+Reading camera 6/62
+Reading camera 7/62
+Reading camera 8/62
+Reading camera 9/62
+Reading camera 10/62
+Reading camera 11/62
+Reading camera 12/62
+Reading camera 13/62
+Reading camera 14/62
+Reading camera 15/62
+Reading camera 16/62
+Reading camera 17/62
+Reading camera 18/62
+Reading camera 19/62
+Reading camera 20/62
+Reading camera 21/62
+Reading camera 22/62
+Reading camera 23/62
+Reading camera 24/62
+Reading camera 25/62
+Reading camera 26/62
+Reading camera 27/62
+Reading camera 28/62
+Reading camera 29/62
+Reading camera 30/62
+Reading camera 31/62
+Reading camera 32/62
+Reading camera 33/62
+Reading camera 34/62
+Reading camera 35/62
+Reading camera 36/62
+Reading camera 37/62
+Reading camera 38/62
+Reading camera 39/62
+Reading camera 40/62
+Reading camera 41/62
+Reading camera 42/62
+Reading camera 43/62
+Reading camera 44/62
+Reading camera 45/62
+Reading camera 46/62
+Reading camera 47/62
+Reading camera 48/62
+Reading camera 49/62
+Reading camera 50/62
+Reading camera 51/62
+Reading camera 52/62
+Reading camera 53/62
+Reading camera 54/62
+Reading camera 55/62
+Reading camera 56/62
+Reading camera 57/62
+Reading camera 58/62
+Reading camera 59/62
+Reading camera 60/62
+Reading camera 61/62
+Reading camera 62/62 [19/10 21:35:59]
+Loading Training Cameras [19/10 21:35:59]
+Loading Test Cameras [19/10 21:36:01]
+loaded iteration 1000: 75419 Gaussians, 8 test views [19/10 21:36:01]
+rendered 8 test views -> /home/soham/assignment2/outputs/eval/gs/iter_001000 [19/10 21:36:02]
++ python scripts/render_gs.py --gs_root /home/soham/assignment2/repos/gaussian-splatting -m /home/soham/assignment2/outputs/gs --iteration 3000 --out /home/soham/assignment2/outputs/eval/gs/iter_003000
+Looking for config file in /home/soham/assignment2/outputs/gs/cfg_args
+Config file found: /home/soham/assignment2/outputs/gs/cfg_args
+Loading trained model at iteration 3000 [19/10 21:36:04]
+------------LLFF HOLD------------- [19/10 21:36:04]
+
+Reading camera 1/62
+Reading camera 2/62
+Reading camera 3/62
+Reading camera 4/62
+Reading camera 5/62
+Reading camera 6/62
+Reading camera 7/62
+Reading camera 8/62
+Reading camera 9/62
+Reading camera 10/62
+Reading camera 11/62
+Reading camera 12/62
+Reading camera 13/62
+Reading camera 14/62
+Reading camera 15/62
+Reading camera 16/62
+Reading camera 17/62
+Reading camera 18/62
+Reading camera 19/62
+Reading camera 20/62
+Reading camera 21/62
+Reading camera 22/62
+Reading camera 23/62
+Reading camera 24/62
+Reading camera 25/62
+Reading camera 26/62
+Reading camera 27/62
+Reading camera 28/62
+Reading camera 29/62
+Reading camera 30/62
+Reading camera 31/62
+Reading camera 32/62
+Reading camera 33/62
+Reading camera 34/62
+Reading camera 35/62
+Reading camera 36/62
+Reading camera 37/62
+Reading camera 38/62
+Reading camera 39/62
+Reading camera 40/62
+Reading camera 41/62
+Reading camera 42/62
+Reading camera 43/62
+Reading camera 44/62
+Reading camera 45/62
+Reading camera 46/62
+Reading camera 47/62
+Reading camera 48/62
+Reading camera 49/62
+Reading camera 50/62
+Reading camera 51/62
+Reading camera 52/62
+Reading camera 53/62
+Reading camera 54/62
+Reading camera 55/62
+Reading camera 56/62
+Reading camera 57/62
+Reading camera 58/62
+Reading camera 59/62
+Reading camera 60/62
+Reading camera 61/62
+Reading camera 62/62 [19/10 21:36:04]
+Loading Training Cameras [19/10 21:36:04]
+Loading Test Cameras [19/10 21:36:05]
+loaded iteration 3000: 725555 Gaussians, 8 test views [19/10 21:36:06]
+rendered 8 test views -> /home/soham/assignment2/outputs/eval/gs/iter_003000 [19/10 21:36:07]
++ python scripts/render_gs.py --gs_root /home/soham/assignment2/repos/gaussian-splatting -m /home/soham/assignment2/outputs/gs --iteration 7000 --out /home/soham/assignment2/outputs/eval/gs/iter_007000
+Looking for config file in /home/soham/assignment2/outputs/gs/cfg_args
+Config file found: /home/soham/assignment2/outputs/gs/cfg_args
+Loading trained model at iteration 7000 [19/10 21:36:09]
+------------LLFF HOLD------------- [19/10 21:36:09]
+
+Reading camera 1/62
+Reading camera 2/62
+Reading camera 3/62
+Reading camera 4/62
+Reading camera 5/62
+Reading camera 6/62
+Reading camera 7/62
+Reading camera 8/62
+Reading camera 9/62
+Reading camera 10/62
+Reading camera 11/62
+Reading camera 12/62
+Reading camera 13/62
+Reading camera 14/62
+Reading camera 15/62
+Reading camera 16/62
+Reading camera 17/62
+Reading camera 18/62
+Reading camera 19/62
+Reading camera 20/62
+Reading camera 21/62
+Reading camera 22/62
+Reading camera 23/62
+Reading camera 24/62
+Reading camera 25/62
+Reading camera 26/62
+Reading camera 27/62
+Reading camera 28/62
+Reading camera 29/62
+Reading camera 30/62
+Reading camera 31/62
+Reading camera 32/62
+Reading camera 33/62
+Reading camera 34/62
+Reading camera 35/62
+Reading camera 36/62
+Reading camera 37/62
+Reading camera 38/62
+Reading camera 39/62
+Reading camera 40/62
+Reading camera 41/62
+Reading camera 42/62
+Reading camera 43/62
+Reading camera 44/62
+Reading camera 45/62
+Reading camera 46/62
+Reading camera 47/62
+Reading camera 48/62
+Reading camera 49/62
+Reading camera 50/62
+Reading camera 51/62
+Reading camera 52/62
+Reading camera 53/62
+Reading camera 54/62
+Reading camera 55/62
+Reading camera 56/62
+Reading camera 57/62
+Reading camera 58/62
+Reading camera 59/62
+Reading camera 60/62
+Reading camera 61/62
+Reading camera 62/62 [19/10 21:36:09]
+Loading Training Cameras [19/10 21:36:09]
+Loading Test Cameras [19/10 21:36:10]
+loaded iteration 7000: 1061681 Gaussians, 8 test views [19/10 21:36:11]
+rendered 8 test views -> /home/soham/assignment2/outputs/eval/gs/iter_007000 [19/10 21:36:13]
++ python scripts/render_gs.py --gs_root /home/soham/assignment2/repos/gaussian-splatting -m /home/soham/assignment2/outputs/gs --iteration 15000 --out /home/soham/assignment2/outputs/eval/gs/iter_015000
+Looking for config file in /home/soham/assignment2/outputs/gs/cfg_args
+Config file found: /home/soham/assignment2/outputs/gs/cfg_args
+Loading trained model at iteration 15000 [19/10 21:36:14]
+------------LLFF HOLD------------- [19/10 21:36:14]
+
+Reading camera 1/62
+Reading camera 2/62
+Reading camera 3/62
+Reading camera 4/62
+Reading camera 5/62
+Reading camera 6/62
+Reading camera 7/62
+Reading camera 8/62
+Reading camera 9/62
+Reading camera 10/62
+Reading camera 11/62
+Reading camera 12/62
+Reading camera 13/62
+Reading camera 14/62
+Reading camera 15/62
+Reading camera 16/62
+Reading camera 17/62
+Reading camera 18/62
+Reading camera 19/62
+Reading camera 20/62
+Reading camera 21/62
+Reading camera 22/62
+Reading camera 23/62
+Reading camera 24/62
+Reading camera 25/62
+Reading camera 26/62
+Reading camera 27/62
+Reading camera 28/62
+Reading camera 29/62
+Reading camera 30/62
+Reading camera 31/62
+Reading camera 32/62
+Reading camera 33/62
+Reading camera 34/62
+Reading camera 35/62
+Reading camera 36/62
+Reading camera 37/62
+Reading camera 38/62
+Reading camera 39/62
+Reading camera 40/62
+Reading camera 41/62
+Reading camera 42/62
+Reading camera 43/62
+Reading camera 44/62
+Reading camera 45/62
+Reading camera 46/62
+Reading camera 47/62
+Reading camera 48/62
+Reading camera 49/62
+Reading camera 50/62
+Reading camera 51/62
+Reading camera 52/62
+Reading camera 53/62
+Reading camera 54/62
+Reading camera 55/62
+Reading camera 56/62
+Reading camera 57/62
+Reading camera 58/62
+Reading camera 59/62
+Reading camera 60/62
+Reading camera 61/62
+Reading camera 62/62 [19/10 21:36:14]
+Loading Training Cameras [19/10 21:36:14]
+Loading Test Cameras [19/10 21:36:15]
+loaded iteration 15000: 1148987 Gaussians, 8 test views [19/10 21:36:16]
+rendered 8 test views -> /home/soham/assignment2/outputs/eval/gs/iter_015000 [19/10 21:36:18]
++ python scripts/render_gs.py --gs_root /home/soham/assignment2/repos/gaussian-splatting -m /home/soham/assignment2/outputs/gs --iteration 30000 --out /home/soham/assignment2/outputs/eval/gs/iter_030000
+Looking for config file in /home/soham/assignment2/outputs/gs/cfg_args
+Config file found: /home/soham/assignment2/outputs/gs/cfg_args
+Loading trained model at iteration 30000 [19/10 21:36:19]
+------------LLFF HOLD------------- [19/10 21:36:19]
+
+Reading camera 1/62
+Reading camera 2/62
+Reading camera 3/62
+Reading camera 4/62
+Reading camera 5/62
+Reading camera 6/62
+Reading camera 7/62
+Reading camera 8/62
+Reading camera 9/62
+Reading camera 10/62
+Reading camera 11/62
+Reading camera 12/62
+Reading camera 13/62
+Reading camera 14/62
+Reading camera 15/62
+Reading camera 16/62
+Reading camera 17/62
+Reading camera 18/62
+Reading camera 19/62
+Reading camera 20/62
+Reading camera 21/62
+Reading camera 22/62
+Reading camera 23/62
+Reading camera 24/62
+Reading camera 25/62
+Reading camera 26/62
+Reading camera 27/62
+Reading camera 28/62
+Reading camera 29/62
+Reading camera 30/62
+Reading camera 31/62
+Reading camera 32/62
+Reading camera 33/62
+Reading camera 34/62
+Reading camera 35/62
+Reading camera 36/62
+Reading camera 37/62
+Reading camera 38/62
+Reading camera 39/62
+Reading camera 40/62
+Reading camera 41/62
+Reading camera 42/62
+Reading camera 43/62
+Reading camera 44/62
+Reading camera 45/62
+Reading camera 46/62
+Reading camera 47/62
+Reading camera 48/62
+Reading camera 49/62
+Reading camera 50/62
+Reading camera 51/62
+Reading camera 52/62
+Reading camera 53/62
+Reading camera 54/62
+Reading camera 55/62
+Reading camera 56/62
+Reading camera 57/62
+Reading camera 58/62
+Reading camera 59/62
+Reading camera 60/62
+Reading camera 61/62
+Reading camera 62/62 [19/10 21:36:19]
+Loading Training Cameras [19/10 21:36:19]
+Loading Test Cameras [19/10 21:36:20]
+loaded iteration 30000: 1148987 Gaussians, 8 test views [19/10 21:36:22]
+rendered 8 test views -> /home/soham/assignment2/outputs/eval/gs/iter_030000 [19/10 21:36:23]
+GPU status before timing-sensitive work:
+index, name, utilization.gpu [%], memory.used [MiB], memory.total [MiB]
+0, NVIDIA GeForce RTX 4060 Laptop GPU, 0 %, 8 MiB, 8188 MiB
++ python scripts/render_gs.py --gs_root /home/soham/assignment2/repos/gaussian-splatting -m /home/soham/assignment2/outputs/gs --iteration 30000 --bench 20 --timing_out /home/soham/assignment2/results/timing/gs.json
+Looking for config file in /home/soham/assignment2/outputs/gs/cfg_args
+Config file found: /home/soham/assignment2/outputs/gs/cfg_args
+Loading trained model at iteration 30000 [19/10 21:36:24]
+------------LLFF HOLD------------- [19/10 21:36:25]
+
+Reading camera 1/62
+Reading camera 2/62
+Reading camera 3/62
+Reading camera 4/62
+Reading camera 5/62
+Reading camera 6/62
+Reading camera 7/62
+Reading camera 8/62
+Reading camera 9/62
+Reading camera 10/62
+Reading camera 11/62
+Reading camera 12/62
+Reading camera 13/62
+Reading camera 14/62
+Reading camera 15/62
+Reading camera 16/62
+Reading camera 17/62
+Reading camera 18/62
+Reading camera 19/62
+Reading camera 20/62
+Reading camera 21/62
+Reading camera 22/62
+Reading camera 23/62
+Reading camera 24/62
+Reading camera 25/62
+Reading camera 26/62
+Reading camera 27/62
+Reading camera 28/62
+Reading camera 29/62
+Reading camera 30/62
+Reading camera 31/62
+Reading camera 32/62
+Reading camera 33/62
+Reading camera 34/62
+Reading camera 35/62
+Reading camera 36/62
+Reading camera 37/62
+Reading camera 38/62
+Reading camera 39/62
+Reading camera 40/62
+Reading camera 41/62
+Reading camera 42/62
+Reading camera 43/62
+Reading camera 44/62
+Reading camera 45/62
+Reading camera 46/62
+Reading camera 47/62
+Reading camera 48/62
+Reading camera 49/62
+Reading camera 50/62
+Reading camera 51/62
+Reading camera 52/62
+Reading camera 53/62
+Reading camera 54/62
+Reading camera 55/62
+Reading camera 56/62
+Reading camera 57/62
+Reading camera 58/62
+Reading camera 59/62
+Reading camera 60/62
+Reading camera 61/62
+Reading camera 62/62 [19/10 21:36:25]
+Loading Training Cameras [19/10 21:36:25]
+Loading Test Cameras [19/10 21:36:25]
+loaded iteration 30000: 1148987 Gaussians, 8 test views [19/10 21:36:27]
+{
+  "method": "3dgs",
+  "iteration": 30000,
+  "n_gaussians": 1148987,
+  "width": 701,
+  "height": 1249,
+  "n_views": 8,
+  "repeats": 20,
+  "warmup": 10,
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "ms_mean": 17.357586687489857,
+  "ms_std": 1.6560113828840448,
+  "ms_median": 17.389514000115014,
+  "fps_mean": 57.61169556599309
+} [19/10 21:36:30]
++ python scripts/render_gs.py --gs_root /home/soham/assignment2/repos/gaussian-splatting -m /home/soham/assignment2/outputs/gs --iteration 30000 --novel /home/soham/assignment2/data/scene/novel/trajectory.json --out /home/soham/assignment2/outputs/novel/gs/trajectory
+Looking for config file in /home/soham/assignment2/outputs/gs/cfg_args
+Config file found: /home/soham/assignment2/outputs/gs/cfg_args
+Loading trained model at iteration 30000 [19/10 21:36:31]
+------------LLFF HOLD------------- [19/10 21:36:31]
+
+Reading camera 1/62
+Reading camera 2/62
+Reading camera 3/62
+Reading camera 4/62
+Reading camera 5/62
+Reading camera 6/62
+Reading camera 7/62
+Reading camera 8/62
+Reading camera 9/62
+Reading camera 10/62
+Reading camera 11/62
+Reading camera 12/62
+Reading camera 13/62
+Reading camera 14/62
+Reading camera 15/62
+Reading camera 16/62
+Reading camera 17/62
+Reading camera 18/62
+Reading camera 19/62
+Reading camera 20/62
+Reading camera 21/62
+Reading camera 22/62
+Reading camera 23/62
+Reading camera 24/62
+Reading camera 25/62
+Reading camera 26/62
+Reading camera 27/62
+Reading camera 28/62
+Reading camera 29/62
+Reading camera 30/62
+Reading camera 31/62
+Reading camera 32/62
+Reading camera 33/62
+Reading camera 34/62
+Reading camera 35/62
+Reading camera 36/62
+Reading camera 37/62
+Reading camera 38/62
+Reading camera 39/62
+Reading camera 40/62
+Reading camera 41/62
+Reading camera 42/62
+Reading camera 43/62
+Reading camera 44/62
+Reading camera 45/62
+Reading camera 46/62
+Reading camera 47/62
+Reading camera 48/62
+Reading camera 49/62
+Reading camera 50/62
+Reading camera 51/62
+Reading camera 52/62
+Reading camera 53/62
+Reading camera 54/62
+Reading camera 55/62
+Reading camera 56/62
+Reading camera 57/62
+Reading camera 58/62
+Reading camera 59/62
+Reading camera 60/62
+Reading camera 61/62
+Reading camera 62/62 [19/10 21:36:31]
+Loading Training Cameras [19/10 21:36:31]
+Loading Test Cameras [19/10 21:36:32]
+loaded iteration 30000: 1148987 Gaussians, 8 test views [19/10 21:36:34]
+pose check: max |projection difference| over test cameras = 0.00e+00 [19/10 21:36:34]
+rendered 120 novel views -> /home/soham/assignment2/outputs/novel/gs/trajectory [19/10 21:36:58]
++ python scripts/render_gs.py --gs_root /home/soham/assignment2/repos/gaussian-splatting -m /home/soham/assignment2/outputs/gs --iteration 30000 --novel /home/soham/assignment2/data/scene/novel/shift_up.json --out /home/soham/assignment2/outputs/novel/gs/shift_up
+Looking for config file in /home/soham/assignment2/outputs/gs/cfg_args
+Config file found: /home/soham/assignment2/outputs/gs/cfg_args
+Loading trained model at iteration 30000 [19/10 21:37:00]
+------------LLFF HOLD------------- [19/10 21:37:00]
+
+Reading camera 1/62
+Reading camera 2/62
+Reading camera 3/62
+Reading camera 4/62
+Reading camera 5/62
+Reading camera 6/62
+Reading camera 7/62
+Reading camera 8/62
+Reading camera 9/62
+Reading camera 10/62
+Reading camera 11/62
+Reading camera 12/62
+Reading camera 13/62
+Reading camera 14/62
+Reading camera 15/62
+Reading camera 16/62
+Reading camera 17/62
+Reading camera 18/62
+Reading camera 19/62
+Reading camera 20/62
+Reading camera 21/62
+Reading camera 22/62
+Reading camera 23/62
+Reading camera 24/62
+Reading camera 25/62
+Reading camera 26/62
+Reading camera 27/62
+Reading camera 28/62
+Reading camera 29/62
+Reading camera 30/62
+Reading camera 31/62
+Reading camera 32/62
+Reading camera 33/62
+Reading camera 34/62
+Reading camera 35/62
+Reading camera 36/62
+Reading camera 37/62
+Reading camera 38/62
+Reading camera 39/62
+Reading camera 40/62
+Reading camera 41/62
+Reading camera 42/62
+Reading camera 43/62
+Reading camera 44/62
+Reading camera 45/62
+Reading camera 46/62
+Reading camera 47/62
+Reading camera 48/62
+Reading camera 49/62
+Reading camera 50/62
+Reading camera 51/62
+Reading camera 52/62
+Reading camera 53/62
+Reading camera 54/62
+Reading camera 55/62
+Reading camera 56/62
+Reading camera 57/62
+Reading camera 58/62
+Reading camera 59/62
+Reading camera 60/62
+Reading camera 61/62
+Reading camera 62/62 [19/10 21:37:00]
+Loading Training Cameras [19/10 21:37:00]
+Loading Test Cameras [19/10 21:37:01]
+loaded iteration 30000: 1148987 Gaussians, 8 test views [19/10 21:37:02]
+pose check: max |projection difference| over test cameras = 0.00e+00 [19/10 21:37:02]
+rendered 90 novel views -> /home/soham/assignment2/outputs/novel/gs/shift_up [19/10 21:37:24]
++ python scripts/render_gs.py --gs_root /home/soham/assignment2/repos/gaussian-splatting -m /home/soham/assignment2/outputs/gs --iteration 30000 --novel /home/soham/assignment2/data/scene/novel/shift_down.json --out /home/soham/assignment2/outputs/novel/gs/shift_down
+Looking for config file in /home/soham/assignment2/outputs/gs/cfg_args
+Config file found: /home/soham/assignment2/outputs/gs/cfg_args
+Loading trained model at iteration 30000 [19/10 21:37:25]
+------------LLFF HOLD------------- [19/10 21:37:25]
+
+Reading camera 1/62
+Reading camera 2/62
+Reading camera 3/62
+Reading camera 4/62
+Reading camera 5/62
+Reading camera 6/62
+Reading camera 7/62
+Reading camera 8/62
+Reading camera 9/62
+Reading camera 10/62
+Reading camera 11/62
+Reading camera 12/62
+Reading camera 13/62
+Reading camera 14/62
+Reading camera 15/62
+Reading camera 16/62
+Reading camera 17/62
+Reading camera 18/62
+Reading camera 19/62
+Reading camera 20/62
+Reading camera 21/62
+Reading camera 22/62
+Reading camera 23/62
+Reading camera 24/62
+Reading camera 25/62
+Reading camera 26/62
+Reading camera 27/62
+Reading camera 28/62
+Reading camera 29/62
+Reading camera 30/62
+Reading camera 31/62
+Reading camera 32/62
+Reading camera 33/62
+Reading camera 34/62
+Reading camera 35/62
+Reading camera 36/62
+Reading camera 37/62
+Reading camera 38/62
+Reading camera 39/62
+Reading camera 40/62
+Reading camera 41/62
+Reading camera 42/62
+Reading camera 43/62
+Reading camera 44/62
+Reading camera 45/62
+Reading camera 46/62
+Reading camera 47/62
+Reading camera 48/62
+Reading camera 49/62
+Reading camera 50/62
+Reading camera 51/62
+Reading camera 52/62
+Reading camera 53/62
+Reading camera 54/62
+Reading camera 55/62
+Reading camera 56/62
+Reading camera 57/62
+Reading camera 58/62
+Reading camera 59/62
+Reading camera 60/62
+Reading camera 61/62
+Reading camera 62/62 [19/10 21:37:25]
+Loading Training Cameras [19/10 21:37:25]
+Loading Test Cameras [19/10 21:37:26]
+loaded iteration 30000: 1148987 Gaussians, 8 test views [19/10 21:37:28]
+pose check: max |projection difference| over test cameras = 0.00e+00 [19/10 21:37:28]
+rendered 90 novel views -> /home/soham/assignment2/outputs/novel/gs/shift_down [19/10 21:37:47]
++ python scripts/render_gs.py --gs_root /home/soham/assignment2/repos/gaussian-splatting -m /home/soham/assignment2/outputs/gs --iteration 30000 --novel /home/soham/assignment2/data/scene/novel/spiral.json --out /home/soham/assignment2/outputs/novel/gs/spiral
+Looking for config file in /home/soham/assignment2/outputs/gs/cfg_args
+Config file found: /home/soham/assignment2/outputs/gs/cfg_args
+Loading trained model at iteration 30000 [19/10 21:37:49]
+------------LLFF HOLD------------- [19/10 21:37:49]
+
+Reading camera 1/62
+Reading camera 2/62
+Reading camera 3/62
+Reading camera 4/62
+Reading camera 5/62
+Reading camera 6/62
+Reading camera 7/62
+Reading camera 8/62
+Reading camera 9/62
+Reading camera 10/62
+Reading camera 11/62
+Reading camera 12/62
+Reading camera 13/62
+Reading camera 14/62
+Reading camera 15/62
+Reading camera 16/62
+Reading camera 17/62
+Reading camera 18/62
+Reading camera 19/62
+Reading camera 20/62
+Reading camera 21/62
+Reading camera 22/62
+Reading camera 23/62
+Reading camera 24/62
+Reading camera 25/62
+Reading camera 26/62
+Reading camera 27/62
+Reading camera 28/62
+Reading camera 29/62
+Reading camera 30/62
+Reading camera 31/62
+Reading camera 32/62
+Reading camera 33/62
+Reading camera 34/62
+Reading camera 35/62
+Reading camera 36/62
+Reading camera 37/62
+Reading camera 38/62
+Reading camera 39/62
+Reading camera 40/62
+Reading camera 41/62
+Reading camera 42/62
+Reading camera 43/62
+Reading camera 44/62
+Reading camera 45/62
+Reading camera 46/62
+Reading camera 47/62
+Reading camera 48/62
+Reading camera 49/62
+Reading camera 50/62
+Reading camera 51/62
+Reading camera 52/62
+Reading camera 53/62
+Reading camera 54/62
+Reading camera 55/62
+Reading camera 56/62
+Reading camera 57/62
+Reading camera 58/62
+Reading camera 59/62
+Reading camera 60/62
+Reading camera 61/62
+Reading camera 62/62 [19/10 21:37:49]
+Loading Training Cameras [19/10 21:37:49]
+Loading Test Cameras [19/10 21:37:50]
+loaded iteration 30000: 1148987 Gaussians, 8 test views [19/10 21:37:51]
+pose check: max |projection difference| over test cameras = 0.00e+00 [19/10 21:37:51]
+rendered 120 novel views -> /home/soham/assignment2/outputs/novel/gs/spiral [19/10 21:38:16]
++ python scripts/render_gs.py --gs_root /home/soham/assignment2/repos/gaussian-splatting -m /home/soham/assignment2/outputs/gs --iteration 30000 --novel /home/soham/assignment2/data/scene/novel/dolly.json --out /home/soham/assignment2/outputs/novel/gs/dolly
+Looking for config file in /home/soham/assignment2/outputs/gs/cfg_args
+Config file found: /home/soham/assignment2/outputs/gs/cfg_args
+Loading trained model at iteration 30000 [19/10 21:38:17]
+------------LLFF HOLD------------- [19/10 21:38:17]
+
+Reading camera 1/62
+Reading camera 2/62
+Reading camera 3/62
+Reading camera 4/62
+Reading camera 5/62
+Reading camera 6/62
+Reading camera 7/62
+Reading camera 8/62
+Reading camera 9/62
+Reading camera 10/62
+Reading camera 11/62
+Reading camera 12/62
+Reading camera 13/62
+Reading camera 14/62
+Reading camera 15/62
+Reading camera 16/62
+Reading camera 17/62
+Reading camera 18/62
+Reading camera 19/62
+Reading camera 20/62
+Reading camera 21/62
+Reading camera 22/62
+Reading camera 23/62
+Reading camera 24/62
+Reading camera 25/62
+Reading camera 26/62
+Reading camera 27/62
+Reading camera 28/62
+Reading camera 29/62
+Reading camera 30/62
+Reading camera 31/62
+Reading camera 32/62
+Reading camera 33/62
+Reading camera 34/62
+Reading camera 35/62
+Reading camera 36/62
+Reading camera 37/62
+Reading camera 38/62
+Reading camera 39/62
+Reading camera 40/62
+Reading camera 41/62
+Reading camera 42/62
+Reading camera 43/62
+Reading camera 44/62
+Reading camera 45/62
+Reading camera 46/62
+Reading camera 47/62
+Reading camera 48/62
+Reading camera 49/62
+Reading camera 50/62
+Reading camera 51/62
+Reading camera 52/62
+Reading camera 53/62
+Reading camera 54/62
+Reading camera 55/62
+Reading camera 56/62
+Reading camera 57/62
+Reading camera 58/62
+Reading camera 59/62
+Reading camera 60/62
+Reading camera 61/62
+Reading camera 62/62 [19/10 21:38:17]
+Loading Training Cameras [19/10 21:38:17]
+Loading Test Cameras [19/10 21:38:18]
+loaded iteration 30000: 1148987 Gaussians, 8 test views [19/10 21:38:19]
+pose check: max |projection difference| over test cameras = 0.00e+00 [19/10 21:38:20]
+rendered 90 novel views -> /home/soham/assignment2/outputs/novel/gs/dolly [19/10 21:38:39]
++ python scripts/render_gs.py --gs_root /home/soham/assignment2/repos/gaussian-splatting -m /home/soham/assignment2/outputs/gs --iteration 30000 --novel /home/soham/assignment2/data/scene/novel/orbit.json --out /home/soham/assignment2/outputs/novel/gs/orbit
+Looking for config file in /home/soham/assignment2/outputs/gs/cfg_args
+Config file found: /home/soham/assignment2/outputs/gs/cfg_args
+Loading trained model at iteration 30000 [19/10 21:38:40]
+------------LLFF HOLD------------- [19/10 21:38:40]
+
+Reading camera 1/62
+Reading camera 2/62
+Reading camera 3/62
+Reading camera 4/62
+Reading camera 5/62
+Reading camera 6/62
+Reading camera 7/62
+Reading camera 8/62
+Reading camera 9/62
+Reading camera 10/62
+Reading camera 11/62
+Reading camera 12/62
+Reading camera 13/62
+Reading camera 14/62
+Reading camera 15/62
+Reading camera 16/62
+Reading camera 17/62
+Reading camera 18/62
+Reading camera 19/62
+Reading camera 20/62
+Reading camera 21/62
+Reading camera 22/62
+Reading camera 23/62
+Reading camera 24/62
+Reading camera 25/62
+Reading camera 26/62
+Reading camera 27/62
+Reading camera 28/62
+Reading camera 29/62
+Reading camera 30/62
+Reading camera 31/62
+Reading camera 32/62
+Reading camera 33/62
+Reading camera 34/62
+Reading camera 35/62
+Reading camera 36/62
+Reading camera 37/62
+Reading camera 38/62
+Reading camera 39/62
+Reading camera 40/62
+Reading camera 41/62
+Reading camera 42/62
+Reading camera 43/62
+Reading camera 44/62
+Reading camera 45/62
+Reading camera 46/62
+Reading camera 47/62
+Reading camera 48/62
+Reading camera 49/62
+Reading camera 50/62
+Reading camera 51/62
+Reading camera 52/62
+Reading camera 53/62
+Reading camera 54/62
+Reading camera 55/62
+Reading camera 56/62
+Reading camera 57/62
+Reading camera 58/62
+Reading camera 59/62
+Reading camera 60/62
+Reading camera 61/62
+Reading camera 62/62 [19/10 21:38:40]
+Loading Training Cameras [19/10 21:38:40]
+Loading Test Cameras [19/10 21:38:41]
+loaded iteration 30000: 1148987 Gaussians, 8 test views [19/10 21:38:43]
+pose check: max |projection difference| over test cameras = 0.00e+00 [19/10 21:38:43]
+rendered 120 novel views -> /home/soham/assignment2/outputs/novel/gs/orbit [19/10 21:39:08]
++ python scripts/render_gs.py --gs_root /home/soham/assignment2/repos/gaussian-splatting -m /home/soham/assignment2/outputs/gs --iteration 30000 --novel /home/soham/assignment2/data/scene/novel/look_around.json --out /home/soham/assignment2/outputs/novel/gs/look_around
+Looking for config file in /home/soham/assignment2/outputs/gs/cfg_args
+Config file found: /home/soham/assignment2/outputs/gs/cfg_args
+Loading trained model at iteration 30000 [19/10 21:39:10]
+------------LLFF HOLD------------- [19/10 21:39:10]
+
+Reading camera 1/62
+Reading camera 2/62
+Reading camera 3/62
+Reading camera 4/62
+Reading camera 5/62
+Reading camera 6/62
+Reading camera 7/62
+Reading camera 8/62
+Reading camera 9/62
+Reading camera 10/62
+Reading camera 11/62
+Reading camera 12/62
+Reading camera 13/62
+Reading camera 14/62
+Reading camera 15/62
+Reading camera 16/62
+Reading camera 17/62
+Reading camera 18/62
+Reading camera 19/62
+Reading camera 20/62
+Reading camera 21/62
+Reading camera 22/62
+Reading camera 23/62
+Reading camera 24/62
+Reading camera 25/62
+Reading camera 26/62
+Reading camera 27/62
+Reading camera 28/62
+Reading camera 29/62
+Reading camera 30/62
+Reading camera 31/62
+Reading camera 32/62
+Reading camera 33/62
+Reading camera 34/62
+Reading camera 35/62
+Reading camera 36/62
+Reading camera 37/62
+Reading camera 38/62
+Reading camera 39/62
+Reading camera 40/62
+Reading camera 41/62
+Reading camera 42/62
+Reading camera 43/62
+Reading camera 44/62
+Reading camera 45/62
+Reading camera 46/62
+Reading camera 47/62
+Reading camera 48/62
+Reading camera 49/62
+Reading camera 50/62
+Reading camera 51/62
+Reading camera 52/62
+Reading camera 53/62
+Reading camera 54/62
+Reading camera 55/62
+Reading camera 56/62
+Reading camera 57/62
+Reading camera 58/62
+Reading camera 59/62
+Reading camera 60/62
+Reading camera 61/62
+Reading camera 62/62 [19/10 21:39:10]
+Loading Training Cameras [19/10 21:39:10]
+Loading Test Cameras [19/10 21:39:11]
+loaded iteration 30000: 1148987 Gaussians, 8 test views [19/10 21:39:12]
+pose check: max |projection difference| over test cameras = 0.00e+00 [19/10 21:39:12]
+rendered 90 novel views -> /home/soham/assignment2/outputs/novel/gs/look_around [19/10 21:39:32]
++ python /home/soham/assignment2/repos/gaussian-splatting/render.py -m /home/soham/assignment2/outputs/gs --iteration 30000 --skip_train
+Looking for config file in /home/soham/assignment2/outputs/gs/cfg_args
+Config file found: /home/soham/assignment2/outputs/gs/cfg_args
+Rendering /home/soham/assignment2/outputs/gs
+Loading trained model at iteration 30000 [19/10 21:39:33]
+------------LLFF HOLD------------- [19/10 21:39:33]
+
+Reading camera 1/62
+Reading camera 2/62
+Reading camera 3/62
+Reading camera 4/62
+Reading camera 5/62
+Reading camera 6/62
+Reading camera 7/62
+Reading camera 8/62
+Reading camera 9/62
+Reading camera 10/62
+Reading camera 11/62
+Reading camera 12/62
+Reading camera 13/62
+Reading camera 14/62
+Reading camera 15/62
+Reading camera 16/62
+Reading camera 17/62
+Reading camera 18/62
+Reading camera 19/62
+Reading camera 20/62
+Reading camera 21/62
+Reading camera 22/62
+Reading camera 23/62
+Reading camera 24/62
+Reading camera 25/62
+Reading camera 26/62
+Reading camera 27/62
+Reading camera 28/62
+Reading camera 29/62
+Reading camera 30/62
+Reading camera 31/62
+Reading camera 32/62
+Reading camera 33/62
+Reading camera 34/62
+Reading camera 35/62
+Reading camera 36/62
+Reading camera 37/62
+Reading camera 38/62
+Reading camera 39/62
+Reading camera 40/62
+Reading camera 41/62
+Reading camera 42/62
+Reading camera 43/62
+Reading camera 44/62
+Reading camera 45/62
+Reading camera 46/62
+Reading camera 47/62
+Reading camera 48/62
+Reading camera 49/62
+Reading camera 50/62
+Reading camera 51/62
+Reading camera 52/62
+Reading camera 53/62
+Reading camera 54/62
+Reading camera 55/62
+Reading camera 56/62
+Reading camera 57/62
+Reading camera 58/62
+Reading camera 59/62
+Reading camera 60/62
+Reading camera 61/62
+Reading camera 62/62 [19/10 21:39:33]
+Loading Training Cameras [19/10 21:39:33]
+Loading Test Cameras [19/10 21:39:34]
+
+Rendering progress:   0%|          | 0/8 [00:00<?, ?it/s]
+Rendering progress:  12%|█▎        | 1/8 [00:00<00:02,  3.19it/s]
+Rendering progress:  25%|██▌       | 2/8 [00:00<00:01,  3.54it/s]
+Rendering progress:  38%|███▊      | 3/8 [00:00<00:01,  3.71it/s]
+Rendering progress:  50%|█████     | 4/8 [00:01<00:01,  3.74it/s]
+Rendering progress:  62%|██████▎   | 5/8 [00:01<00:00,  3.67it/s]
+Rendering progress:  75%|███████▌  | 6/8 [00:01<00:00,  3.46it/s]
+Rendering progress:  88%|████████▊ | 7/8 [00:02<00:00,  3.34it/s]
+Rendering progress: 100%|██████████| 8/8 [00:02<00:00,  3.32it/s]
+Rendering progress: 100%|██████████| 8/8 [00:02<00:00,  3.45it/s]
++ python /home/soham/assignment2/repos/gaussian-splatting/metrics.py -m /home/soham/assignment2/outputs/gs
+
+Scene: /home/soham/assignment2/outputs/gs
+Method: ours_30000
+
+Metric evaluation progress:   0%|          | 0/8 [00:00<?, ?it/s]Downloading: "https://download.pytorch.org/models/vgg16-397923af.pth" to /home/soham/.cache/torch/hub/checkpoints/vgg16-397923af.pth
+
+
+  0%|          | 0.00/528M [00:00<?, ?B/s][A
+
+  1%|          | 3.49M/528M [00:00<00:15, 36.6MB/s][A
+
+  1%|▏         | 6.98M/528M [00:00<00:22, 24.2MB/s][A
+
+  2%|▏         | 9.52M/528M [00:00<00:26, 20.7MB/s][A
+
+  2%|▏         | 11.6M/528M [00:00<00:26, 20.3MB/s][A
+
+  3%|▎         | 13.6M/528M [00:00<00:26, 20.0MB/s][A
+
+  3%|▎         | 15.6M/528M [00:00<00:26, 19.9MB/s][A
+
+  3%|▎         | 17.5M/528M [00:00<00:27, 19.8MB/s][A
+
+  4%|▎         | 19.4M/528M [00:00<00:26, 19.8MB/s][A
+
+  4%|▍         | 21.3M/528M [00:01<00:26, 19.7MB/s][A
+
+  4%|▍         | 23.2M/528M [00:01<00:26, 19.6MB/s][A
+
+  5%|▍         | 25.1M/528M [00:01<00:26, 19.6MB/s][A
+
+  5%|▌         | 27.0M/528M [00:01<00:26, 19.6MB/s][A
+
+  5%|▌         | 28.9M/528M [00:01<00:26, 19.6MB/s][A
+
+  6%|▌         | 30.8M/528M [00:01<00:26, 19.6MB/s][A
+
+  6%|▌         | 32.6M/528M [00:01<00:26, 19.6MB/s][A
+
+  7%|▋         | 34.5M/528M [00:01<00:26, 19.6MB/s][A
+
+  7%|▋         | 36.4M/528M [00:01<00:26, 19.6MB/s][A
+
+  7%|▋         | 38.3M/528M [00:01<00:26, 19.6MB/s][A
+
+  8%|▊         | 40.2M/528M [00:02<00:26, 19.6MB/s][A
+
+  8%|▊         | 42.0M/528M [00:02<00:26, 19.6MB/s][A
+
+  8%|▊         | 43.9M/528M [00:02<00:25, 19.6MB/s][A
+
+  9%|▊         | 45.8M/528M [00:02<00:25, 19.6MB/s][A
+
+  9%|▉         | 47.7M/528M [00:02<00:25, 19.6MB/s][A
+
+  9%|▉         | 49.6M/528M [00:02<00:25, 19.6MB/s][A
+
+ 10%|▉         | 51.5M/528M [00:02<00:25, 19.5MB/s][A
+
+ 10%|█         | 53.3M/528M [00:02<00:25, 19.6MB/s][A
+
+ 10%|█         | 55.2M/528M [00:02<00:25, 19.6MB/s][A
+
+ 11%|█         | 57.1M/528M [00:02<00:25, 19.6MB/s][A
+
+ 11%|█         | 59.0M/528M [00:03<00:25, 19.5MB/s][A
+
+ 12%|█▏        | 60.9M/528M [00:03<00:24, 19.6MB/s][A
+
+ 12%|█▏        | 62.7M/528M [00:03<00:24, 19.6MB/s][A
+
+ 12%|█▏        | 64.6M/528M [00:03<00:24, 19.6MB/s][A
+
+ 13%|█▎        | 66.5M/528M [00:03<00:24, 19.6MB/s][A
+
+ 13%|█▎        | 68.4M/528M [00:03<00:24, 19.6MB/s][A
+
+ 13%|█▎        | 70.2M/528M [00:03<00:24, 19.5MB/s][A
+
+ 14%|█▎        | 72.1M/528M [00:03<00:24, 19.5MB/s][A
+
+ 14%|█▍        | 74.0M/528M [00:03<00:24, 19.7MB/s][A
+
+ 14%|█▍        | 75.9M/528M [00:04<00:24, 19.5MB/s][A
+
+ 15%|█▍        | 77.8M/528M [00:04<00:24, 19.5MB/s][A
+
+ 15%|█▌        | 79.7M/528M [00:04<00:24, 19.6MB/s][A
+
+ 15%|█▌        | 81.6M/528M [00:04<00:23, 19.6MB/s][A
+
+ 16%|█▌        | 83.5M/528M [00:04<00:23, 19.5MB/s][A
+
+ 16%|█▌        | 85.4M/528M [00:04<00:23, 19.6MB/s][A
+
+ 17%|█▋        | 87.3M/528M [00:04<00:23, 19.5MB/s][A
+
+ 17%|█▋        | 89.2M/528M [00:04<00:23, 19.7MB/s][A
+
+ 17%|█▋        | 91.1M/528M [00:04<00:23, 19.6MB/s][A
+
+ 18%|█▊        | 93.0M/528M [00:04<00:23, 19.6MB/s][A
+
+ 18%|█▊        | 94.9M/528M [00:05<00:23, 19.6MB/s][A
+
+ 18%|█▊        | 96.8M/528M [00:05<00:23, 19.6MB/s][A
+
+ 19%|█▊        | 98.6M/528M [00:05<00:23, 19.6MB/s][A
+
+ 19%|█▉        | 101M/528M [00:05<00:22, 19.6MB/s] [A
+
+ 19%|█▉        | 102M/528M [00:05<00:22, 19.5MB/s][A
+
+ 20%|█▉        | 104M/528M [00:05<00:22, 19.4MB/s][A
+
+ 20%|██        | 106M/528M [00:05<00:22, 19.4MB/s][A
+
+ 20%|██        | 108M/528M [00:05<00:22, 19.4MB/s][A
+
+ 21%|██        | 110M/528M [00:05<00:22, 19.3MB/s][A
+
+ 21%|██        | 112M/528M [00:05<00:22, 19.4MB/s][A
+
+ 22%|██▏       | 114M/528M [00:06<00:22, 19.4MB/s][A
+
+ 22%|██▏       | 115M/528M [00:06<00:22, 19.4MB/s][A
+
+ 22%|██▏       | 117M/528M [00:06<00:22, 19.4MB/s][A
+
+ 23%|██▎       | 119M/528M [00:06<00:22, 19.5MB/s][A
+
+ 23%|██▎       | 121M/528M [00:06<00:21, 19.4MB/s][A
+
+ 23%|██▎       | 123M/528M [00:06<00:21, 19.4MB/s][A
+
+ 24%|██▎       | 125M/528M [00:06<00:21, 19.4MB/s][A
+
+ 24%|██▍       | 127M/528M [00:06<00:21, 19.3MB/s][A
+
+ 24%|██▍       | 128M/528M [00:06<00:21, 19.4MB/s][A
+
+ 25%|██▍       | 130M/528M [00:06<00:21, 19.4MB/s][A
+
+ 25%|██▌       | 132M/528M [00:07<00:21, 19.4MB/s][A
+
+ 25%|██▌       | 134M/528M [00:07<00:21, 19.4MB/s][A
+
+ 26%|██▌       | 136M/528M [00:07<00:21, 19.4MB/s][A
+
+ 26%|██▌       | 138M/528M [00:07<00:21, 19.3MB/s][A
+
+ 26%|██▋       | 140M/528M [00:07<00:20, 19.5MB/s][A
+
+ 27%|██▋       | 142M/528M [00:07<00:20, 19.4MB/s][A
+
+ 27%|██▋       | 143M/528M [00:07<00:20, 19.4MB/s][A
+
+ 28%|██▊       | 145M/528M [00:07<00:20, 19.4MB/s][A
+
+ 28%|██▊       | 147M/528M [00:07<00:20, 19.4MB/s][A
+
+ 28%|██▊       | 149M/528M [00:07<00:20, 19.4MB/s][A
+
+ 29%|██▊       | 151M/528M [00:08<00:20, 19.4MB/s][A
+
+ 29%|██▉       | 153M/528M [00:08<00:20, 19.4MB/s][A
+
+ 29%|██▉       | 155M/528M [00:08<00:20, 19.5MB/s][A
+
+ 30%|██▉       | 156M/528M [00:08<00:19, 19.5MB/s][A
+
+ 30%|███       | 158M/528M [00:08<00:19, 19.5MB/s][A
+
+ 30%|███       | 160M/528M [00:08<00:19, 19.5MB/s][A
+
+ 31%|███       | 162M/528M [00:08<00:19, 19.5MB/s][A
+
+ 31%|███       | 164M/528M [00:08<00:19, 19.4MB/s][A
+
+ 31%|███▏      | 166M/528M [00:08<00:19, 19.4MB/s][A
+
+ 32%|███▏      | 168M/528M [00:08<00:19, 19.5MB/s][A
+
+ 32%|███▏      | 170M/528M [00:09<00:19, 19.5MB/s][A
+
+ 32%|███▏      | 171M/528M [00:09<00:19, 19.4MB/s][A
+
+ 33%|███▎      | 173M/528M [00:09<00:19, 19.5MB/s][A
+
+ 33%|███▎      | 175M/528M [00:09<00:19, 19.4MB/s][A
+
+ 34%|███▎      | 177M/528M [00:09<00:18, 19.4MB/s][A
+
+ 34%|███▍      | 179M/528M [00:09<00:18, 19.4MB/s][A
+
+ 34%|███▍      | 181M/528M [00:09<00:18, 19.5MB/s][A
+
+ 35%|███▍      | 183M/528M [00:09<00:18, 19.5MB/s][A
+
+ 35%|███▍      | 184M/528M [00:09<00:18, 19.4MB/s][A
+
+ 35%|███▌      | 186M/528M [00:09<00:18, 19.5MB/s][A
+
+ 36%|███▌      | 188M/528M [00:10<00:18, 19.4MB/s][A
+
+ 36%|███▌      | 190M/528M [00:10<00:18, 19.4MB/s][A
+
+ 36%|███▋      | 192M/528M [00:10<00:18, 19.5MB/s][A
+
+ 37%|███▋      | 194M/528M [00:10<00:17, 19.5MB/s][A
+
+ 37%|███▋      | 196M/528M [00:10<00:17, 19.5MB/s][A
+
+ 37%|███▋      | 198M/528M [00:10<00:17, 19.5MB/s][A
+
+ 38%|███▊      | 199M/528M [00:10<00:17, 19.5MB/s][A
+
+ 38%|███▊      | 201M/528M [00:10<00:17, 19.5MB/s][A
+
+ 38%|███▊      | 203M/528M [00:10<00:17, 19.5MB/s][A
+
+ 39%|███▉      | 205M/528M [00:10<00:17, 19.4MB/s][A
+
+ 39%|███▉      | 207M/528M [00:11<00:17, 19.5MB/s][A
+
+ 40%|███▉      | 209M/528M [00:11<00:17, 19.5MB/s][A
+
+ 40%|███▉      | 211M/528M [00:11<00:17, 19.5MB/s][A
+
+ 40%|████      | 213M/528M [00:11<00:16, 19.5MB/s][A
+
+ 41%|████      | 214M/528M [00:11<00:16, 19.5MB/s][A
+
+ 41%|████      | 216M/528M [00:11<00:16, 19.5MB/s][A
+
+ 41%|████▏     | 218M/528M [00:11<00:16, 19.4MB/s][A
+
+ 42%|████▏     | 220M/528M [00:11<00:16, 19.4MB/s][A
+
+ 42%|████▏     | 222M/528M [00:11<00:16, 19.5MB/s][A
+
+ 42%|████▏     | 224M/528M [00:11<00:16, 19.6MB/s][A
+
+ 43%|████▎     | 226M/528M [00:12<00:16, 19.5MB/s][A
+
+ 43%|████▎     | 227M/528M [00:12<00:16, 19.3MB/s][A
+
+ 43%|████▎     | 229M/528M [00:12<00:15, 19.6MB/s][A
+
+ 44%|████▍     | 231M/528M [00:12<00:15, 19.6MB/s][A
+
+ 44%|████▍     | 233M/528M [00:12<00:15, 19.5MB/s][A
+
+ 45%|████▍     | 235M/528M [00:12<00:15, 19.5MB/s][A
+
+ 45%|████▍     | 237M/528M [00:12<00:15, 19.5MB/s][A
+
+ 45%|████▌     | 239M/528M [00:12<00:15, 19.5MB/s][A
+
+ 46%|████▌     | 241M/528M [00:12<00:15, 19.4MB/s][A
+
+ 46%|████▌     | 243M/528M [00:12<00:15, 19.6MB/s][A
+
+ 46%|████▋     | 244M/528M [00:13<00:15, 19.5MB/s][A
+
+ 47%|████▋     | 246M/528M [00:13<00:15, 19.6MB/s][A
+
+ 47%|████▋     | 248M/528M [00:13<00:15, 19.5MB/s][A
+
+ 47%|████▋     | 250M/528M [00:13<00:14, 19.6MB/s][A
+
+ 48%|████▊     | 252M/528M [00:13<00:14, 19.5MB/s][A
+
+ 48%|████▊     | 254M/528M [00:13<00:14, 19.5MB/s][A
+
+ 48%|████▊     | 256M/528M [00:13<00:14, 19.5MB/s][A
+
+ 49%|████▉     | 258M/528M [00:13<00:14, 19.5MB/s][A
+
+ 49%|████▉     | 259M/528M [00:13<00:14, 19.5MB/s][A
+
+ 50%|████▉     | 261M/528M [00:13<00:14, 19.5MB/s][A
+
+ 50%|████▉     | 263M/528M [00:14<00:14, 19.5MB/s][A
+
+ 50%|█████     | 265M/528M [00:14<00:14, 19.4MB/s][A
+
+ 51%|█████     | 267M/528M [00:14<00:14, 19.4MB/s][A
+
+ 51%|█████     | 269M/528M [00:14<00:13, 19.4MB/s][A
+
+ 51%|█████▏    | 271M/528M [00:14<00:13, 19.6MB/s][A
+
+ 52%|█████▏    | 273M/528M [00:14<00:13, 19.6MB/s][A
+
+ 52%|█████▏    | 274M/528M [00:14<00:13, 19.5MB/s][A
+
+ 52%|█████▏    | 276M/528M [00:14<00:13, 19.6MB/s][A
+
+ 53%|█████▎    | 278M/528M [00:14<00:13, 19.5MB/s][A
+
+ 53%|█████▎    | 280M/528M [00:14<00:13, 19.5MB/s][A
+
+ 53%|█████▎    | 282M/528M [00:15<00:13, 19.5MB/s][A
+
+ 54%|█████▍    | 284M/528M [00:15<00:13, 19.5MB/s][A
+
+ 54%|█████▍    | 286M/528M [00:15<00:12, 19.6MB/s][A
+
+ 54%|█████▍    | 288M/528M [00:15<00:12, 19.5MB/s][A
+
+ 55%|█████▍    | 290M/528M [00:15<00:12, 19.4MB/s][A
+
+ 55%|█████▌    | 291M/528M [00:15<00:12, 19.5MB/s][A
+
+ 56%|█████▌    | 293M/528M [00:15<00:12, 19.5MB/s][A
+
+ 56%|█████▌    | 295M/528M [00:15<00:12, 19.4MB/s][A
+
+ 56%|█████▋    | 297M/528M [00:15<00:12, 19.5MB/s][A
+
+ 57%|█████▋    | 299M/528M [00:16<00:12, 19.6MB/s][A
+
+ 57%|█████▋    | 301M/528M [00:16<00:12, 19.6MB/s][A
+
+ 57%|█████▋    | 303M/528M [00:16<00:12, 19.6MB/s][A
+
+ 58%|█████▊    | 305M/528M [00:16<00:11, 19.5MB/s][A
+
+ 58%|█████▊    | 306M/528M [00:16<00:11, 19.5MB/s][A
+
+ 58%|█████▊    | 308M/528M [00:16<00:11, 19.4MB/s][A
+
+ 59%|█████▉    | 310M/528M [00:16<00:11, 19.6MB/s][A
+
+ 59%|█████▉    | 312M/528M [00:16<00:11, 19.6MB/s][A
+
+ 59%|█████▉    | 314M/528M [00:16<00:11, 19.6MB/s][A
+
+ 60%|█████▉    | 316M/528M [00:16<00:11, 19.6MB/s][A
+
+ 60%|██████    | 318M/528M [00:17<00:11, 19.6MB/s][A
+
+ 61%|██████    | 320M/528M [00:17<00:11, 19.5MB/s][A
+
+ 61%|██████    | 322M/528M [00:17<00:11, 19.5MB/s][A
+
+ 61%|██████▏   | 323M/528M [00:17<00:10, 19.5MB/s][A
+
+ 62%|██████▏   | 325M/528M [00:17<00:10, 19.5MB/s][A
+
+ 62%|██████▏   | 327M/528M [00:17<00:10, 19.5MB/s][A
+
+ 62%|██████▏   | 329M/528M [00:17<00:10, 19.5MB/s][A
+
+ 63%|██████▎   | 331M/528M [00:17<00:10, 19.5MB/s][A
+
+ 63%|██████▎   | 333M/528M [00:17<00:10, 19.5MB/s][A
+
+ 63%|██████▎   | 335M/528M [00:17<00:10, 19.5MB/s][A
+
+ 64%|██████▍   | 336M/528M [00:18<00:10, 19.5MB/s][A
+
+ 64%|██████▍   | 338M/528M [00:18<00:10, 19.5MB/s][A
+
+ 64%|██████▍   | 340M/528M [00:18<00:10, 19.5MB/s][A
+
+ 65%|██████▍   | 342M/528M [00:18<00:09, 19.5MB/s][A
+
+ 65%|██████▌   | 344M/528M [00:18<00:09, 19.6MB/s][A
+
+ 66%|██████▌   | 346M/528M [00:18<00:09, 19.6MB/s][A
+
+ 66%|██████▌   | 348M/528M [00:18<00:09, 19.5MB/s][A
+
+ 66%|██████▌   | 350M/528M [00:18<00:09, 19.5MB/s][A
+
+ 67%|██████▋   | 352M/528M [00:18<00:09, 19.5MB/s][A
+
+ 67%|██████▋   | 353M/528M [00:18<00:09, 19.5MB/s][A
+
+ 67%|██████▋   | 355M/528M [00:19<00:09, 19.5MB/s][A
+
+ 68%|██████▊   | 357M/528M [00:19<00:09, 19.5MB/s][A
+
+ 68%|██████▊   | 359M/528M [00:19<00:09, 19.5MB/s][A
+
+ 68%|██████▊   | 361M/528M [00:19<00:08, 19.6MB/s][A
+
+ 69%|██████▊   | 363M/528M [00:19<00:08, 19.5MB/s][A
+
+ 69%|██████▉   | 365M/528M [00:19<00:08, 19.6MB/s][A
+
+ 69%|██████▉   | 367M/528M [00:19<00:08, 19.6MB/s][A
+
+ 70%|██████▉   | 368M/528M [00:19<00:08, 19.6MB/s][A
+
+ 70%|███████   | 370M/528M [00:19<00:08, 19.5MB/s][A
+
+ 71%|███████   | 372M/528M [00:19<00:08, 19.6MB/s][A
+
+ 71%|███████   | 374M/528M [00:20<00:08, 19.6MB/s][A
+
+ 71%|███████   | 376M/528M [00:20<00:08, 19.5MB/s][A
+
+ 72%|███████▏  | 378M/528M [00:20<00:08, 19.6MB/s][A
+
+ 72%|███████▏  | 380M/528M [00:20<00:07, 19.6MB/s][A
+
+ 72%|███████▏  | 382M/528M [00:20<00:07, 19.5MB/s][A
+
+ 73%|███████▎  | 383M/528M [00:20<00:07, 19.5MB/s][A
+
+ 73%|███████▎  | 385M/528M [00:20<00:12, 12.5MB/s][A
+
+ 73%|███████▎  | 388M/528M [00:20<00:09, 15.4MB/s][A
+
+ 74%|███████▍  | 391M/528M [00:21<00:07, 19.1MB/s][A
+
+ 74%|███████▍  | 393M/528M [00:21<00:07, 19.2MB/s][A
+
+ 75%|███████▍  | 395M/528M [00:21<00:07, 19.3MB/s][A
+
+ 75%|███████▌  | 397M/528M [00:21<00:07, 19.3MB/s][A
+
+ 76%|███████▌  | 399M/528M [00:21<00:06, 19.5MB/s][A
+
+ 76%|███████▌  | 401M/528M [00:21<00:06, 19.5MB/s][A
+
+ 76%|███████▋  | 403M/528M [00:21<00:06, 19.5MB/s][A
+
+ 77%|███████▋  | 405M/528M [00:21<00:06, 19.5MB/s][A
+
+ 77%|███████▋  | 407M/528M [00:21<00:06, 19.5MB/s][A
+
+ 77%|███████▋  | 408M/528M [00:21<00:06, 19.5MB/s][A
+
+ 78%|███████▊  | 410M/528M [00:22<00:06, 19.6MB/s][A
+
+ 78%|███████▊  | 412M/528M [00:22<00:06, 19.6MB/s][A
+
+ 78%|███████▊  | 414M/528M [00:22<00:06, 19.6MB/s][A
+
+ 79%|███████▉  | 416M/528M [00:22<00:06, 19.5MB/s][A
+
+ 79%|███████▉  | 418M/528M [00:22<00:05, 19.5MB/s][A
+
+ 80%|███████▉  | 420M/528M [00:22<00:05, 19.6MB/s][A
+
+ 80%|███████▉  | 422M/528M [00:22<00:05, 19.6MB/s][A
+
+ 80%|████████  | 424M/528M [00:22<00:05, 19.6MB/s][A
+
+ 81%|████████  | 425M/528M [00:22<00:05, 19.5MB/s][A
+
+ 81%|████████  | 427M/528M [00:22<00:05, 19.6MB/s][A
+
+ 81%|████████▏ | 429M/528M [00:23<00:05, 19.6MB/s][A
+
+ 82%|████████▏ | 431M/528M [00:23<00:05, 19.6MB/s][A
+
+ 82%|████████▏ | 433M/528M [00:23<00:05, 19.5MB/s][A
+
+ 82%|████████▏ | 435M/528M [00:23<00:04, 19.6MB/s][A
+
+ 83%|████████▎ | 437M/528M [00:23<00:04, 19.6MB/s][A
+
+ 83%|████████▎ | 439M/528M [00:23<00:04, 19.6MB/s][A
+
+ 83%|████████▎ | 440M/528M [00:23<00:04, 19.6MB/s][A
+
+ 84%|████████▍ | 442M/528M [00:23<00:04, 19.6MB/s][A
+
+ 84%|████████▍ | 444M/528M [00:23<00:04, 19.6MB/s][A
+
+ 85%|████████▍ | 446M/528M [00:23<00:04, 19.6MB/s][A
+
+ 85%|████████▍ | 448M/528M [00:24<00:04, 19.6MB/s][A
+
+ 85%|████████▌ | 450M/528M [00:24<00:04, 19.6MB/s][A
+
+ 86%|████████▌ | 452M/528M [00:24<00:04, 19.6MB/s][A
+
+ 86%|████████▌ | 454M/528M [00:24<00:03, 19.6MB/s][A
+
+ 86%|████████▋ | 455M/528M [00:24<00:03, 19.5MB/s][A
+
+ 87%|████████▋ | 457M/528M [00:24<00:03, 19.5MB/s][A
+
+ 87%|████████▋ | 459M/528M [00:24<00:03, 19.6MB/s][A
+
+ 87%|████████▋ | 461M/528M [00:24<00:03, 19.6MB/s][A
+
+ 88%|████████▊ | 463M/528M [00:24<00:03, 19.6MB/s][A
+
+ 88%|████████▊ | 465M/528M [00:25<00:03, 19.6MB/s][A
+
+ 88%|████████▊ | 467M/528M [00:25<00:03, 19.6MB/s][A
+
+ 89%|████████▉ | 469M/528M [00:25<00:03, 19.5MB/s][A
+
+ 89%|████████▉ | 470M/528M [00:25<00:03, 19.5MB/s][A
+
+ 89%|████████▉ | 472M/528M [00:25<00:02, 19.6MB/s][A
+
+ 90%|████████▉ | 474M/528M [00:25<00:02, 19.6MB/s][A
+
+ 90%|█████████ | 476M/528M [00:25<00:02, 19.6MB/s][A
+
+ 91%|█████████ | 478M/528M [00:25<00:02, 19.6MB/s][A
+
+ 91%|█████████ | 480M/528M [00:25<00:02, 19.5MB/s][A
+
+ 91%|█████████▏| 482M/528M [00:25<00:02, 19.5MB/s][A
+
+ 92%|█████████▏| 484M/528M [00:26<00:02, 19.5MB/s][A
+
+ 92%|█████████▏| 485M/528M [00:26<00:02, 19.6MB/s][A
+
+ 92%|█████████▏| 487M/528M [00:26<00:02, 19.5MB/s][A
+
+ 93%|█████████▎| 489M/528M [00:26<00:02, 19.5MB/s][A
+
+ 93%|█████████▎| 491M/528M [00:26<00:01, 19.4MB/s][A
+
+ 93%|█████████▎| 493M/528M [00:26<00:01, 19.5MB/s][A
+
+ 94%|█████████▍| 495M/528M [00:26<00:01, 19.6MB/s][A
+
+ 94%|█████████▍| 497M/528M [00:26<00:01, 19.6MB/s][A
+
+ 94%|█████████▍| 499M/528M [00:26<00:01, 19.6MB/s][A
+
+ 95%|█████████▍| 501M/528M [00:26<00:01, 19.6MB/s][A
+
+ 95%|█████████▌| 502M/528M [00:27<00:01, 19.6MB/s][A
+
+ 96%|█████████▌| 504M/528M [00:27<00:01, 19.6MB/s][A
+
+ 96%|█████████▌| 506M/528M [00:27<00:01, 19.6MB/s][A
+
+ 96%|█████████▌| 508M/528M [00:27<00:01, 19.6MB/s][A
+
+ 97%|█████████▋| 510M/528M [00:27<00:00, 19.6MB/s][A
+
+ 97%|█████████▋| 512M/528M [00:27<00:00, 19.3MB/s][A
+
+ 97%|█████████▋| 514M/528M [00:27<00:00, 19.7MB/s][A
+
+ 98%|█████████▊| 516M/528M [00:27<00:00, 19.3MB/s][A
+
+ 98%|█████████▊| 517M/528M [00:27<00:00, 19.4MB/s][A
+
+ 98%|█████████▊| 519M/528M [00:27<00:00, 19.6MB/s][A
+
+ 99%|█████████▉| 521M/528M [00:28<00:00, 19.7MB/s][A
+
+ 99%|█████████▉| 523M/528M [00:28<00:00, 19.7MB/s][A
+
+ 99%|█████████▉| 525M/528M [00:28<00:00, 19.4MB/s][A
+
+100%|█████████▉| 527M/528M [00:28<00:00, 19.7MB/s][A
+100%|██████████| 528M/528M [00:28<00:00, 19.5MB/s]
+Downloading: "https://raw.githubusercontent.com/richzhang/PerceptualSimilarity/master/lpips/weights/v0.1/vgg.pth" to /home/soham/.cache/torch/hub/checkpoints/vgg.pth
+
+
+  0%|          | 0.00/7.12k [00:00<?, ?B/s][A
+100%|██████████| 7.12k/7.12k [00:00<00:00, 8.97MB/s]
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torch/nn/modules/conv.py:456: UserWarning: Applied workaround for CuDNN issue, install nvrtc.so (Triggered internally at ../aten/src/ATen/native/cudnn/Conv_v8.cpp:80.)
+  return F.conv2d(input, weight, bias, self.stride,
+
+Metric evaluation progress:  12%|█▎        | 1/8 [00:30<03:32, 30.43s/it]
+Metric evaluation progress:  25%|██▌       | 2/8 [00:31<01:18, 13.00s/it]
+Metric evaluation progress:  38%|███▊      | 3/8 [00:32<00:37,  7.47s/it]
+Metric evaluation progress:  50%|█████     | 4/8 [00:33<00:19,  4.91s/it]
+Metric evaluation progress:  62%|██████▎   | 5/8 [00:33<00:10,  3.46s/it]
+Metric evaluation progress:  75%|███████▌  | 6/8 [00:34<00:05,  2.58s/it]
+Metric evaluation progress:  88%|████████▊ | 7/8 [00:35<00:02,  2.03s/it]
+Metric evaluation progress: 100%|██████████| 8/8 [00:36<00:00,  1.66s/it]
+Metric evaluation progress: 100%|██████████| 8/8 [00:36<00:00,  4.58s/it]
+  SSIM :    0.9788678
+  PSNR :   36.0301018
+  LPIPS:    0.0688909
+
+3DGS done.
++ conda activate ngp
+GPU status before timing-sensitive work:
+index, name, utilization.gpu [%], memory.used [MiB], memory.total [MiB]
+0, NVIDIA GeForce RTX 4060 Laptop GPU, 0 %, 8 MiB, 8188 MiB
++ python scripts/train_ngp.py --ngp_root /home/soham/assignment2/repos/instant-ngp --scene /home/soham/assignment2/data/scene/transforms_train.json --out_dir /home/soham/assignment2/outputs/ngp --checkpoints 1000 3000 7000 15000 35000  > /home/soham/assignment2/logs/ngp_train.log
+  ngp training finished in 303.6 s
++ python scripts/render_ngp.py --ngp_root /home/soham/assignment2/repos/instant-ngp --snapshot /home/soham/assignment2/outputs/ngp/step_001000.ingp --transforms /home/soham/assignment2/data/scene/transforms_test.json --train_json /home/soham/assignment2/data/scene/transforms_train.json --out /home/soham/assignment2/outputs/eval/ngp/step_001000
+[0m21:45:24 [0;32mSUCCESS  [0mInitialized CUDA 11.8. Active GPU is #0: NVIDIA GeForce RTX 4060 Laptop GPU [89][K[0m
+21:45:24 [0;36mINFO     [0mLoading network snapshot from: /home/soham/assignment2/outputs/ngp/step_001000.ingp[K[0m
+21:45:24 [0;36mINFO     [0mMultiLevelEncoding: type=hashgrid Nmin=16 b=2.43803 F=4 T=2^19 L=8[K[0m
+21:45:24 [0;36mINFO     [0mDensity model: 3--[HashGrid]-->32--[FullyFusedMLP(neurons=64,layers=3)]-->1[K[0m
+21:45:24 [0;36mINFO     [0mColor model:   3--[Composite]-->16+16--[FullyFusedMLP(neurons=64,layers=4)]-->3[K[0m
+21:45:24 [0;36mINFO     [0m  total_encoding_params=12855296 total_network_params=10240[K[0m
+21:45:24 [0;36mINFO     [0mLoading NeRF dataset from[K[0m
+21:45:24 [0;36mINFO     [0m  /home/soham/assignment2/data/scene/_ngp_stage_30666.json[K[0m
+21:45:24 [0;36mINFO     [0m  cam_aabb=[min=[0.699067,0.262597,0.474291], max=[0.74746,0.681025,0.495896]][K[0m
+snapshot /home/soham/assignment2/outputs/ngp/step_001000.ingp: training step 1000, 8 views at 701x1249
+rendered 8/8
+done -> /home/soham/assignment2/outputs/eval/ngp/step_001000
+[0m+ python scripts/render_ngp.py --ngp_root /home/soham/assignment2/repos/instant-ngp --snapshot /home/soham/assignment2/outputs/ngp/step_003000.ingp --transforms /home/soham/assignment2/data/scene/transforms_test.json --train_json /home/soham/assignment2/data/scene/transforms_train.json --out /home/soham/assignment2/outputs/eval/ngp/step_003000
+[0m21:45:28 [0;32mSUCCESS  [0mInitialized CUDA 11.8. Active GPU is #0: NVIDIA GeForce RTX 4060 Laptop GPU [89][K[0m
+21:45:28 [0;36mINFO     [0mLoading network snapshot from: /home/soham/assignment2/outputs/ngp/step_003000.ingp[K[0m
+21:45:29 [0;36mINFO     [0mMultiLevelEncoding: type=hashgrid Nmin=16 b=2.43803 F=4 T=2^19 L=8[K[0m
+21:45:29 [0;36mINFO     [0mDensity model: 3--[HashGrid]-->32--[FullyFusedMLP(neurons=64,layers=3)]-->1[K[0m
+21:45:29 [0;36mINFO     [0mColor model:   3--[Composite]-->16+16--[FullyFusedMLP(neurons=64,layers=4)]-->3[K[0m
+21:45:29 [0;36mINFO     [0m  total_encoding_params=12855296 total_network_params=10240[K[0m
+21:45:29 [0;36mINFO     [0mLoading NeRF dataset from[K[0m
+21:45:29 [0;36mINFO     [0m  /home/soham/assignment2/data/scene/_ngp_stage_30735.json[K[0m
+21:45:29 [0;36mINFO     [0m  cam_aabb=[min=[0.699067,0.262597,0.474291], max=[0.74746,0.681025,0.495896]][K[0m
+snapshot /home/soham/assignment2/outputs/ngp/step_003000.ingp: training step 3000, 8 views at 701x1249
+rendered 8/8
+done -> /home/soham/assignment2/outputs/eval/ngp/step_003000
+[0m+ python scripts/render_ngp.py --ngp_root /home/soham/assignment2/repos/instant-ngp --snapshot /home/soham/assignment2/outputs/ngp/step_007000.ingp --transforms /home/soham/assignment2/data/scene/transforms_test.json --train_json /home/soham/assignment2/data/scene/transforms_train.json --out /home/soham/assignment2/outputs/eval/ngp/step_007000
+[0m21:45:33 [0;32mSUCCESS  [0mInitialized CUDA 11.8. Active GPU is #0: NVIDIA GeForce RTX 4060 Laptop GPU [89][K[0m
+21:45:33 [0;36mINFO     [0mLoading network snapshot from: /home/soham/assignment2/outputs/ngp/step_007000.ingp[K[0m
+21:45:33 [0;36mINFO     [0mMultiLevelEncoding: type=hashgrid Nmin=16 b=2.43803 F=4 T=2^19 L=8[K[0m
+21:45:33 [0;36mINFO     [0mDensity model: 3--[HashGrid]-->32--[FullyFusedMLP(neurons=64,layers=3)]-->1[K[0m
+21:45:33 [0;36mINFO     [0mColor model:   3--[Composite]-->16+16--[FullyFusedMLP(neurons=64,layers=4)]-->3[K[0m
+21:45:33 [0;36mINFO     [0m  total_encoding_params=12855296 total_network_params=10240[K[0m
+21:45:33 [0;36mINFO     [0mLoading NeRF dataset from[K[0m
+21:45:33 [0;36mINFO     [0m  /home/soham/assignment2/data/scene/_ngp_stage_30806.json[K[0m
+21:45:33 [0;36mINFO     [0m  cam_aabb=[min=[0.699067,0.262597,0.474291], max=[0.74746,0.681025,0.495896]][K[0m
+snapshot /home/soham/assignment2/outputs/ngp/step_007000.ingp: training step 7000, 8 views at 701x1249
+rendered 8/8
+done -> /home/soham/assignment2/outputs/eval/ngp/step_007000
+[0m+ python scripts/render_ngp.py --ngp_root /home/soham/assignment2/repos/instant-ngp --snapshot /home/soham/assignment2/outputs/ngp/step_015000.ingp --transforms /home/soham/assignment2/data/scene/transforms_test.json --train_json /home/soham/assignment2/data/scene/transforms_train.json --out /home/soham/assignment2/outputs/eval/ngp/step_015000
+[0m21:45:37 [0;32mSUCCESS  [0mInitialized CUDA 11.8. Active GPU is #0: NVIDIA GeForce RTX 4060 Laptop GPU [89][K[0m
+21:45:37 [0;36mINFO     [0mLoading network snapshot from: /home/soham/assignment2/outputs/ngp/step_015000.ingp[K[0m
+21:45:37 [0;36mINFO     [0mMultiLevelEncoding: type=hashgrid Nmin=16 b=2.43803 F=4 T=2^19 L=8[K[0m
+21:45:37 [0;36mINFO     [0mDensity model: 3--[HashGrid]-->32--[FullyFusedMLP(neurons=64,layers=3)]-->1[K[0m
+21:45:37 [0;36mINFO     [0mColor model:   3--[Composite]-->16+16--[FullyFusedMLP(neurons=64,layers=4)]-->3[K[0m
+21:45:37 [0;36mINFO     [0m  total_encoding_params=12855296 total_network_params=10240[K[0m
+21:45:37 [0;36mINFO     [0mLoading NeRF dataset from[K[0m
+21:45:37 [0;36mINFO     [0m  /home/soham/assignment2/data/scene/_ngp_stage_30875.json[K[0m
+21:45:37 [0;36mINFO     [0m  cam_aabb=[min=[0.699067,0.262597,0.474291], max=[0.74746,0.681025,0.495896]][K[0m
+snapshot /home/soham/assignment2/outputs/ngp/step_015000.ingp: training step 15000, 8 views at 701x1249
+rendered 8/8
+done -> /home/soham/assignment2/outputs/eval/ngp/step_015000
+[0m+ python scripts/render_ngp.py --ngp_root /home/soham/assignment2/repos/instant-ngp --snapshot /home/soham/assignment2/outputs/ngp/step_035000.ingp --transforms /home/soham/assignment2/data/scene/transforms_test.json --train_json /home/soham/assignment2/data/scene/transforms_train.json --out /home/soham/assignment2/outputs/eval/ngp/step_035000
+[0m21:45:41 [0;32mSUCCESS  [0mInitialized CUDA 11.8. Active GPU is #0: NVIDIA GeForce RTX 4060 Laptop GPU [89][K[0m
+21:45:41 [0;36mINFO     [0mLoading network snapshot from: /home/soham/assignment2/outputs/ngp/step_035000.ingp[K[0m
+21:45:41 [0;36mINFO     [0mMultiLevelEncoding: type=hashgrid Nmin=16 b=2.43803 F=4 T=2^19 L=8[K[0m
+21:45:41 [0;36mINFO     [0mDensity model: 3--[HashGrid]-->32--[FullyFusedMLP(neurons=64,layers=3)]-->1[K[0m
+21:45:41 [0;36mINFO     [0mColor model:   3--[Composite]-->16+16--[FullyFusedMLP(neurons=64,layers=4)]-->3[K[0m
+21:45:41 [0;36mINFO     [0m  total_encoding_params=12855296 total_network_params=10240[K[0m
+21:45:41 [0;36mINFO     [0mLoading NeRF dataset from[K[0m
+21:45:41 [0;36mINFO     [0m  /home/soham/assignment2/data/scene/_ngp_stage_30945.json[K[0m
+21:45:41 [0;36mINFO     [0m  cam_aabb=[min=[0.699067,0.262597,0.474291], max=[0.74746,0.681025,0.495896]][K[0m
+snapshot /home/soham/assignment2/outputs/ngp/step_035000.ingp: training step 35000, 8 views at 701x1249
+rendered 8/8
+done -> /home/soham/assignment2/outputs/eval/ngp/step_035000
+[0mGPU status before timing-sensitive work:
+index, name, utilization.gpu [%], memory.used [MiB], memory.total [MiB]
+0, NVIDIA GeForce RTX 4060 Laptop GPU, 0 %, 8 MiB, 8188 MiB
++ python scripts/render_ngp.py --ngp_root /home/soham/assignment2/repos/instant-ngp --snapshot /home/soham/assignment2/outputs/ngp/step_035000.ingp --transforms /home/soham/assignment2/data/scene/transforms_test.json --train_json /home/soham/assignment2/data/scene/transforms_train.json --bench 20 --timing_out /home/soham/assignment2/results/timing/ngp.json
+[0m21:45:45 [0;32mSUCCESS  [0mInitialized CUDA 11.8. Active GPU is #0: NVIDIA GeForce RTX 4060 Laptop GPU [89][K[0m
+21:45:45 [0;36mINFO     [0mLoading network snapshot from: /home/soham/assignment2/outputs/ngp/step_035000.ingp[K[0m
+21:45:46 [0;36mINFO     [0mMultiLevelEncoding: type=hashgrid Nmin=16 b=2.43803 F=4 T=2^19 L=8[K[0m
+21:45:46 [0;36mINFO     [0mDensity model: 3--[HashGrid]-->32--[FullyFusedMLP(neurons=64,layers=3)]-->1[K[0m
+21:45:46 [0;36mINFO     [0mColor model:   3--[Composite]-->16+16--[FullyFusedMLP(neurons=64,layers=4)]-->3[K[0m
+21:45:46 [0;36mINFO     [0m  total_encoding_params=12855296 total_network_params=10240[K[0m
+21:45:46 [0;36mINFO     [0mLoading NeRF dataset from[K[0m
+21:45:46 [0;36mINFO     [0m  /home/soham/assignment2/data/scene/_ngp_stage_31018.json[K[0m
+21:45:46 [0;36mINFO     [0m  cam_aabb=[min=[0.699067,0.262597,0.474291], max=[0.74746,0.681025,0.495896]][K[0m
+snapshot /home/soham/assignment2/outputs/ngp/step_035000.ingp: training step 35000, 8 views at 701x1249
+{
+  "method": "instant-ngp",
+  "snapshot": "/home/soham/assignment2/outputs/ngp/step_035000.ingp",
+  "training_step": 35000,
+  "width": 701,
+  "height": 1249,
+  "n_views": 8,
+  "repeats": 20,
+  "warmup": 10,
+  "n_params": 12865536,
+  "spp": {
+    "1": {
+      "ms_mean": 23.725901150027084,
+      "ms_std": 1.6821931519121673,
+      "ms_median": 23.45249700010754,
+      "fps_mean": 42.148030276138044
+    },
+    "8": {
+      "ms_mean": 174.7888776375305,
+      "ms_std": 12.06350524667518,
+      "ms_median": 171.87396449980952,
+      "fps_mean": 5.721187832521907
+    }
+  },
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU"
+}
+[0m+ python scripts/render_ngp.py --ngp_root /home/soham/assignment2/repos/instant-ngp --snapshot /home/soham/assignment2/outputs/ngp/step_035000.ingp --transforms /home/soham/assignment2/data/scene/novel/trajectory.json --train_json /home/soham/assignment2/data/scene/transforms_train.json --out /home/soham/assignment2/outputs/novel/ngp/trajectory
+[0m21:46:20 [0;32mSUCCESS  [0mInitialized CUDA 11.8. Active GPU is #0: NVIDIA GeForce RTX 4060 Laptop GPU [89][K[0m
+21:46:20 [0;36mINFO     [0mLoading network snapshot from: /home/soham/assignment2/outputs/ngp/step_035000.ingp[K[0m
+21:46:21 [0;36mINFO     [0mMultiLevelEncoding: type=hashgrid Nmin=16 b=2.43803 F=4 T=2^19 L=8[K[0m
+21:46:21 [0;36mINFO     [0mDensity model: 3--[HashGrid]-->32--[FullyFusedMLP(neurons=64,layers=3)]-->1[K[0m
+21:46:21 [0;36mINFO     [0mColor model:   3--[Composite]-->16+16--[FullyFusedMLP(neurons=64,layers=4)]-->3[K[0m
+21:46:21 [0;36mINFO     [0m  total_encoding_params=12855296 total_network_params=10240[K[0m
+21:46:21 [0;36mINFO     [0mLoading NeRF dataset from[K[0m
+21:46:21 [0;36mINFO     [0m  /home/soham/assignment2/data/scene/novel/_ngp_stage_31087.json[K[0m
+21:46:21 [0;36mINFO     [0m  cam_aabb=[min=[0.701416,0.267465,0.489975], max=[0.728442,0.372613,0.497237]][K[0m
+snapshot /home/soham/assignment2/outputs/ngp/step_035000.ingp: training step 35000, 120 views at 701x1249
+rendered 30/120
+21:46:31 [0;36mINFO     [0mLoading NeRF dataset from[K[0m
+21:46:31 [0;36mINFO     [0m  /home/soham/assignment2/data/scene/novel/_ngp_stage_31087.json[K[0m
+21:46:31 [0;36mINFO     [0m  cam_aabb=[min=[0.729976,0.377942,0.486075], max=[0.744508,0.489606,0.48934]][K[0m
+rendered 60/120
+21:46:42 [0;36mINFO     [0mLoading NeRF dataset from[K[0m
+21:46:42 [0;36mINFO     [0m  /home/soham/assignment2/data/scene/novel/_ngp_stage_31087.json[K[0m
+21:46:42 [0;36mINFO     [0m  cam_aabb=[min=[0.739158,0.494038,0.479645], max=[0.748026,0.605475,0.485819]][K[0m
+rendered 90/120
+21:46:54 [0;36mINFO     [0mLoading NeRF dataset from[K[0m
+21:46:54 [0;36mINFO     [0m  /home/soham/assignment2/data/scene/novel/_ngp_stage_31087.json[K[0m
+21:46:54 [0;36mINFO     [0m  cam_aabb=[min=[0.739496,0.608311,0.47285], max=[0.74473,0.722361,0.48083]][K[0m
+rendered 120/120
+done -> /home/soham/assignment2/outputs/novel/ngp/trajectory
+[0m+ python scripts/render_ngp.py --ngp_root /home/soham/assignment2/repos/instant-ngp --snapshot /home/soham/assignment2/outputs/ngp/step_035000.ingp --transforms /home/soham/assignment2/data/scene/novel/shift_up.json --train_json /home/soham/assignment2/data/scene/transforms_train.json --out /home/soham/assignment2/outputs/novel/ngp/shift_up
+[0m21:47:07 [0;32mSUCCESS  [0mInitialized CUDA 11.8. Active GPU is #0: NVIDIA GeForce RTX 4060 Laptop GPU [89][K[0m
+21:47:07 [0;36mINFO     [0mLoading network snapshot from: /home/soham/assignment2/outputs/ngp/step_035000.ingp[K[0m
+21:47:07 [0;36mINFO     [0mMultiLevelEncoding: type=hashgrid Nmin=16 b=2.43803 F=4 T=2^19 L=8[K[0m
+21:47:07 [0;36mINFO     [0mDensity model: 3--[HashGrid]-->32--[FullyFusedMLP(neurons=64,layers=3)]-->1[K[0m
+21:47:07 [0;36mINFO     [0mColor model:   3--[Composite]-->16+16--[FullyFusedMLP(neurons=64,layers=4)]-->3[K[0m
+21:47:07 [0;36mINFO     [0m  total_encoding_params=12855296 total_network_params=10240[K[0m
+21:47:07 [0;36mINFO     [0mLoading NeRF dataset from[K[0m
+21:47:07 [0;36mINFO     [0m  /home/soham/assignment2/data/scene/novel/_ngp_stage_31204.json[K[0m
+21:47:07 [0;36mINFO     [0m  cam_aabb=[min=[0.701572,0.269242,0.520644], max=[0.734554,0.410388,0.531689]][K[0m
+snapshot /home/soham/assignment2/outputs/ngp/step_035000.ingp: training step 35000, 90 views at 701x1249
+rendered 30/90
+21:47:21 [0;36mINFO     [0mLoading NeRF dataset from[K[0m
+21:47:21 [0;36mINFO     [0m  /home/soham/assignment2/data/scene/novel/_ngp_stage_31204.json[K[0m
+21:47:21 [0;36mINFO     [0m  cam_aabb=[min=[0.734549,0.413492,0.514127], max=[0.748066,0.570179,0.520826]][K[0m
+rendered 60/90
+21:47:34 [0;36mINFO     [0mLoading NeRF dataset from[K[0m
+21:47:34 [0;36mINFO     [0m  /home/soham/assignment2/data/scene/novel/_ngp_stage_31204.json[K[0m
+21:47:34 [0;36mINFO     [0m  cam_aabb=[min=[0.739336,0.574175,0.507296], max=[0.748104,0.724137,0.516708]][K[0m
+rendered 90/90
+done -> /home/soham/assignment2/outputs/novel/ngp/shift_up
+[0m+ python scripts/render_ngp.py --ngp_root /home/soham/assignment2/repos/instant-ngp --snapshot /home/soham/assignment2/outputs/ngp/step_035000.ingp --transforms /home/soham/assignment2/data/scene/novel/shift_down.json --train_json /home/soham/assignment2/data/scene/transforms_train.json --out /home/soham/assignment2/outputs/novel/ngp/shift_down
+[0m21:47:49 [0;32mSUCCESS  [0mInitialized CUDA 11.8. Active GPU is #0: NVIDIA GeForce RTX 4060 Laptop GPU [89][K[0m
+21:47:49 [0;36mINFO     [0mLoading network snapshot from: /home/soham/assignment2/outputs/ngp/step_035000.ingp[K[0m
+21:47:49 [0;36mINFO     [0mMultiLevelEncoding: type=hashgrid Nmin=16 b=2.43803 F=4 T=2^19 L=8[K[0m
+21:47:49 [0;36mINFO     [0mDensity model: 3--[HashGrid]-->32--[FullyFusedMLP(neurons=64,layers=3)]-->1[K[0m
+21:47:49 [0;36mINFO     [0mColor model:   3--[Composite]-->16+16--[FullyFusedMLP(neurons=64,layers=4)]-->3[K[0m
+21:47:49 [0;36mINFO     [0m  total_encoding_params=12855296 total_network_params=10240[K[0m
+21:47:49 [0;36mINFO     [0mLoading NeRF dataset from[K[0m
+21:47:49 [0;36mINFO     [0m  /home/soham/assignment2/data/scene/novel/_ngp_stage_31305.json[K[0m
+21:47:49 [0;36mINFO     [0m  cam_aabb=[min=[0.70126,0.265689,0.451761], max=[0.734242,0.406835,0.462806]][K[0m
+snapshot /home/soham/assignment2/outputs/ngp/step_035000.ingp: training step 35000, 90 views at 701x1249
+rendered 30/90
+21:48:02 [0;36mINFO     [0mLoading NeRF dataset from[K[0m
+21:48:02 [0;36mINFO     [0m  /home/soham/assignment2/data/scene/novel/_ngp_stage_31305.json[K[0m
+21:48:02 [0;36mINFO     [0m  cam_aabb=[min=[0.734236,0.409938,0.445245], max=[0.747754,0.566626,0.451944]][K[0m
+rendered 60/90
+21:48:14 [0;36mINFO     [0mLoading NeRF dataset from[K[0m
+21:48:14 [0;36mINFO     [0m  /home/soham/assignment2/data/scene/novel/_ngp_stage_31305.json[K[0m
+21:48:14 [0;36mINFO     [0m  cam_aabb=[min=[0.739024,0.570622,0.438414], max=[0.747792,0.720584,0.447825]][K[0m
+rendered 90/90
+done -> /home/soham/assignment2/outputs/novel/ngp/shift_down
+[0m+ python scripts/render_ngp.py --ngp_root /home/soham/assignment2/repos/instant-ngp --snapshot /home/soham/assignment2/outputs/ngp/step_035000.ingp --transforms /home/soham/assignment2/data/scene/novel/spiral.json --train_json /home/soham/assignment2/data/scene/transforms_train.json --out /home/soham/assignment2/outputs/novel/ngp/spiral
+[0m21:48:29 [0;32mSUCCESS  [0mInitialized CUDA 11.8. Active GPU is #0: NVIDIA GeForce RTX 4060 Laptop GPU [89][K[0m
+21:48:29 [0;36mINFO     [0mLoading network snapshot from: /home/soham/assignment2/outputs/ngp/step_035000.ingp[K[0m
+21:48:30 [0;36mINFO     [0mMultiLevelEncoding: type=hashgrid Nmin=16 b=2.43803 F=4 T=2^19 L=8[K[0m
+21:48:30 [0;36mINFO     [0mDensity model: 3--[HashGrid]-->32--[FullyFusedMLP(neurons=64,layers=3)]-->1[K[0m
+21:48:30 [0;36mINFO     [0mColor model:   3--[Composite]-->16+16--[FullyFusedMLP(neurons=64,layers=4)]-->3[K[0m
+21:48:30 [0;36mINFO     [0m  total_encoding_params=12855296 total_network_params=10240[K[0m
+21:48:30 [0;36mINFO     [0mLoading NeRF dataset from[K[0m
+21:48:30 [0;36mINFO     [0m  /home/soham/assignment2/data/scene/novel/_ngp_stage_31404.json[K[0m
+21:48:30 [0;36mINFO     [0m  cam_aabb=[min=[0.703022,0.285764,0.47778], max=[0.728273,0.370687,0.508359]][K[0m
+snapshot /home/soham/assignment2/outputs/ngp/step_035000.ingp: training step 35000, 120 views at 701x1249
+rendered 30/120
+21:48:41 [0;36mINFO     [0mLoading NeRF dataset from[K[0m
+21:48:41 [0;36mINFO     [0m  /home/soham/assignment2/data/scene/novel/_ngp_stage_31404.json[K[0m
+21:48:41 [0;36mINFO     [0m  cam_aabb=[min=[0.73007,0.37889,0.467731], max=[0.742908,0.471385,0.507708]][K[0m
+rendered 60/120
+21:48:51 [0;36mINFO     [0mLoading NeRF dataset from[K[0m
+21:48:51 [0;36mINFO     [0m  /home/soham/assignment2/data/scene/novel/_ngp_stage_31404.json[K[0m
+21:48:51 [0;36mINFO     [0m  cam_aabb=[min=[0.739526,0.47574,0.462846], max=[0.749633,0.60815,0.500396]][K[0m
+rendered 90/120
+21:49:03 [0;36mINFO     [0mLoading NeRF dataset from[K[0m
+21:49:03 [0;36mINFO     [0m  /home/soham/assignment2/data/scene/novel/_ngp_stage_31404.json[K[0m
+21:49:03 [0;36mINFO     [0m  cam_aabb=[min=[0.739307,0.607363,0.462462], max=[0.743309,0.740582,0.491998]][K[0m
+rendered 120/120
+done -> /home/soham/assignment2/outputs/novel/ngp/spiral
+[0m+ python scripts/render_ngp.py --ngp_root /home/soham/assignment2/repos/instant-ngp --snapshot /home/soham/assignment2/outputs/ngp/step_035000.ingp --transforms /home/soham/assignment2/data/scene/novel/dolly.json --train_json /home/soham/assignment2/data/scene/transforms_train.json --out /home/soham/assignment2/outputs/novel/ngp/dolly
+[0m21:49:16 [0;32mSUCCESS  [0mInitialized CUDA 11.8. Active GPU is #0: NVIDIA GeForce RTX 4060 Laptop GPU [89][K[0m
+21:49:16 [0;36mINFO     [0mLoading network snapshot from: /home/soham/assignment2/outputs/ngp/step_035000.ingp[K[0m
+21:49:16 [0;36mINFO     [0mMultiLevelEncoding: type=hashgrid Nmin=16 b=2.43803 F=4 T=2^19 L=8[K[0m
+21:49:16 [0;36mINFO     [0mDensity model: 3--[HashGrid]-->32--[FullyFusedMLP(neurons=64,layers=3)]-->1[K[0m
+21:49:16 [0;36mINFO     [0mColor model:   3--[Composite]-->16+16--[FullyFusedMLP(neurons=64,layers=4)]-->3[K[0m
+21:49:16 [0;36mINFO     [0m  total_encoding_params=12855296 total_network_params=10240[K[0m
+21:49:16 [0;36mINFO     [0mLoading NeRF dataset from[K[0m
+21:49:16 [0;36mINFO     [0m  /home/soham/assignment2/data/scene/novel/_ngp_stage_31521.json[K[0m
+21:49:16 [0;36mINFO     [0m  cam_aabb=[min=[0.665249,0.494038,0.485819], max=[0.745362,0.501072,0.485819]][K[0m
+snapshot /home/soham/assignment2/outputs/ngp/step_035000.ingp: training step 35000, 90 views at 701x1249
+rendered 30/90
+21:49:27 [0;36mINFO     [0mLoading NeRF dataset from[K[0m
+21:49:27 [0;36mINFO     [0m  /home/soham/assignment2/data/scene/novel/_ngp_stage_31521.json[K[0m
+21:49:27 [0;36mINFO     [0m  cam_aabb=[min=[0.67594,0.488204,0.485819], max=[0.811819,0.500133,0.485819]][K[0m
+rendered 60/90
+21:49:39 [0;36mINFO     [0mLoading NeRF dataset from[K[0m
+21:49:39 [0;36mINFO     [0m  /home/soham/assignment2/data/scene/novel/_ngp_stage_31521.json[K[0m
+21:49:39 [0;36mINFO     [0m  cam_aabb=[min=[0.750954,0.487005,0.485819], max=[0.825475,0.493547,0.485819]][K[0m
+rendered 90/90
+done -> /home/soham/assignment2/outputs/novel/ngp/dolly
+[0m+ python scripts/render_ngp.py --ngp_root /home/soham/assignment2/repos/instant-ngp --snapshot /home/soham/assignment2/outputs/ngp/step_035000.ingp --transforms /home/soham/assignment2/data/scene/novel/orbit.json --train_json /home/soham/assignment2/data/scene/transforms_train.json --out /home/soham/assignment2/outputs/novel/ngp/orbit
+[0m21:49:53 [0;32mSUCCESS  [0mInitialized CUDA 11.8. Active GPU is #0: NVIDIA GeForce RTX 4060 Laptop GPU [89][K[0m
+21:49:53 [0;36mINFO     [0mLoading network snapshot from: /home/soham/assignment2/outputs/ngp/step_035000.ingp[K[0m
+21:49:54 [0;36mINFO     [0mMultiLevelEncoding: type=hashgrid Nmin=16 b=2.43803 F=4 T=2^19 L=8[K[0m
+21:49:54 [0;36mINFO     [0mDensity model: 3--[HashGrid]-->32--[FullyFusedMLP(neurons=64,layers=3)]-->1[K[0m
+21:49:54 [0;36mINFO     [0mColor model:   3--[Composite]-->16+16--[FullyFusedMLP(neurons=64,layers=4)]-->3[K[0m
+21:49:54 [0;36mINFO     [0m  total_encoding_params=12855296 total_network_params=10240[K[0m
+21:49:54 [0;36mINFO     [0mLoading NeRF dataset from[K[0m
+21:49:54 [0;36mINFO     [0m  /home/soham/assignment2/data/scene/novel/_ngp_stage_31622.json[K[0m
+21:49:54 [0;36mINFO     [0m  cam_aabb=[min=[0.711698,0.479969,0.479642], max=[0.733249,0.597429,0.485608]][K[0m
+snapshot /home/soham/assignment2/outputs/ngp/step_035000.ingp: training step 35000, 120 views at 701x1249
+rendered 30/120
+21:50:05 [0;36mINFO     [0mLoading NeRF dataset from[K[0m
+21:50:05 [0;36mINFO     [0m  /home/soham/assignment2/data/scene/novel/_ngp_stage_31622.json[K[0m
+21:50:06 [0;36mINFO     [0m  cam_aabb=[min=[0.711628,0.486273,0.479635], max=[0.733249,0.597579,0.485281]][K[0m
+rendered 60/120
+21:50:17 [0;36mINFO     [0mLoading NeRF dataset from[K[0m
+21:50:17 [0;36mINFO     [0m  /home/soham/assignment2/data/scene/novel/_ngp_stage_31622.json[K[0m
+21:50:17 [0;36mINFO     [0m  cam_aabb=[min=[0.691548,0.367909,0.485608], max=[0.73237,0.479969,0.491574]][K[0m
+rendered 90/120
+21:50:29 [0;36mINFO     [0mLoading NeRF dataset from[K[0m
+21:50:29 [0;36mINFO     [0m  /home/soham/assignment2/data/scene/novel/_ngp_stage_31622.json[K[0m
+21:50:29 [0;36mINFO     [0m  cam_aabb=[min=[0.691453,0.367773,0.485935], max=[0.731731,0.47368,0.491581]][K[0m
+rendered 120/120
+done -> /home/soham/assignment2/outputs/novel/ngp/orbit
+[0m+ python scripts/render_ngp.py --ngp_root /home/soham/assignment2/repos/instant-ngp --snapshot /home/soham/assignment2/outputs/ngp/step_035000.ingp --transforms /home/soham/assignment2/data/scene/novel/look_around.json --train_json /home/soham/assignment2/data/scene/transforms_train.json --out /home/soham/assignment2/outputs/novel/ngp/look_around
+[0m21:50:41 [0;32mSUCCESS  [0mInitialized CUDA 11.8. Active GPU is #0: NVIDIA GeForce RTX 4060 Laptop GPU [89][K[0m
+21:50:41 [0;36mINFO     [0mLoading network snapshot from: /home/soham/assignment2/outputs/ngp/step_035000.ingp[K[0m
+21:50:41 [0;36mINFO     [0mMultiLevelEncoding: type=hashgrid Nmin=16 b=2.43803 F=4 T=2^19 L=8[K[0m
+21:50:41 [0;36mINFO     [0mDensity model: 3--[HashGrid]-->32--[FullyFusedMLP(neurons=64,layers=3)]-->1[K[0m
+21:50:41 [0;36mINFO     [0mColor model:   3--[Composite]-->16+16--[FullyFusedMLP(neurons=64,layers=4)]-->3[K[0m
+21:50:41 [0;36mINFO     [0m  total_encoding_params=12855296 total_network_params=10240[K[0m
+21:50:41 [0;36mINFO     [0mLoading NeRF dataset from[K[0m
+21:50:41 [0;36mINFO     [0m  /home/soham/assignment2/data/scene/novel/_ngp_stage_31739.json[K[0m
+21:50:41 [0;36mINFO     [0m  cam_aabb=[min=[0.745362,0.494038,0.485819], max=[0.745362,0.494038,0.485819]][K[0m
+snapshot /home/soham/assignment2/outputs/ngp/step_035000.ingp: training step 35000, 90 views at 701x1249
+rendered 30/90
+21:50:53 [0;36mINFO     [0mLoading NeRF dataset from[K[0m
+21:50:53 [0;36mINFO     [0m  /home/soham/assignment2/data/scene/novel/_ngp_stage_31739.json[K[0m
+21:50:53 [0;36mINFO     [0m  cam_aabb=[min=[0.745362,0.494038,0.485819], max=[0.745362,0.494038,0.485819]][K[0m
+rendered 60/90
+21:51:04 [0;36mINFO     [0mLoading NeRF dataset from[K[0m
+21:51:04 [0;36mINFO     [0m  /home/soham/assignment2/data/scene/novel/_ngp_stage_31739.json[K[0m
+21:51:04 [0;36mINFO     [0m  cam_aabb=[min=[0.745362,0.494038,0.485819], max=[0.745362,0.494038,0.485819]][K[0m
+rendered 90/90
+done -> /home/soham/assignment2/outputs/novel/ngp/look_around
+[0mInstantNGP done.
++ conda activate gs
++ python scripts/eval_metrics.py --gt_dir /home/soham/assignment2/data/scene/images --list /home/soham/assignment2/results/test_list.txt --pred_dir /home/soham/assignment2/outputs/eval/gs/iter_001000 --method 3dgs --tag 1000 --out /home/soham/assignment2/results/metrics/gs_iter_001000.json
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG16_Weights.IMAGENET1K_V1`. You can also use `weights=VGG16_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Downloading: "https://download.pytorch.org/models/alexnet-owt-7be5be79.pth" to /home/soham/.cache/torch/hub/checkpoints/alexnet-owt-7be5be79.pth
+
+  0%|          | 0.00/233M [00:00<?, ?B/s]
+  1%|          | 1.90M/233M [00:00<00:12, 19.4MB/s]
+  2%|▏         | 4.84M/233M [00:00<00:09, 24.6MB/s]
+  3%|▎         | 7.31M/233M [00:00<00:09, 25.1MB/s]
+  4%|▍         | 9.70M/233M [00:00<00:10, 22.8MB/s]
+  5%|▌         | 11.9M/233M [00:00<00:10, 21.6MB/s]
+  6%|▌         | 14.0M/233M [00:00<00:11, 20.9MB/s]
+  7%|▋         | 16.0M/233M [00:00<00:11, 19.2MB/s]
+  8%|▊         | 17.8M/233M [00:00<00:11, 19.3MB/s]
+  8%|▊         | 19.7M/233M [00:01<00:11, 19.3MB/s]
+  9%|▉         | 21.6M/233M [00:01<00:11, 19.4MB/s]
+ 10%|█         | 23.5M/233M [00:01<00:11, 19.5MB/s]
+ 11%|█         | 25.3M/233M [00:01<00:11, 19.5MB/s]
+ 12%|█▏        | 27.2M/233M [00:01<00:11, 19.5MB/s]
+ 12%|█▏        | 29.1M/233M [00:01<00:10, 19.5MB/s]
+ 13%|█▎        | 31.0M/233M [00:01<00:10, 19.5MB/s]
+ 14%|█▍        | 32.8M/233M [00:01<00:10, 19.5MB/s]
+ 15%|█▍        | 34.7M/233M [00:01<00:10, 19.5MB/s]
+ 16%|█▌        | 36.6M/233M [00:01<00:10, 19.6MB/s]
+ 17%|█▋        | 38.5M/233M [00:02<00:10, 19.6MB/s]
+ 17%|█▋        | 40.3M/233M [00:02<00:10, 19.3MB/s]
+ 18%|█▊        | 42.3M/233M [00:02<00:10, 19.6MB/s]
+ 19%|█▉        | 44.2M/233M [00:02<00:10, 19.7MB/s]
+ 20%|█▉        | 46.1M/233M [00:02<00:09, 19.6MB/s]
+ 21%|██        | 47.9M/233M [00:02<00:09, 19.6MB/s]
+ 21%|██▏       | 49.8M/233M [00:02<00:09, 19.6MB/s]
+ 22%|██▏       | 51.7M/233M [00:02<00:09, 19.6MB/s]
+ 23%|██▎       | 53.6M/233M [00:02<00:09, 19.6MB/s]
+ 24%|██▍       | 55.5M/233M [00:02<00:10, 18.4MB/s]
+ 25%|██▍       | 57.7M/233M [00:03<00:10, 17.9MB/s]
+ 26%|██▌       | 60.3M/233M [00:03<00:08, 20.4MB/s]
+ 27%|██▋       | 62.3M/233M [00:03<00:08, 20.2MB/s]
+ 28%|██▊       | 64.3M/233M [00:03<00:08, 20.0MB/s]
+ 28%|██▊       | 66.2M/233M [00:03<00:08, 19.9MB/s]
+ 29%|██▉       | 68.1M/233M [00:03<00:08, 19.8MB/s]
+ 30%|███       | 70.0M/233M [00:03<00:08, 19.7MB/s]
+ 31%|███       | 71.9M/233M [00:03<00:08, 19.7MB/s]
+ 32%|███▏      | 73.8M/233M [00:03<00:08, 19.6MB/s]
+ 32%|███▏      | 75.7M/233M [00:04<00:08, 19.4MB/s]
+ 33%|███▎      | 77.6M/233M [00:04<00:08, 19.7MB/s]
+ 34%|███▍      | 79.5M/233M [00:04<00:08, 19.7MB/s]
+ 35%|███▍      | 81.4M/233M [00:04<00:08, 19.7MB/s]
+ 36%|███▌      | 83.3M/233M [00:04<00:08, 19.6MB/s]
+ 37%|███▋      | 85.2M/233M [00:04<00:07, 19.5MB/s]
+ 37%|███▋      | 87.1M/233M [00:04<00:07, 19.7MB/s]
+ 38%|███▊      | 89.0M/233M [00:04<00:07, 19.6MB/s]
+ 39%|███▉      | 90.8M/233M [00:04<00:07, 19.6MB/s]
+ 40%|███▉      | 92.7M/233M [00:04<00:07, 19.6MB/s]
+ 41%|████      | 94.6M/233M [00:05<00:07, 19.6MB/s]
+ 41%|████▏     | 96.5M/233M [00:05<00:07, 19.6MB/s]
+ 42%|████▏     | 98.3M/233M [00:05<00:07, 19.6MB/s]
+ 43%|████▎     | 100M/233M [00:05<00:07, 19.6MB/s] 
+ 44%|████▍     | 102M/233M [00:05<00:07, 19.6MB/s]
+ 45%|████▍     | 104M/233M [00:05<00:06, 19.6MB/s]
+ 45%|████▌     | 106M/233M [00:05<00:06, 19.6MB/s]
+ 46%|████▌     | 108M/233M [00:05<00:06, 19.4MB/s]
+ 47%|████▋     | 110M/233M [00:05<00:06, 19.6MB/s]
+ 48%|████▊     | 112M/233M [00:05<00:06, 19.6MB/s]
+ 49%|████▊     | 113M/233M [00:06<00:06, 19.6MB/s]
+ 49%|████▉     | 115M/233M [00:06<00:06, 19.6MB/s]
+ 50%|█████     | 117M/233M [00:06<00:06, 19.6MB/s]
+ 51%|█████     | 119M/233M [00:06<00:06, 19.6MB/s]
+ 52%|█████▏    | 121M/233M [00:06<00:06, 19.6MB/s]
+ 53%|█████▎    | 123M/233M [00:06<00:05, 19.6MB/s]
+ 53%|█████▎    | 125M/233M [00:06<00:05, 19.6MB/s]
+ 54%|█████▍    | 127M/233M [00:06<00:05, 19.6MB/s]
+ 55%|█████▌    | 128M/233M [00:06<00:05, 19.6MB/s]
+ 56%|█████▌    | 130M/233M [00:06<00:05, 19.6MB/s]
+ 57%|█████▋    | 132M/233M [00:07<00:05, 19.1MB/s]
+ 58%|█████▊    | 134M/233M [00:07<00:05, 19.6MB/s]
+ 58%|█████▊    | 136M/233M [00:07<00:05, 19.7MB/s]
+ 59%|█████▉    | 138M/233M [00:07<00:05, 19.7MB/s]
+ 60%|██████    | 140M/233M [00:07<00:04, 19.6MB/s]
+ 61%|██████    | 142M/233M [00:07<00:04, 19.5MB/s]
+ 62%|██████▏   | 144M/233M [00:07<00:04, 19.6MB/s]
+ 62%|██████▏   | 146M/233M [00:07<00:04, 19.7MB/s]
+ 63%|██████▎   | 147M/233M [00:07<00:04, 19.6MB/s]
+ 64%|██████▍   | 149M/233M [00:07<00:04, 19.6MB/s]
+ 65%|██████▍   | 151M/233M [00:08<00:04, 19.6MB/s]
+ 66%|██████▌   | 153M/233M [00:08<00:04, 19.6MB/s]
+ 66%|██████▋   | 155M/233M [00:08<00:04, 19.6MB/s]
+ 67%|██████▋   | 157M/233M [00:08<00:04, 19.6MB/s]
+ 68%|██████▊   | 159M/233M [00:08<00:03, 19.6MB/s]
+ 69%|██████▉   | 161M/233M [00:08<00:03, 19.1MB/s]
+ 70%|██████▉   | 163M/233M [00:08<00:03, 19.8MB/s]
+ 71%|███████   | 165M/233M [00:08<00:03, 19.7MB/s]
+ 71%|███████▏  | 166M/233M [00:08<00:03, 19.7MB/s]
+ 72%|███████▏  | 168M/233M [00:08<00:03, 19.6MB/s]
+ 73%|███████▎  | 170M/233M [00:09<00:03, 19.6MB/s]
+ 74%|███████▍  | 172M/233M [00:09<00:03, 19.6MB/s]
+ 75%|███████▍  | 174M/233M [00:09<00:03, 19.6MB/s]
+ 75%|███████▌  | 176M/233M [00:09<00:03, 19.6MB/s]
+ 76%|███████▌  | 178M/233M [00:09<00:02, 19.6MB/s]
+ 77%|███████▋  | 180M/233M [00:09<00:02, 19.6MB/s]
+ 78%|███████▊  | 181M/233M [00:09<00:02, 19.6MB/s]
+ 79%|███████▊  | 183M/233M [00:09<00:02, 19.6MB/s]
+ 79%|███████▉  | 185M/233M [00:09<00:02, 19.6MB/s]
+ 80%|████████  | 187M/233M [00:09<00:02, 19.6MB/s]
+ 81%|████████  | 189M/233M [00:10<00:02, 19.5MB/s]
+ 82%|████████▏ | 191M/233M [00:10<00:02, 19.6MB/s]
+ 83%|████████▎ | 193M/233M [00:10<00:02, 19.5MB/s]
+ 83%|████████▎ | 195M/233M [00:10<00:02, 19.6MB/s]
+ 84%|████████▍ | 196M/233M [00:10<00:01, 19.6MB/s]
+ 85%|████████▌ | 198M/233M [00:10<00:01, 19.5MB/s]
+ 86%|████████▌ | 200M/233M [00:10<00:01, 19.5MB/s]
+ 87%|████████▋ | 202M/233M [00:10<00:01, 19.5MB/s]
+ 88%|████████▊ | 204M/233M [00:10<00:01, 19.5MB/s]
+ 88%|████████▊ | 206M/233M [00:10<00:01, 19.6MB/s]
+ 89%|████████▉ | 208M/233M [00:11<00:01, 19.6MB/s]
+ 90%|████████▉ | 210M/233M [00:11<00:01, 19.6MB/s]
+ 91%|█████████ | 211M/233M [00:11<00:01, 19.6MB/s]
+ 92%|█████████▏| 213M/233M [00:11<00:01, 19.5MB/s]
+ 92%|█████████▏| 215M/233M [00:11<00:00, 19.6MB/s]
+ 93%|█████████▎| 217M/233M [00:11<00:00, 19.6MB/s]
+ 94%|█████████▍| 219M/233M [00:11<00:00, 19.6MB/s]
+ 95%|█████████▍| 221M/233M [00:11<00:00, 19.6MB/s]
+ 96%|█████████▌| 223M/233M [00:11<00:00, 19.5MB/s]
+ 96%|█████████▋| 225M/233M [00:11<00:00, 19.5MB/s]
+ 97%|█████████▋| 226M/233M [00:12<00:00, 19.5MB/s]
+ 98%|█████████▊| 228M/233M [00:12<00:00, 19.6MB/s]
+ 99%|█████████▉| 230M/233M [00:12<00:00, 19.6MB/s]
+100%|█████████▉| 232M/233M [00:12<00:00, 19.7MB/s]
+100%|██████████| 233M/233M [00:12<00:00, 19.7MB/s]
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torch/nn/modules/conv.py:456: UserWarning: Applied workaround for CuDNN issue, install nvrtc.so (Triggered internally at ../aten/src/ATen/native/cudnn/Conv_v8.cpp:80.)
+  return F.conv2d(input, weight, bias, self.stride,
+0000 psnr=26.7980  ssim=0.9092  lpips_vgg=0.2963  lpips_alex=0.1895
+0008 psnr=27.9927  ssim=0.9137  lpips_vgg=0.2448  lpips_alex=0.1336
+0016 psnr=28.7645  ssim=0.9193  lpips_vgg=0.2388  lpips_alex=0.1432
+0024 psnr=26.3975  ssim=0.8993  lpips_vgg=0.2539  lpips_alex=0.1553
+0032 psnr=29.4537  ssim=0.9331  lpips_vgg=0.2308  lpips_alex=0.1176
+0040 psnr=27.7293  ssim=0.9169  lpips_vgg=0.2273  lpips_alex=0.1223
+0048 psnr=26.5727  ssim=0.9184  lpips_vgg=0.2599  lpips_alex=0.1517
+0056 psnr=26.8784  ssim=0.9108  lpips_vgg=0.2640  lpips_alex=0.1687
+mean psnr=27.5733  ssim=0.9151  lpips_vgg=0.2520  lpips_alex=0.1477  psnr_of_mean_mse=27.4553 -> /home/soham/assignment2/results/metrics/gs_iter_001000.json
++ python scripts/eval_metrics.py --gt_dir /home/soham/assignment2/data/scene/images --list /home/soham/assignment2/results/test_list.txt --pred_dir /home/soham/assignment2/outputs/eval/gs/iter_003000 --method 3dgs --tag 3000 --out /home/soham/assignment2/results/metrics/gs_iter_003000.json
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG16_Weights.IMAGENET1K_V1`. You can also use `weights=VGG16_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torch/nn/modules/conv.py:456: UserWarning: Applied workaround for CuDNN issue, install nvrtc.so (Triggered internally at ../aten/src/ATen/native/cudnn/Conv_v8.cpp:80.)
+  return F.conv2d(input, weight, bias, self.stride,
+0000 psnr=32.2666  ssim=0.9624  lpips_vgg=0.2133  lpips_alex=0.0896
+0008 psnr=33.4986  ssim=0.9697  lpips_vgg=0.1691  lpips_alex=0.0521
+0016 psnr=33.0124  ssim=0.9681  lpips_vgg=0.1713  lpips_alex=0.0598
+0024 psnr=29.1947  ssim=0.9439  lpips_vgg=0.1844  lpips_alex=0.0729
+0032 psnr=33.4609  ssim=0.9701  lpips_vgg=0.1667  lpips_alex=0.0506
+0040 psnr=33.1882  ssim=0.9715  lpips_vgg=0.1464  lpips_alex=0.0423
+0048 psnr=32.3635  ssim=0.9677  lpips_vgg=0.1669  lpips_alex=0.0526
+0056 psnr=32.8615  ssim=0.9656  lpips_vgg=0.1672  lpips_alex=0.0621
+mean psnr=32.4808  ssim=0.9649  lpips_vgg=0.1732  lpips_alex=0.0603  psnr_of_mean_mse=32.2438 -> /home/soham/assignment2/results/metrics/gs_iter_003000.json
++ python scripts/eval_metrics.py --gt_dir /home/soham/assignment2/data/scene/images --list /home/soham/assignment2/results/test_list.txt --pred_dir /home/soham/assignment2/outputs/eval/gs/iter_007000 --method 3dgs --tag 7000 --out /home/soham/assignment2/results/metrics/gs_iter_007000.json
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG16_Weights.IMAGENET1K_V1`. You can also use `weights=VGG16_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torch/nn/modules/conv.py:456: UserWarning: Applied workaround for CuDNN issue, install nvrtc.so (Triggered internally at ../aten/src/ATen/native/cudnn/Conv_v8.cpp:80.)
+  return F.conv2d(input, weight, bias, self.stride,
+0000 psnr=35.1818  ssim=0.9768  lpips_vgg=0.1893  lpips_alex=0.0566
+0008 psnr=36.6532  ssim=0.9815  lpips_vgg=0.1526  lpips_alex=0.0389
+0016 psnr=35.9286  ssim=0.9801  lpips_vgg=0.1527  lpips_alex=0.0436
+0024 psnr=30.6606  ssim=0.9571  lpips_vgg=0.1692  lpips_alex=0.0553
+0032 psnr=35.6441  ssim=0.9799  lpips_vgg=0.1568  lpips_alex=0.0398
+0040 psnr=35.2732  ssim=0.9796  lpips_vgg=0.1356  lpips_alex=0.0342
+0048 psnr=34.1282  ssim=0.9765  lpips_vgg=0.1439  lpips_alex=0.0397
+0056 psnr=37.1333  ssim=0.9808  lpips_vgg=0.1457  lpips_alex=0.0447
+mean psnr=35.0754  ssim=0.9765  lpips_vgg=0.1557  lpips_alex=0.0441  psnr_of_mean_mse=34.5854 -> /home/soham/assignment2/results/metrics/gs_iter_007000.json
++ python scripts/eval_metrics.py --gt_dir /home/soham/assignment2/data/scene/images --list /home/soham/assignment2/results/test_list.txt --pred_dir /home/soham/assignment2/outputs/eval/gs/iter_015000 --method 3dgs --tag 15000 --out /home/soham/assignment2/results/metrics/gs_iter_015000.json
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG16_Weights.IMAGENET1K_V1`. You can also use `weights=VGG16_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torch/nn/modules/conv.py:456: UserWarning: Applied workaround for CuDNN issue, install nvrtc.so (Triggered internally at ../aten/src/ATen/native/cudnn/Conv_v8.cpp:80.)
+  return F.conv2d(input, weight, bias, self.stride,
+0000 psnr=36.0230  ssim=0.9781  lpips_vgg=0.1798  lpips_alex=0.0482
+0008 psnr=36.9503  ssim=0.9824  lpips_vgg=0.1460  lpips_alex=0.0358
+0016 psnr=36.5294  ssim=0.9818  lpips_vgg=0.1472  lpips_alex=0.0406
+0024 psnr=31.4282  ssim=0.9626  lpips_vgg=0.1639  lpips_alex=0.0480
+0032 psnr=37.1137  ssim=0.9836  lpips_vgg=0.1505  lpips_alex=0.0354
+0040 psnr=35.4326  ssim=0.9801  lpips_vgg=0.1348  lpips_alex=0.0327
+0048 psnr=36.1448  ssim=0.9812  lpips_vgg=0.1365  lpips_alex=0.0341
+0056 psnr=38.0059  ssim=0.9830  lpips_vgg=0.1400  lpips_alex=0.0412
+mean psnr=35.9535  ssim=0.9791  lpips_vgg=0.1498  lpips_alex=0.0395  psnr_of_mean_mse=35.4599 -> /home/soham/assignment2/results/metrics/gs_iter_015000.json
++ python scripts/eval_metrics.py --gt_dir /home/soham/assignment2/data/scene/images --list /home/soham/assignment2/results/test_list.txt --pred_dir /home/soham/assignment2/outputs/eval/gs/iter_030000 --method 3dgs --tag 30000 --out /home/soham/assignment2/results/metrics/gs_iter_030000.json
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG16_Weights.IMAGENET1K_V1`. You can also use `weights=VGG16_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torch/nn/modules/conv.py:456: UserWarning: Applied workaround for CuDNN issue, install nvrtc.so (Triggered internally at ../aten/src/ATen/native/cudnn/Conv_v8.cpp:80.)
+  return F.conv2d(input, weight, bias, self.stride,
+0000 psnr=36.0339  ssim=0.9783  lpips_vgg=0.1759  lpips_alex=0.0452
+0008 psnr=37.3063  ssim=0.9826  lpips_vgg=0.1435  lpips_alex=0.0338
+0016 psnr=36.5273  ssim=0.9821  lpips_vgg=0.1434  lpips_alex=0.0386
+0024 psnr=31.1485  ssim=0.9605  lpips_vgg=0.1634  lpips_alex=0.0474
+0032 psnr=37.5468  ssim=0.9840  lpips_vgg=0.1470  lpips_alex=0.0330
+0040 psnr=35.5181  ssim=0.9796  lpips_vgg=0.1327  lpips_alex=0.0314
+0048 psnr=36.1092  ssim=0.9809  lpips_vgg=0.1330  lpips_alex=0.0325
+0056 psnr=38.0507  ssim=0.9829  lpips_vgg=0.1366  lpips_alex=0.0390
+mean psnr=36.0301  ssim=0.9789  lpips_vgg=0.1469  lpips_alex=0.0376  psnr_of_mean_mse=35.4450 -> /home/soham/assignment2/results/metrics/gs_iter_030000.json
++ python scripts/eval_metrics.py --gt_dir /home/soham/assignment2/data/scene/images --list /home/soham/assignment2/results/test_list.txt --pred_dir /home/soham/assignment2/outputs/eval/ngp/step_001000 --method instant-ngp --tag 1000 --out /home/soham/assignment2/results/metrics/ngp_step_001000.json
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG16_Weights.IMAGENET1K_V1`. You can also use `weights=VGG16_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torch/nn/modules/conv.py:456: UserWarning: Applied workaround for CuDNN issue, install nvrtc.so (Triggered internally at ../aten/src/ATen/native/cudnn/Conv_v8.cpp:80.)
+  return F.conv2d(input, weight, bias, self.stride,
+0000 psnr=26.9136  ssim=0.8956  lpips_vgg=0.3051  lpips_alex=0.1705
+0008 psnr=27.0642  ssim=0.8885  lpips_vgg=0.2604  lpips_alex=0.1573
+0016 psnr=27.0814  ssim=0.8845  lpips_vgg=0.2621  lpips_alex=0.1687
+0024 psnr=25.5982  ssim=0.8661  lpips_vgg=0.2624  lpips_alex=0.1739
+0032 psnr=26.9327  ssim=0.8963  lpips_vgg=0.2438  lpips_alex=0.1444
+0040 psnr=25.8351  ssim=0.8768  lpips_vgg=0.2518  lpips_alex=0.1610
+0048 psnr=25.5870  ssim=0.8767  lpips_vgg=0.2779  lpips_alex=0.1639
+0056 psnr=26.8070  ssim=0.8860  lpips_vgg=0.2834  lpips_alex=0.1773
+mean psnr=26.4774  ssim=0.8838  lpips_vgg=0.2684  lpips_alex=0.1646  psnr_of_mean_mse=26.4305 -> /home/soham/assignment2/results/metrics/ngp_step_001000.json
++ python scripts/eval_metrics.py --gt_dir /home/soham/assignment2/data/scene/images --list /home/soham/assignment2/results/test_list.txt --pred_dir /home/soham/assignment2/outputs/eval/ngp/step_003000 --method instant-ngp --tag 3000 --out /home/soham/assignment2/results/metrics/ngp_step_003000.json
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG16_Weights.IMAGENET1K_V1`. You can also use `weights=VGG16_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torch/nn/modules/conv.py:456: UserWarning: Applied workaround for CuDNN issue, install nvrtc.so (Triggered internally at ../aten/src/ATen/native/cudnn/Conv_v8.cpp:80.)
+  return F.conv2d(input, weight, bias, self.stride,
+0000 psnr=29.9023  ssim=0.9273  lpips_vgg=0.2596  lpips_alex=0.1237
+0008 psnr=29.6495  ssim=0.9301  lpips_vgg=0.2067  lpips_alex=0.1000
+0016 psnr=29.4319  ssim=0.9257  lpips_vgg=0.2089  lpips_alex=0.1145
+0024 psnr=27.2786  ssim=0.9033  lpips_vgg=0.2226  lpips_alex=0.1194
+0032 psnr=29.8878  ssim=0.9369  lpips_vgg=0.1941  lpips_alex=0.0903
+0040 psnr=28.7489  ssim=0.9256  lpips_vgg=0.1937  lpips_alex=0.0927
+0048 psnr=28.8470  ssim=0.9261  lpips_vgg=0.2070  lpips_alex=0.0953
+0056 psnr=29.5971  ssim=0.9274  lpips_vgg=0.2156  lpips_alex=0.1176
+mean psnr=29.1679  ssim=0.9253  lpips_vgg=0.2135  lpips_alex=0.1067  psnr_of_mean_mse=29.0837 -> /home/soham/assignment2/results/metrics/ngp_step_003000.json
++ python scripts/eval_metrics.py --gt_dir /home/soham/assignment2/data/scene/images --list /home/soham/assignment2/results/test_list.txt --pred_dir /home/soham/assignment2/outputs/eval/ngp/step_007000 --method instant-ngp --tag 7000 --out /home/soham/assignment2/results/metrics/ngp_step_007000.json
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG16_Weights.IMAGENET1K_V1`. You can also use `weights=VGG16_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torch/nn/modules/conv.py:456: UserWarning: Applied workaround for CuDNN issue, install nvrtc.so (Triggered internally at ../aten/src/ATen/native/cudnn/Conv_v8.cpp:80.)
+  return F.conv2d(input, weight, bias, self.stride,
+0000 psnr=31.1314  ssim=0.9399  lpips_vgg=0.2299  lpips_alex=0.1032
+0008 psnr=31.1186  ssim=0.9466  lpips_vgg=0.1830  lpips_alex=0.0777
+0016 psnr=30.8127  ssim=0.9427  lpips_vgg=0.1864  lpips_alex=0.0908
+0024 psnr=28.1303  ssim=0.9183  lpips_vgg=0.2000  lpips_alex=0.0990
+0032 psnr=31.5636  ssim=0.9522  lpips_vgg=0.1726  lpips_alex=0.0702
+0040 psnr=30.3933  ssim=0.9443  lpips_vgg=0.1688  lpips_alex=0.0691
+0048 psnr=30.8237  ssim=0.9462  lpips_vgg=0.1773  lpips_alex=0.0727
+0056 psnr=31.4483  ssim=0.9467  lpips_vgg=0.1832  lpips_alex=0.0885
+mean psnr=30.6778  ssim=0.9421  lpips_vgg=0.1876  lpips_alex=0.0839  psnr_of_mean_mse=30.5394 -> /home/soham/assignment2/results/metrics/ngp_step_007000.json
++ python scripts/eval_metrics.py --gt_dir /home/soham/assignment2/data/scene/images --list /home/soham/assignment2/results/test_list.txt --pred_dir /home/soham/assignment2/outputs/eval/ngp/step_015000 --method instant-ngp --tag 15000 --out /home/soham/assignment2/results/metrics/ngp_step_015000.json
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG16_Weights.IMAGENET1K_V1`. You can also use `weights=VGG16_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torch/nn/modules/conv.py:456: UserWarning: Applied workaround for CuDNN issue, install nvrtc.so (Triggered internally at ../aten/src/ATen/native/cudnn/Conv_v8.cpp:80.)
+  return F.conv2d(input, weight, bias, self.stride,
+0000 psnr=32.2006  ssim=0.9480  lpips_vgg=0.2155  lpips_alex=0.0899
+0008 psnr=32.1857  ssim=0.9559  lpips_vgg=0.1716  lpips_alex=0.0656
+0016 psnr=31.8527  ssim=0.9527  lpips_vgg=0.1751  lpips_alex=0.0779
+0024 psnr=28.7309  ssim=0.9269  lpips_vgg=0.1873  lpips_alex=0.0866
+0032 psnr=32.6513  ssim=0.9601  lpips_vgg=0.1622  lpips_alex=0.0587
+0040 psnr=31.3869  ssim=0.9533  lpips_vgg=0.1562  lpips_alex=0.0585
+0048 psnr=31.9335  ssim=0.9554  lpips_vgg=0.1622  lpips_alex=0.0615
+0056 psnr=32.9454  ssim=0.9574  lpips_vgg=0.1680  lpips_alex=0.0732
+mean psnr=31.7359  ssim=0.9512  lpips_vgg=0.1748  lpips_alex=0.0715  psnr_of_mean_mse=31.5358 -> /home/soham/assignment2/results/metrics/ngp_step_015000.json
++ python scripts/eval_metrics.py --gt_dir /home/soham/assignment2/data/scene/images --list /home/soham/assignment2/results/test_list.txt --pred_dir /home/soham/assignment2/outputs/eval/ngp/step_035000 --method instant-ngp --tag 35000 --out /home/soham/assignment2/results/metrics/ngp_step_035000.json
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG16_Weights.IMAGENET1K_V1`. You can also use `weights=VGG16_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torch/nn/modules/conv.py:456: UserWarning: Applied workaround for CuDNN issue, install nvrtc.so (Triggered internally at ../aten/src/ATen/native/cudnn/Conv_v8.cpp:80.)
+  return F.conv2d(input, weight, bias, self.stride,
+0000 psnr=33.1086  ssim=0.9545  lpips_vgg=0.2036  lpips_alex=0.0790
+0008 psnr=33.3681  ssim=0.9636  lpips_vgg=0.1607  lpips_alex=0.0552
+0016 psnr=32.9466  ssim=0.9607  lpips_vgg=0.1643  lpips_alex=0.0663
+0024 psnr=29.1427  ssim=0.9331  lpips_vgg=0.1794  lpips_alex=0.0765
+0032 psnr=33.8858  ssim=0.9669  lpips_vgg=0.1516  lpips_alex=0.0509
+0040 psnr=32.5670  ssim=0.9612  lpips_vgg=0.1438  lpips_alex=0.0492
+0048 psnr=33.1809  ssim=0.9628  lpips_vgg=0.1497  lpips_alex=0.0526
+0056 psnr=34.4980  ssim=0.9653  lpips_vgg=0.1520  lpips_alex=0.0626
+mean psnr=32.8372  ssim=0.9585  lpips_vgg=0.1631  lpips_alex=0.0615  psnr_of_mean_mse=32.5249 -> /home/soham/assignment2/results/metrics/ngp_step_035000.json
++ python scripts/collect_results.py --outputs /home/soham/assignment2/outputs --results /home/soham/assignment2/results --logs /home/soham/assignment2/logs
+# Results summary
+
+## Test-view quality (mean over test views)
+
+| Metric | InstantNGP | 3DGS |
+|---|---|---|
+| PSNR (dB) ↑ | 32.84 | 36.03 |
+| SSIM ↑ | 0.9585 | 0.9789 |
+| LPIPS-VGG ↓ | 0.1631 | 0.1469 |
+| LPIPS-Alex ↓ | 0.0615 | 0.0376 |
+
+## Efficiency
+
+| | InstantNGP | 3DGS |
+|---|---|---|
+| Training iterations | 35000 | 30000 |
+| Training time, wall clock (s) | 303.6 | 2593.6 |
+| Render time (ms / frame) | 23.73 (spp 1) | 17.36 |
+| Render speed (FPS) | 42.1 | 57.6 |
+| Model size on disk (MB) | 23.41 (.ingp, compressed) | 271.75 (.ply) |
+| Model size uncompressed (MB) | 36.58 | 271.75 |
+| Parameters | 12,865,536 | 67,790,233 (1,148,987 Gaussians × 59) |
+| Peak GPU memory, process (MiB) | – | – |
+| Peak GPU memory, whole GPU (MiB) | 1215 | 4305 |
+
+GPU: NVIDIA GeForce RTX 4060 Laptop GPU
+
+Cross-check with the official 3DGS metrics.py on the same renders: PSNR 36.030, SSIM 0.9789 (ours 36.030, 0.9789). Its LPIPS differs because metrics.py feeds [0,1] images to a network expecting [-1,1].
+
++ python scripts/make_figures.py --outputs /home/soham/assignment2/outputs --results /home/soham/assignment2/results --scene /home/soham/assignment2/data/scene --test_list /home/soham/assignment2/results/test_list.txt --train_list /home/soham/assignment2/results/train_list.txt --fig_dir /home/soham/assignment2/results/figures --video_dir /home/soham/assignment2/results/videos
+  01_test_views_a.png
+  01_test_views_b.png
+  02_zoom_crops.png
+  03_error_difference.png
+  04_per_view_metrics.png
+  05_convergence.png
+  06_efficiency.png
+  07_model_growth.png
+  08_error_distribution.png
+  09_view_extrapolation.png
+  10_sharpness.png
+  11_frequency_spectrum.png
+  12_novel_overview.png
+  13_novel_trajectory.png
+  13_novel_shift_up.png
+  13_novel_shift_down.png
+  13_novel_spiral.png
+  13_novel_dolly.png
+  13_novel_orbit.png
+  13_novel_look_around.png
+  14_camera_paths.png
+  15_gaussian_stats.png
+  trajectory_side_by_side.mp4
+  shift_up_side_by_side.mp4
+  shift_down_side_by_side.mp4
+  spiral_side_by_side.mp4
+  dolly_side_by_side.mp4
+  orbit_side_by_side.mp4
+  look_around_side_by_side.mp4
+Evaluation done: /home/soham/assignment2/results/summary.md, /home/soham/assignment2/results/figures/, /home/soham/assignment2/results/videos/
+PIPELINE_EXIT=0

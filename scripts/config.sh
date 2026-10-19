@@ -13,7 +13,7 @@ GS_ENV="${GS_ENV:-gs}"       # conda env with 3DGS (+ lpips, matplotlib, scipy f
 NGP_ENV="${NGP_ENV:-ngp}"    # conda env with the instant-ngp build
 
 GS_ITERS=(1000 3000 7000 15000 30000)    # last one = final 3DGS model
-NGP_STEPS=(1000 3000 7000 15000 35000)   # last one = final InstantNGP model
+NGP_STEPS=(1000 3000 7000 15000 35000 100000)   # last one = final InstantNGP model (35k = paper schedule, 100k = converged)
 NOVEL_PATHS=(trajectory shift_up shift_down spiral dolly orbit look_around)
 BENCH_REPEATS=20
 

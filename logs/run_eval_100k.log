@@ -1,0 +1,260 @@
++ conda activate gs
++ python scripts/eval_metrics.py --gt_dir /home/soham/assignment2/data/scene/images --list /home/soham/assignment2/results/test_list.txt --pred_dir /home/soham/assignment2/outputs/eval/gs/iter_001000 --method 3dgs --tag 1000 --out /home/soham/assignment2/results/metrics/gs_iter_001000.json
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG16_Weights.IMAGENET1K_V1`. You can also use `weights=VGG16_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torch/nn/modules/conv.py:456: UserWarning: Applied workaround for CuDNN issue, install nvrtc.so (Triggered internally at ../aten/src/ATen/native/cudnn/Conv_v8.cpp:80.)
+  return F.conv2d(input, weight, bias, self.stride,
+0000 psnr=26.7980  ssim=0.9092  lpips_vgg=0.2963  lpips_alex=0.1895
+0008 psnr=27.9927  ssim=0.9137  lpips_vgg=0.2448  lpips_alex=0.1336
+0016 psnr=28.7645  ssim=0.9193  lpips_vgg=0.2388  lpips_alex=0.1432
+0024 psnr=26.3975  ssim=0.8993  lpips_vgg=0.2539  lpips_alex=0.1553
+0032 psnr=29.4537  ssim=0.9331  lpips_vgg=0.2308  lpips_alex=0.1176
+0040 psnr=27.7293  ssim=0.9169  lpips_vgg=0.2273  lpips_alex=0.1223
+0048 psnr=26.5727  ssim=0.9184  lpips_vgg=0.2599  lpips_alex=0.1517
+0056 psnr=26.8784  ssim=0.9108  lpips_vgg=0.2640  lpips_alex=0.1687
+mean psnr=27.5733  ssim=0.9151  lpips_vgg=0.2520  lpips_alex=0.1477  psnr_of_mean_mse=27.4553 -> /home/soham/assignment2/results/metrics/gs_iter_001000.json
++ python scripts/eval_metrics.py --gt_dir /home/soham/assignment2/data/scene/images --list /home/soham/assignment2/results/test_list.txt --pred_dir /home/soham/assignment2/outputs/eval/gs/iter_003000 --method 3dgs --tag 3000 --out /home/soham/assignment2/results/metrics/gs_iter_003000.json
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG16_Weights.IMAGENET1K_V1`. You can also use `weights=VGG16_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torch/nn/modules/conv.py:456: UserWarning: Applied workaround for CuDNN issue, install nvrtc.so (Triggered internally at ../aten/src/ATen/native/cudnn/Conv_v8.cpp:80.)
+  return F.conv2d(input, weight, bias, self.stride,
+0000 psnr=32.2666  ssim=0.9624  lpips_vgg=0.2133  lpips_alex=0.0896
+0008 psnr=33.4986  ssim=0.9697  lpips_vgg=0.1691  lpips_alex=0.0521
+0016 psnr=33.0124  ssim=0.9681  lpips_vgg=0.1713  lpips_alex=0.0598
+0024 psnr=29.1947  ssim=0.9439  lpips_vgg=0.1844  lpips_alex=0.0729
+0032 psnr=33.4609  ssim=0.9701  lpips_vgg=0.1667  lpips_alex=0.0506
+0040 psnr=33.1882  ssim=0.9715  lpips_vgg=0.1464  lpips_alex=0.0423
+0048 psnr=32.3635  ssim=0.9677  lpips_vgg=0.1669  lpips_alex=0.0526
+0056 psnr=32.8615  ssim=0.9656  lpips_vgg=0.1672  lpips_alex=0.0621
+mean psnr=32.4808  ssim=0.9649  lpips_vgg=0.1732  lpips_alex=0.0603  psnr_of_mean_mse=32.2438 -> /home/soham/assignment2/results/metrics/gs_iter_003000.json
++ python scripts/eval_metrics.py --gt_dir /home/soham/assignment2/data/scene/images --list /home/soham/assignment2/results/test_list.txt --pred_dir /home/soham/assignment2/outputs/eval/gs/iter_007000 --method 3dgs --tag 7000 --out /home/soham/assignment2/results/metrics/gs_iter_007000.json
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG16_Weights.IMAGENET1K_V1`. You can also use `weights=VGG16_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torch/nn/modules/conv.py:456: UserWarning: Applied workaround for CuDNN issue, install nvrtc.so (Triggered internally at ../aten/src/ATen/native/cudnn/Conv_v8.cpp:80.)
+  return F.conv2d(input, weight, bias, self.stride,
+0000 psnr=35.1818  ssim=0.9768  lpips_vgg=0.1893  lpips_alex=0.0566
+0008 psnr=36.6532  ssim=0.9815  lpips_vgg=0.1526  lpips_alex=0.0389
+0016 psnr=35.9286  ssim=0.9801  lpips_vgg=0.1527  lpips_alex=0.0436
+0024 psnr=30.6606  ssim=0.9571  lpips_vgg=0.1692  lpips_alex=0.0553
+0032 psnr=35.6441  ssim=0.9799  lpips_vgg=0.1568  lpips_alex=0.0398
+0040 psnr=35.2732  ssim=0.9796  lpips_vgg=0.1356  lpips_alex=0.0342
+0048 psnr=34.1282  ssim=0.9765  lpips_vgg=0.1439  lpips_alex=0.0397
+0056 psnr=37.1333  ssim=0.9808  lpips_vgg=0.1457  lpips_alex=0.0447
+mean psnr=35.0754  ssim=0.9765  lpips_vgg=0.1557  lpips_alex=0.0441  psnr_of_mean_mse=34.5854 -> /home/soham/assignment2/results/metrics/gs_iter_007000.json
++ python scripts/eval_metrics.py --gt_dir /home/soham/assignment2/data/scene/images --list /home/soham/assignment2/results/test_list.txt --pred_dir /home/soham/assignment2/outputs/eval/gs/iter_015000 --method 3dgs --tag 15000 --out /home/soham/assignment2/results/metrics/gs_iter_015000.json
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG16_Weights.IMAGENET1K_V1`. You can also use `weights=VGG16_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torch/nn/modules/conv.py:456: UserWarning: Applied workaround for CuDNN issue, install nvrtc.so (Triggered internally at ../aten/src/ATen/native/cudnn/Conv_v8.cpp:80.)
+  return F.conv2d(input, weight, bias, self.stride,
+0000 psnr=36.0230  ssim=0.9781  lpips_vgg=0.1798  lpips_alex=0.0482
+0008 psnr=36.9503  ssim=0.9824  lpips_vgg=0.1460  lpips_alex=0.0358
+0016 psnr=36.5294  ssim=0.9818  lpips_vgg=0.1472  lpips_alex=0.0406
+0024 psnr=31.4282  ssim=0.9626  lpips_vgg=0.1639  lpips_alex=0.0480
+0032 psnr=37.1137  ssim=0.9836  lpips_vgg=0.1505  lpips_alex=0.0354
+0040 psnr=35.4326  ssim=0.9801  lpips_vgg=0.1348  lpips_alex=0.0327
+0048 psnr=36.1448  ssim=0.9812  lpips_vgg=0.1365  lpips_alex=0.0341
+0056 psnr=38.0059  ssim=0.9830  lpips_vgg=0.1400  lpips_alex=0.0412
+mean psnr=35.9535  ssim=0.9791  lpips_vgg=0.1498  lpips_alex=0.0395  psnr_of_mean_mse=35.4599 -> /home/soham/assignment2/results/metrics/gs_iter_015000.json
++ python scripts/eval_metrics.py --gt_dir /home/soham/assignment2/data/scene/images --list /home/soham/assignment2/results/test_list.txt --pred_dir /home/soham/assignment2/outputs/eval/gs/iter_030000 --method 3dgs --tag 30000 --out /home/soham/assignment2/results/metrics/gs_iter_030000.json
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG16_Weights.IMAGENET1K_V1`. You can also use `weights=VGG16_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torch/nn/modules/conv.py:456: UserWarning: Applied workaround for CuDNN issue, install nvrtc.so (Triggered internally at ../aten/src/ATen/native/cudnn/Conv_v8.cpp:80.)
+  return F.conv2d(input, weight, bias, self.stride,
+0000 psnr=36.0339  ssim=0.9783  lpips_vgg=0.1759  lpips_alex=0.0452
+0008 psnr=37.3063  ssim=0.9826  lpips_vgg=0.1435  lpips_alex=0.0338
+0016 psnr=36.5273  ssim=0.9821  lpips_vgg=0.1434  lpips_alex=0.0386
+0024 psnr=31.1485  ssim=0.9605  lpips_vgg=0.1634  lpips_alex=0.0474
+0032 psnr=37.5468  ssim=0.9840  lpips_vgg=0.1470  lpips_alex=0.0330
+0040 psnr=35.5181  ssim=0.9796  lpips_vgg=0.1327  lpips_alex=0.0314
+0048 psnr=36.1092  ssim=0.9809  lpips_vgg=0.1330  lpips_alex=0.0325
+0056 psnr=38.0507  ssim=0.9829  lpips_vgg=0.1366  lpips_alex=0.0390
+mean psnr=36.0301  ssim=0.9789  lpips_vgg=0.1469  lpips_alex=0.0376  psnr_of_mean_mse=35.4450 -> /home/soham/assignment2/results/metrics/gs_iter_030000.json
++ python scripts/eval_metrics.py --gt_dir /home/soham/assignment2/data/scene/images --list /home/soham/assignment2/results/test_list.txt --pred_dir /home/soham/assignment2/outputs/eval/ngp/step_001000 --method instant-ngp --tag 1000 --out /home/soham/assignment2/results/metrics/ngp_step_001000.json
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG16_Weights.IMAGENET1K_V1`. You can also use `weights=VGG16_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torch/nn/modules/conv.py:456: UserWarning: Applied workaround for CuDNN issue, install nvrtc.so (Triggered internally at ../aten/src/ATen/native/cudnn/Conv_v8.cpp:80.)
+  return F.conv2d(input, weight, bias, self.stride,
+0000 psnr=27.0518  ssim=0.8962  lpips_vgg=0.3053  lpips_alex=0.1710
+0008 psnr=27.1574  ssim=0.8893  lpips_vgg=0.2552  lpips_alex=0.1574
+0016 psnr=27.1629  ssim=0.8857  lpips_vgg=0.2578  lpips_alex=0.1667
+0024 psnr=25.5864  ssim=0.8678  lpips_vgg=0.2648  lpips_alex=0.1693
+0032 psnr=26.9671  ssim=0.8967  lpips_vgg=0.2459  lpips_alex=0.1424
+0040 psnr=25.9762  ssim=0.8781  lpips_vgg=0.2532  lpips_alex=0.1557
+0048 psnr=25.7906  ssim=0.8781  lpips_vgg=0.2780  lpips_alex=0.1588
+0056 psnr=27.0391  ssim=0.8877  lpips_vgg=0.2875  lpips_alex=0.1761
+mean psnr=26.5914  ssim=0.8850  lpips_vgg=0.2685  lpips_alex=0.1622  psnr_of_mean_mse=26.5438 -> /home/soham/assignment2/results/metrics/ngp_step_001000.json
++ python scripts/eval_metrics.py --gt_dir /home/soham/assignment2/data/scene/images --list /home/soham/assignment2/results/test_list.txt --pred_dir /home/soham/assignment2/outputs/eval/ngp/step_003000 --method instant-ngp --tag 3000 --out /home/soham/assignment2/results/metrics/ngp_step_003000.json
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG16_Weights.IMAGENET1K_V1`. You can also use `weights=VGG16_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torch/nn/modules/conv.py:456: UserWarning: Applied workaround for CuDNN issue, install nvrtc.so (Triggered internally at ../aten/src/ATen/native/cudnn/Conv_v8.cpp:80.)
+  return F.conv2d(input, weight, bias, self.stride,
+0000 psnr=29.9981  ssim=0.9279  lpips_vgg=0.2526  lpips_alex=0.1248
+0008 psnr=29.7475  ssim=0.9311  lpips_vgg=0.2048  lpips_alex=0.1002
+0016 psnr=29.5049  ssim=0.9271  lpips_vgg=0.2086  lpips_alex=0.1131
+0024 psnr=27.3034  ssim=0.9037  lpips_vgg=0.2178  lpips_alex=0.1166
+0032 psnr=29.8853  ssim=0.9374  lpips_vgg=0.1932  lpips_alex=0.0888
+0040 psnr=28.7541  ssim=0.9262  lpips_vgg=0.1885  lpips_alex=0.0913
+0048 psnr=29.1434  ssim=0.9284  lpips_vgg=0.2050  lpips_alex=0.0935
+0056 psnr=29.8987  ssim=0.9299  lpips_vgg=0.2141  lpips_alex=0.1154
+mean psnr=29.2794  ssim=0.9265  lpips_vgg=0.2106  lpips_alex=0.1055  psnr_of_mean_mse=29.1891 -> /home/soham/assignment2/results/metrics/ngp_step_003000.json
++ python scripts/eval_metrics.py --gt_dir /home/soham/assignment2/data/scene/images --list /home/soham/assignment2/results/test_list.txt --pred_dir /home/soham/assignment2/outputs/eval/ngp/step_007000 --method instant-ngp --tag 7000 --out /home/soham/assignment2/results/metrics/ngp_step_007000.json
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG16_Weights.IMAGENET1K_V1`. You can also use `weights=VGG16_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torch/nn/modules/conv.py:456: UserWarning: Applied workaround for CuDNN issue, install nvrtc.so (Triggered internally at ../aten/src/ATen/native/cudnn/Conv_v8.cpp:80.)
+  return F.conv2d(input, weight, bias, self.stride,
+0000 psnr=31.2398  ssim=0.9404  lpips_vgg=0.2290  lpips_alex=0.1018
+0008 psnr=31.2152  ssim=0.9472  lpips_vgg=0.1815  lpips_alex=0.0780
+0016 psnr=30.9526  ssim=0.9437  lpips_vgg=0.1852  lpips_alex=0.0895
+0024 psnr=28.0587  ssim=0.9180  lpips_vgg=0.1982  lpips_alex=0.0968
+0032 psnr=31.5418  ssim=0.9523  lpips_vgg=0.1704  lpips_alex=0.0696
+0040 psnr=30.3907  ssim=0.9447  lpips_vgg=0.1655  lpips_alex=0.0682
+0048 psnr=30.8905  ssim=0.9470  lpips_vgg=0.1780  lpips_alex=0.0722
+0056 psnr=31.6504  ssim=0.9480  lpips_vgg=0.1833  lpips_alex=0.0875
+mean psnr=30.7425  ssim=0.9427  lpips_vgg=0.1864  lpips_alex=0.0829  psnr_of_mean_mse=30.5875 -> /home/soham/assignment2/results/metrics/ngp_step_007000.json
++ python scripts/eval_metrics.py --gt_dir /home/soham/assignment2/data/scene/images --list /home/soham/assignment2/results/test_list.txt --pred_dir /home/soham/assignment2/outputs/eval/ngp/step_015000 --method instant-ngp --tag 15000 --out /home/soham/assignment2/results/metrics/ngp_step_015000.json
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG16_Weights.IMAGENET1K_V1`. You can also use `weights=VGG16_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torch/nn/modules/conv.py:456: UserWarning: Applied workaround for CuDNN issue, install nvrtc.so (Triggered internally at ../aten/src/ATen/native/cudnn/Conv_v8.cpp:80.)
+  return F.conv2d(input, weight, bias, self.stride,
+0000 psnr=32.0700  ssim=0.9480  lpips_vgg=0.2164  lpips_alex=0.0892
+0008 psnr=32.2377  ssim=0.9564  lpips_vgg=0.1706  lpips_alex=0.0657
+0016 psnr=31.8509  ssim=0.9528  lpips_vgg=0.1736  lpips_alex=0.0768
+0024 psnr=28.6427  ssim=0.9267  lpips_vgg=0.1877  lpips_alex=0.0858
+0032 psnr=32.6072  ssim=0.9599  lpips_vgg=0.1608  lpips_alex=0.0590
+0040 psnr=31.4043  ssim=0.9537  lpips_vgg=0.1533  lpips_alex=0.0577
+0048 psnr=31.9047  ssim=0.9558  lpips_vgg=0.1625  lpips_alex=0.0618
+0056 psnr=33.1002  ssim=0.9583  lpips_vgg=0.1676  lpips_alex=0.0727
+mean psnr=31.7272  ssim=0.9514  lpips_vgg=0.1741  lpips_alex=0.0711  psnr_of_mean_mse=31.5142 -> /home/soham/assignment2/results/metrics/ngp_step_015000.json
++ python scripts/eval_metrics.py --gt_dir /home/soham/assignment2/data/scene/images --list /home/soham/assignment2/results/test_list.txt --pred_dir /home/soham/assignment2/outputs/eval/ngp/step_035000 --method instant-ngp --tag 35000 --out /home/soham/assignment2/results/metrics/ngp_step_035000.json
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG16_Weights.IMAGENET1K_V1`. You can also use `weights=VGG16_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torch/nn/modules/conv.py:456: UserWarning: Applied workaround for CuDNN issue, install nvrtc.so (Triggered internally at ../aten/src/ATen/native/cudnn/Conv_v8.cpp:80.)
+  return F.conv2d(input, weight, bias, self.stride,
+0000 psnr=33.0475  ssim=0.9549  lpips_vgg=0.2046  lpips_alex=0.0781
+0008 psnr=33.5868  ssim=0.9645  lpips_vgg=0.1608  lpips_alex=0.0546
+0016 psnr=33.1161  ssim=0.9615  lpips_vgg=0.1627  lpips_alex=0.0649
+0024 psnr=29.1822  ssim=0.9337  lpips_vgg=0.1828  lpips_alex=0.0761
+0032 psnr=33.9280  ssim=0.9670  lpips_vgg=0.1491  lpips_alex=0.0495
+0040 psnr=32.5801  ssim=0.9614  lpips_vgg=0.1408  lpips_alex=0.0475
+0048 psnr=33.2401  ssim=0.9634  lpips_vgg=0.1485  lpips_alex=0.0521
+0056 psnr=34.6614  ssim=0.9660  lpips_vgg=0.1518  lpips_alex=0.0617
+mean psnr=32.9178  ssim=0.9590  lpips_vgg=0.1626  lpips_alex=0.0606  psnr_of_mean_mse=32.5947 -> /home/soham/assignment2/results/metrics/ngp_step_035000.json
++ python scripts/eval_metrics.py --gt_dir /home/soham/assignment2/data/scene/images --list /home/soham/assignment2/results/test_list.txt --pred_dir /home/soham/assignment2/outputs/eval/ngp/step_100000 --method instant-ngp --tag 100000 --out /home/soham/assignment2/results/metrics/ngp_step_100000.json
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG16_Weights.IMAGENET1K_V1`. You can also use `weights=VGG16_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/soham/miniconda3/envs/gs/lib/python3.10/site-packages/torch/nn/modules/conv.py:456: UserWarning: Applied workaround for CuDNN issue, install nvrtc.so (Triggered internally at ../aten/src/ATen/native/cudnn/Conv_v8.cpp:80.)
+  return F.conv2d(input, weight, bias, self.stride,
+0000 psnr=33.1517  ssim=0.9557  lpips_vgg=0.2036  lpips_alex=0.0767
+0008 psnr=33.7258  ssim=0.9653  lpips_vgg=0.1593  lpips_alex=0.0533
+0016 psnr=33.2601  ssim=0.9624  lpips_vgg=0.1624  lpips_alex=0.0637
+0024 psnr=29.2137  ssim=0.9343  lpips_vgg=0.1823  lpips_alex=0.0755
+0032 psnr=34.0831  ssim=0.9678  lpips_vgg=0.1482  lpips_alex=0.0486
+0040 psnr=32.7434  ssim=0.9622  lpips_vgg=0.1404  lpips_alex=0.0467
+0048 psnr=33.3761  ssim=0.9642  lpips_vgg=0.1475  lpips_alex=0.0509
+0056 psnr=34.8440  ssim=0.9669  lpips_vgg=0.1506  lpips_alex=0.0606
+mean psnr=33.0498  ssim=0.9598  lpips_vgg=0.1618  lpips_alex=0.0595  psnr_of_mean_mse=32.7081 -> /home/soham/assignment2/results/metrics/ngp_step_100000.json
++ python scripts/collect_results.py --outputs /home/soham/assignment2/outputs --results /home/soham/assignment2/results --logs /home/soham/assignment2/logs
+# Results summary
+
+## Test-view quality (mean over test views)
+
+| Metric | InstantNGP | 3DGS |
+|---|---|---|
+| PSNR (dB) ↑ | 33.05 | 36.03 |
+| SSIM ↑ | 0.9598 | 0.9789 |
+| LPIPS-VGG ↓ | 0.1618 | 0.1469 |
+| LPIPS-Alex ↓ | 0.0595 | 0.0376 |
+
+## Efficiency
+
+| | InstantNGP | 3DGS |
+|---|---|---|
+| Training iterations | 100000 | 30000 |
+| Training time, wall clock (s) | 833.7 | 2593.6 |
+| Render time (ms / frame) | 20.32 (spp 1) | 17.36 |
+| Render speed (FPS) | 49.2 | 57.6 |
+| Model size on disk (MB) | 23.35 (.ingp, compressed) | 271.75 (.ply) |
+| Model size uncompressed (MB) | 36.58 | 271.75 |
+| Parameters | 12,865,536 | 67,790,233 (1,148,987 Gaussians × 59) |
+| Peak GPU memory, process (MiB) | – | – |
+| Peak GPU memory, whole GPU (MiB) | 1209 | 4305 |
+
+GPU: NVIDIA GeForce RTX 4060 Laptop GPU
+
+Cross-check with the official 3DGS metrics.py on the same renders: PSNR 36.030, SSIM 0.9789 (ours 36.030, 0.9789). Its LPIPS differs because metrics.py feeds [0,1] images to a network expecting [-1,1].
+
++ python scripts/make_figures.py --outputs /home/soham/assignment2/outputs --results /home/soham/assignment2/results --scene /home/soham/assignment2/data/scene --test_list /home/soham/assignment2/results/test_list.txt --train_list /home/soham/assignment2/results/train_list.txt --fig_dir /home/soham/assignment2/results/figures --video_dir /home/soham/assignment2/results/videos
+  01_test_views_a.png
+  01_test_views_b.png
+  02_zoom_crops.png
+  03_error_difference.png
+  04_per_view_metrics.png
+  05_convergence.png
+  06_efficiency.png
+  07_model_growth.png
+  08_error_distribution.png
+  09_view_extrapolation.png
+  10_sharpness.png
+  11_frequency_spectrum.png
+  12_novel_overview.png
+  13_novel_trajectory.png
+  13_novel_shift_up.png
+  13_novel_shift_down.png
+  13_novel_spiral.png
+  13_novel_dolly.png
+  13_novel_orbit.png
+  13_novel_look_around.png
+  14_camera_paths.png
+  15_gaussian_stats.png
+  trajectory_side_by_side.mp4
+  shift_up_side_by_side.mp4
+  shift_down_side_by_side.mp4
+  spiral_side_by_side.mp4
+  dolly_side_by_side.mp4
+  orbit_side_by_side.mp4
+  look_around_side_by_side.mp4
+Evaluation done: /home/soham/assignment2/results/summary.md, /home/soham/assignment2/results/figures/, /home/soham/assignment2/results/videos/

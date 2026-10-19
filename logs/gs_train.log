@@ -1,0 +1,87 @@
+Optimizing /home/soham/assignment2/outputs/gs
+Output folder: /home/soham/assignment2/outputs/gs [19/10 20:52:43]
+Tensorboard not available: not logging progress [19/10 20:52:43]
+------------LLFF HOLD------------- [19/10 20:52:43]
+
+Reading camera 1/62
+Reading camera 2/62
+Reading camera 3/62
+Reading camera 4/62
+Reading camera 5/62
+Reading camera 6/62
+Reading camera 7/62
+Reading camera 8/62
+Reading camera 9/62
+Reading camera 10/62
+Reading camera 11/62
+Reading camera 12/62
+Reading camera 13/62
+Reading camera 14/62
+Reading camera 15/62
+Reading camera 16/62
+Reading camera 17/62
+Reading camera 18/62
+Reading camera 19/62
+Reading camera 20/62
+Reading camera 21/62
+Reading camera 22/62
+Reading camera 23/62
+Reading camera 24/62
+Reading camera 25/62
+Reading camera 26/62
+Reading camera 27/62
+Reading camera 28/62
+Reading camera 29/62
+Reading camera 30/62
+Reading camera 31/62
+Reading camera 32/62
+Reading camera 33/62
+Reading camera 34/62
+Reading camera 35/62
+Reading camera 36/62
+Reading camera 37/62
+Reading camera 38/62
+Reading camera 39/62
+Reading camera 40/62
+Reading camera 41/62
+Reading camera 42/62
+Reading camera 43/62
+Reading camera 44/62
+Reading camera 45/62
+Reading camera 46/62
+Reading camera 47/62
+Reading camera 48/62
+Reading camera 49/62
+Reading camera 50/62
+Reading camera 51/62
+Reading camera 52/62
+Reading camera 53/62
+Reading camera 54/62
+Reading camera 55/62
+Reading camera 56/62
+Reading camera 57/62
+Reading camera 58/62
+Reading camera 59/62
+Reading camera 60/62
+Reading camera 61/62
+Reading camera 62/62 [19/10 20:52:43]
+Loading Training Cameras [19/10 20:52:43]
+Loading Test Cameras [19/10 20:52:44]
+Number of points at initialisation :  16573 [19/10 20:52:44]
+
+
+[ITER 1000] Saving Gaussians [19/10 20:53:10]
+
+[ITER 3000] Saving Gaussians [19/10 20:54:41]
+
+[ITER 7000] Saving Gaussians [19/10 20:59:40]
+
+[ITER 15000] Saving Gaussians [19/10 21:12:56]
+
+[ITER 30000] Evaluating test: L1 0.00894580181920901 PSNR 36.05902814865112 [19/10 21:35:47]
+
+[ITER 30000] Evaluating train: L1 0.00602201009169221 PSNR 40.29690628051758 [19/10 21:35:47]
+
+[ITER 30000] Saving Gaussians [19/10 21:35:47]
+
+Training complete. [19/10 21:35:53]
