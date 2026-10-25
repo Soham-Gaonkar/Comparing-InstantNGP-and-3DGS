@@ -1,4 +1,10 @@
-# InstantNGP vs 3D Gaussian Splatting on a Self-Captured Scene
+# InstantNGP vs 3D Gaussian Splatting 
+
+E9 247 : Assignment 2
+
+Name : Soham Gaonkar
+
+SR no.: 28875 
 
 ## 1. Objective
 
@@ -17,23 +23,19 @@ evaluation code.
 
 ### 2.1 Capture
 
-| Item | Value |
-|---|---|
-| Scene | wall-mounted shelf with books, ornaments, plants, trophies (static, indoor) |
-| Device / mode | phone camera, video |
-| Video | 1080 x 1920 (portrait), 30 fps, HEVC, 31.1 s |
-| Camera motion | one sideways pass along the shelf at constant height and distance, without rotating the camera |
-| Lighting | indoor room lighting |
+- **Scene:** wall-mounted shelf with books, ornaments, plants and trophies (static, indoor)
+- **Device / mode:** phone camera, video
+- **Video:** 1080 x 1920 (portrait), 30 fps, HEVC, 31.1 s
+- **Camera motion:** one sideways pass along the shelf at constant height and distance, without rotating the camera
+- **Lighting:** indoor room lighting
 
 ### 2.2 Frame selection
 
-| Step | Setting | Result |
-|---|---|---|
-| Extraction (ffmpeg) | 6 fps, resized to 720 x 1280 (Lanczos) | 186 candidate frames |
-| Sharpness filter | variance of the Laplacian; sharpest frame kept in each group of 3 consecutive frames | 62 frames |
-| Visual inspection | blur, moving objects, photographer shadow | 62 frames used |
+- **Extraction (ffmpeg):** 6 fps, resized to 720 x 1280 (Lanczos) → 186 candidate frames
+- **Sharpness filter:** variance of the Laplacian; the sharpest frame in each group of 3 consecutive frames is kept → 62 frames
+- **Visual inspection:** checked for blur, moving objects and the photographer's shadow → all 62 frames used
 
-![Frame sharpness](results/figures/sharpness.png)
+<p align="center"><img src="results/figures/sharpness.png" alt="Frame sharpness" width="70%"></p>
 
 *Figure 1. Sharpness (variance of the Laplacian) of all candidate frames; kept frames highlighted.*
 
@@ -61,18 +63,8 @@ directions, as required by the capture protocol.
 
 *Figure 2. COLMAP sparse point cloud (front and top view).*
 
-### 2.4 Train / test split
-
-Images are sorted by name and every 8th image (index mod 8 = 0) is held out for testing, which
-is the rule 3DGS uses with `--eval`.
-
-| Set | Images |
-|---|---|
-| Train | 54 |
-| Test | 8: 0000, 0008, 0016, 0024, 0032, 0040, 0048, 0056 |
-
-Both methods train on the undistorted 701 x 1249 images and are evaluated against the same
-undistorted test images.
+Every 8th image (sorted by name, the rule 3DGS uses with `--eval`) was held out for testing:
+54 training and 8 test images (0000, 0008, ..., 0056).
 
 ## 3. Methods and settings
 
@@ -84,7 +76,8 @@ undistorted test images.
 | Initialisation | 16,573 COLMAP points |
 | Iterations | 30,000 (official default) |
 | Resolution | full (`-r 1`), 701 x 1249 |
-| Other hyper-parameters | repository defaults (SH degree 3, densification until 15k, opacity reset every 3k) |
+| Densification | every 100 iterations from 500 to 15k: clone small and split large Gaussians with a high view-space gradient (> 0.0002), prune those with opacity < 0.005; opacity reset every 3k |
+| Other hyper-parameters | repository defaults (SH degree 3, loss 0.8·L1 + 0.2·D-SSIM) |
 | Checkpoints saved | 1k, 3k, 7k, 15k, 30k |
 
 ### 3.2 InstantNGP
@@ -167,6 +160,11 @@ NGP = InstantNGP at 100k steps; 3DGS at 30k iterations; Δ = 3DGS − NGP.
 
 *Figure 4. Per-view PSNR, SSIM and LPIPS-VGG (horizontal lines: means).*
 
+<p align="center"><img src="results/figures/04b_best_worst_views.png" alt="Best and worst test views" width="50%"></p>
+
+*Figure 4b. Best (0056) and worst (0024) test view for both methods. View 0024 is the test view
+farthest from any training camera (Section 7).*
+
 ### 5.3 Convergence
 
 | 3DGS iteration | 1k | 3k | 7k | 15k | 30k |
@@ -192,29 +190,38 @@ Both methods have converged:
 
 *Figure 5. Test metrics against iterations (top, log scale) and against wall-clock training time (bottom).*
 
+**Time to reach the same test PSNR** (wall clock, same GPU):
+
+| Test PSNR reached | InstantNGP | 3DGS |
+|---|---|---|
+| 28 dB | **18 s** | 33 s |
+| 30 dB | **42 s** | 59 s |
+| 31 dB | **76 s** | 79 s |
+| 32 dB | 2.6 min | **107 s** |
+| 33 dB | 9.5 min | **2.6 min** |
+| 35 dB | not reached | 6.9 min |
+| 36 dB | not reached | 32.2 min |
+| Best reached | 33.05 dB at 13.9 min | 36.03 dB at 43.2 min |
+
+Times are interpolated between the saved checkpoints (PSNR assumed linear in log time between
+two checkpoints; `scripts/time_to_psnr.py`), so they are estimates. With only 5–6 checkpoints
+per method, individual entries may be off by about ±20 %; the crossover near 31 dB is robust.
+
 Observations:
 
-- **Per unit of time, InstantNGP is ahead only in the first minute.** At about 0.5 min it reaches
-  29.3 dB, against 27.6 dB for 3DGS. By 2 min, 3DGS is ahead (32.5 vs about 31.7 dB). After 7 min,
-  3DGS (35.1 dB) exceeds the best InstantNGP result at any training length (33.05 dB).
+- **InstantNGP is ahead only up to about 31 dB (the first ~1.3 min).** After 7 min, 3DGS
+  (35.1 dB) exceeds the best InstantNGP result at any training length (33.05 dB).
 - **Half of 3DGS's training time adds 0.08 dB.** The Gaussian count stops changing at 15k
-  iterations, when densification ends. The last 15k iterations take 22.7 of the 43.2 minutes.
+  iterations, when densification ends. 3DGS's cost per iteration grows with the number of
+  Gaussians: iterations 15k–30k take (2591 − 1229) s / 15000 = 91 ms each, 22.7 of the 43.2 minutes.
 - **3DGS fits its training views much better than the test views.** Its own logs at 30k report
   40.30 dB on training views and 36.06 dB on test views (a 4.2 dB gap). The 36.06 dB is computed
   on float renders; our 36.03 dB is computed on the saved 8-bit PNGs.
 
-### 5.4 Training time
+### 5.4 Rendering time
 
-| | InstantNGP 35k | InstantNGP 100k | 3DGS 30k | 3DGS 15k |
-|---|---|---|---|---|
-| Wall clock | 301 s | 834 s | 2594 s | 1229 s |
-| Relative to InstantNGP 35k | 1.0x | 2.8x | 8.6x | 4.1x |
-
-InstantNGP trains 8.6x faster at its default schedule. 3DGS's cost per iteration grows with the
-number of Gaussians: the 1k checkpoint is written 29 s after start (including data loading), while
-iterations 15k–30k take (2591 − 1229) / 15000 = 91 ms each.
-
-### 5.5 Rendering time
+spp = samples per pixel: the number of slightly offset rays InstantNGP traces through each pixel
+and averages; more spp gives less noise but costs proportionally more time.
 
 | | ms / frame (mean ± std) | FPS |
 |---|---|---|
@@ -228,7 +235,7 @@ sampling noise than the 8 spp images that were evaluated. 3DGS rasterises 1.15 M
 InstantNGP marches rays through its occupancy grid and evaluates the hash encoding and two MLPs
 per sample.
 
-### 5.6 Model size
+### 5.5 Model size
 
 | | InstantNGP | 3DGS |
 |---|---|---|
@@ -236,26 +243,26 @@ per sample.
 | Uncompressed | 36.6 MB | 271.8 MB |
 | Content | 12.87 M parameters (fp16): hash tables 12,855,296, MLPs 10,240; plus fp16 occupancy grid (3 x 128³ cells) | 1,148,987 Gaussians x 62 float32 values (position, normal, 48 SH colour coefficients, opacity, 3 scales, 4 rotation) |
 
-The uncompressed InstantNGP size matches its contents: 12,865,536 x 2 bytes + 3 x 128³ x 2 bytes
-= 38.31 x 10^6 bytes, against 38.35 x 10^6 bytes measured (the rest is configuration metadata).
+Both sizes follow from the contents (fp16 = 2 bytes, float32 = 4 bytes):
+
+- **InstantNGP (uncompressed):** (parameters + occupancy cells) x 2 B = (12,865,536 + 3 x 128³) x 2 B
+  = 38.31 x 10^6 B, against 38.35 x 10^6 B measured (the rest is configuration metadata).
+- **3DGS:** Gaussians x 62 values x 4 B = 1,148,987 x 62 x 4 B = 284.95 x 10^6 B = 271.8 MB.
 
 3DGS is 11.6x larger on disk. 48 of its 59 learned values per Gaussian are spherical-harmonic
 colour coefficients. The InstantNGP model has a fixed size from the first step, while 3DGS grows
 during densification (Figure 6).
 
-![Model growth](results/figures/07_model_growth.png)
+<p align="center"><img src="results/figures/07_model_growth.png" alt="Model growth" width="50%"></p>
 
 *Figure 6. Model file size during training.*
 
-### 5.7 Visual comparison
+### 5.6 Visual comparison
 
-![Test views A](results/figures/01_test_views_a.png)
+<p align="center"><img src="results/figures/01_test_views.png" alt="Test views with error maps" width="85%"></p>
 
-*Figure 7a. Test views 0000–0024: ground truth, InstantNGP, 3DGS and absolute error maps (common scale).*
-
-![Test views B](results/figures/01_test_views_b.png)
-
-*Figure 7b. Test views 0032–0056.*
+*Figure 7. Ground truth, InstantNGP, 3DGS and absolute error maps (common scale) for the view with
+the largest PSNR gap (0008) and the worst view (0024).*
 
 ![Zoomed crops](results/figures/02_zoom_crops.png)
 
@@ -274,72 +281,43 @@ Observations:
 - **Error maps:** both concentrate on edges and textured objects. The plain wall has near-zero
   error for both.
 
-![Error difference](results/figures/03_error_difference.png)
+<p align="center"><img src="results/figures/03_error_difference.png" alt="Error difference" width="50%"></p>
 
-*Figure 9. Per-pixel error(3DGS) − error(InstantNGP), blurred with σ = 2 px. Orange: 3DGS closer to ground truth; blue: InstantNGP closer.*
+*Figure 9. Per-pixel error(3DGS) − error(InstantNGP), blurred with σ = 2 px, for the same two views.
+Orange: 3DGS closer to ground truth; blue: InstantNGP closer.*
 
-With a 0.01 margin, 3DGS is closer to the ground truth on 7–12 % of pixels per view and
-InstantNGP on 0–2 %. The remaining pixels (mostly the wall) are equal. The regions where
-InstantNGP is closer are small and mostly at image borders and the shelf's lower edge
-(views 0000, 0048, 0056).
+Over all 8 test views, with a 0.01 margin, 3DGS is closer to the ground truth on 7–12 % of
+pixels per view and InstantNGP on 0–2 %. The remaining pixels (mostly the wall) are equal. The
+regions where InstantNGP is closer are small and mostly at image borders and the shelf's lower edge.
 
-### 5.8 Error and frequency analysis
+### 5.7 Sharpness analysis
 
-![Error distribution](results/figures/08_error_distribution.png)
+**Sharpness** is measured as the variance of the Laplacian of the grey image, relative to the
+ground truth:
 
-*Figure 10. Distribution of per-pixel absolute error over all test pixels.*
+```
+S(I) = Var( ∇²I ),   I = mean of the R, G, B channels,   ∇² = 3x3 Laplacian [0 1 0; 1 −4 1; 0 1 0]
+relative sharpness = S(render) / S(ground truth)          (1 = as sharp as the ground truth)
+```
 
-The median per-pixel error is the same (0.005) for both methods. The difference is in the tail:
-the 95th percentile is 0.027 for 3DGS and 0.042 for InstantNGP. Large errors are rarer in 3DGS
-at every error level above about 0.02.
+Edges and fine texture give large Laplacian values, so a blurred image has a lower variance.
 
-![Sharpness](results/figures/10_sharpness.png)
+<p align="center"><img src="results/figures/10_sharpness.png" alt="Sharpness" width="55%"></p>
 
-*Figure 11. Variance of the Laplacian of each render relative to the ground truth.*
+*Figure 10. Relative sharpness of each test render.*
 
-![Frequency spectrum](results/figures/11_frequency_spectrum.png)
+InstantNGP renders keep 53 % of the ground-truth sharpness on average, 3DGS keeps 90 %. This is
+the loss of fine detail seen in Figure 8.
 
-*Figure 12. Radial power spectrum of the renders divided by that of the ground truth (geometric mean over test views).*
+### 5.8 Novel views away from the capture path
 
-- **Sharpness:** InstantNGP renders keep 53 % of the ground-truth Laplacian variance on average,
-  3DGS keeps 90 %.
-- **Frequency content:** 3DGS keeps at least about 85 % of the ground-truth power at all
-  frequencies. InstantNGP drops to about 45 % between 0.3 and 0.4 cycles/pixel. This is the loss
-  of fine detail seen in Figure 8.
-- **Near the Nyquist limit** (> 0.45 cycles/pixel), InstantNGP's power rises back above the
-  ground truth (1.06). That is pixel-level noise from stochastic ray sampling, not recovered detail.
-
-![View extrapolation](results/figures/09_view_extrapolation.png)
-
-*Figure 13. Test PSNR against distance to the nearest training camera (in units of the median spacing between training cameras).*
-
-- Six test views lie within 0.7 camera spacings of a training camera.
-- Views 0040 (1.7 spacings) and 0024 (2.1 spacings) are farther, because the capture speed was
-  uneven there. View 0024 is the worst view for both methods (31.15 / 29.21 dB), and view 0040
-  is below the mean for both.
-- **Both methods lose quality with the distance to the nearest training view.** The 3DGS
-  advantage holds at every distance.
-
-### 5.9 Novel views away from the capture path
-
-Seven camera paths were rendered with identical cameras for both methods (Figure 14):
-
-| Path | Description |
-|---|---|
-| trajectory | the captured path, smoothed (interpolation) |
-| shift_up / shift_down | captured path moved up / down by 0.15 x scene depth |
-| spiral | captured path plus a circular offset of 0.08 x scene depth, 3 turns |
-| dolly | mid-path camera moving ±0.35 x scene depth along the viewing axis |
-| orbit | ±30° arc around the scene centre, looking at it |
-| look_around | mid-path camera panning ±20° and tilting ±12° |
-
-![Camera paths](results/figures/14_camera_paths.png)
-
-*Figure 14. Training cameras (triangles), test cameras (squares) and novel paths, over the COLMAP points.*
+Seven camera paths were rendered with identical cameras for both methods: the captured path
+(smoothed), the path shifted up and down by 0.15 x scene depth, a spiral around it, a dolly
+along the viewing axis, a ±30° orbit around the scene centre, and a ±20° look-around pan.
 
 ![Novel views](results/figures/12_novel_overview.png)
 
-*Figure 15. One frame per path at its largest deviation from the captured views; top InstantNGP, bottom 3DGS, same camera.*
+*Figure 11. One frame per path at its largest deviation from the captured views; top InstantNGP, bottom 3DGS, same camera.*
 
 Per-path frame strips: `results/figures/13_novel_<path>.png`.
 
@@ -356,11 +334,11 @@ Per-path frame strips: `results/figures/13_novel_<path>.png`.
 - A single horizontal pass gives almost no vertical parallax, so neither method can recover
   surfaces that are hidden from the capture line (tops of books, the area behind objects).
 
-### 5.10 3DGS model statistics
+### 5.9 3DGS model statistics
 
 ![Gaussian statistics](results/figures/15_gaussian_stats.png)
 
-*Figure 16. Opacity, size and anisotropy of the 1,148,987 Gaussians at 30k iterations.*
+*Figure 12. Opacity, size and anisotropy of the 1,148,987 Gaussians at 30k iterations.*
 
 - **Count:** densification grew the 16,573 SfM points to 1,148,987 Gaussians (69x).
 - **Opacity:** median 0.06. Most Gaussians are nearly transparent and contribute through
@@ -369,7 +347,7 @@ Per-path frame strips: `results/figures/13_novel_<path>.png`.
 - **Shape:** the ratio of largest to smallest axis has its mode around 100:1. The scene is
   represented mostly by flat, disc- or needle-like splats aligned with surfaces.
 
-## 6. Discussion
+## 6. Summary
 
 | Criterion | Better method | Margin on this scene |
 |---|---|---|
@@ -383,7 +361,7 @@ Per-path frame strips: `results/figures/13_novel_<path>.png`.
   number grew to 1.15 M exactly where the scene has detail (text, leaves, faceted objects), which
   gives sharp renders and high-frequency fidelity but a large model. InstantNGP stores a fixed
   hash grid (12.9 M parameters, shared through hashing) and two small MLPs. It is compact and
-  fast to train, but its renders lose fine detail (Figures 11, 12).
+  fast to train, but its renders lose fine detail (Figures 8, 10).
 - **Rendering.** Rasterising sorted Gaussians costs one pass per image. Volume rendering costs
   many network evaluations per ray, and InstantNGP needs several samples per pixel to reach the
   quality reported here.
@@ -400,9 +378,10 @@ Per-path frame strips: `results/figures/13_novel_<path>.png`.
    across views, but the shiny objects are where both methods have their largest local errors.
 2. **Small test set.** 8 test views from a single sideways pass, all close to the training
    cameras. The metrics measure interpolation quality, not wide-baseline novel-view synthesis.
-3. **Laptop GPU under WSL2.** All numbers come from one RTX 4060 Laptop GPU under WSL2. GPU
-   memory is the whole-GPU peak, because WSL2 does not report per-process usage. Absolute times
-   would be lower on a desktop GPU; the ratios between the methods are the comparable quantity.
+3. **Uneven capture speed.** The walking speed along the shelf was not constant. Six test views
+   lie within 0.7 camera spacings of a training camera, but views 0040 and 0024 lie 1.7 and 2.1
+   spacings away. These two are the lowest-scoring test views for both methods (0024: 29.21 /
+   31.15 dB), so both methods lose quality as the distance to the nearest training view grows.
 4. **InstantNGP render speed depends on spp.** 1 spp is 7.7x faster than 8 spp but noisier;
    quality was measured only at 8 spp.
 5. **One scene, one run per method.** No variance over random seeds was measured.
@@ -411,8 +390,10 @@ Per-path frame strips: `results/figures/13_novel_<path>.png`.
 
 | Item | Location |
 |---|---|
+| Code and data repository | [github.com/Soham-Gaonkar/Comparing-InstantNGP-and-3DGS](https://github.com/Soham-Gaonkar/Comparing-InstantNGP-and-3DGS) |
+| Interactive 3DGS model (browser) | [antimatter15 splat viewer](https://antimatter15.com/splat/?url=https://raw.githubusercontent.com/Soham-Gaonkar/splat-host/main/model.splat) |
 | Frames, COLMAP model, splits, novel paths | `data/scene/`, `results/train_list.txt`, `results/test_list.txt` |
-| Pipeline code | `scripts/` (`filter_frames.py`, `prepare_ngp.py`, `make_novel_paths.py`, `train_ngp.py`, `render_gs.py`, `render_ngp.py`, `eval_metrics.py`, `collect_results.py`, `make_figures.py`) |
+| Pipeline code | `scripts/` (`filter_frames.py`, `prepare_ngp.py`, `make_novel_paths.py`, `train_ngp.py`, `render_gs.py`, `render_ngp.py`, `eval_metrics.py`, `collect_results.py`, `make_figures.py`, `time_to_psnr.py`) |
 | Full run | `bash scripts/run_all.sh` (settings in `scripts/config.sh`) |
 | Raw results | `results/metrics/*.json`, `results/timing/*.json`, `results/summary.json`, `logs/` |
 | Model repositories | gaussian-splatting `54c035f7834b564019656c3e3fcc3646292f727d`, instant-ngp `abe236ee00cf90cfca6e36e65c00435d5b21f50a` |

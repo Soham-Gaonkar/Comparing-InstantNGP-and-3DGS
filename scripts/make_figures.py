@@ -3,10 +3,11 @@
   python scripts/make_figures.py            (after collect_results.py)
 
 Figures (results/figures/):
-  01_test_views_a/b      every test view: GT | InstantNGP | 3DGS | error maps
+  01_test_views          largest-gap and worst test view: GT | InstantNGP | 3DGS | error maps
   02_zoom_crops          high-detail crops of the hardest / most different views
-  03_error_difference    per-pixel: which method is closer to GT
+  03_error_difference    per-pixel: which method is closer to GT (same two views)
   04_per_view_metrics    PSNR / SSIM / LPIPS per test view
+  04b_best_worst_views   small GT | InstantNGP | 3DGS strip of the best and worst test view
   05_convergence         metrics vs iterations and vs training wall-clock time
   06_efficiency          training time, render speed, model size, GPU memory
   07_model_growth        model size over training
@@ -117,27 +118,33 @@ class Data:
 
 # ---------------------------------------------------------------- test-view images
 
+def error_map_views(d):
+    """The view with the largest PSNR gap between the methods and the worst view (mean PSNR)."""
+    pv = {m: d.summary[m]["per_view"] for m, _, _ in METHODS}
+    gap = {n: pv["3dgs"][n]["psnr"] - pv["instant-ngp"][n]["psnr"] for n in d.names}
+    mean = {n: np.mean([pv[m][n]["psnr"] for m in pv]) for n in d.names}
+    picks = [max(gap, key=gap.get), min(mean, key=mean.get)]
+    return [n for n in d.names if n in picks]
+
+
 def fig_test_grid(d, out):
     vmax = 0.25
-    halves = [d.names[: (len(d.names) + 1) // 2], d.names[(len(d.names) + 1) // 2:]]
-    for tag, names in zip("ab", halves):
-        if not names:
-            continue
-        fig, axes = plt.subplots(len(names), 5, figsize=(10.5, 3.9 * len(names)), squeeze=False, layout="constrained")
-        for r, n in enumerate(names):
-            gt = d.gt(n)
-            image_axis(axes[r, 0], gt, f"Ground truth\nview {n}")
-            for c, (m, label, _) in enumerate(METHODS):
-                img = d.pred(m, n)
-                pv = d.summary[m]["per_view"][n]
-                image_axis(axes[r, 1 + c], img, f"{label}\n{pv['psnr']:.2f} dB · SSIM {pv['ssim']:.3f}")
-                image_axis(axes[r, 3 + c], abs_err(img, gt), f"|error| {label}", cmap=SEQ, vmin=0, vmax=vmax)
-                im = axes[r, 3 + c].images[-1]
-        cb = fig.colorbar(im, ax=axes, orientation="horizontal", fraction=0.02, pad=0.01, shrink=0.5)
-        cb.set_label("mean absolute RGB error (0-1)", color=INK2)
-        cb.outline.set_visible(False)
-        fig.suptitle("Test views: ground truth, renders and error maps (same error scale everywhere)", x=0.01, ha="left", fontweight="bold")
-        save(fig, out, f"01_test_views_{tag}")
+    names = error_map_views(d)
+    fig, axes = plt.subplots(len(names), 5, figsize=(10.5, 3.9 * len(names)), squeeze=False, layout="constrained")
+    for r, n in enumerate(names):
+        gt = d.gt(n)
+        image_axis(axes[r, 0], gt, f"Ground truth\nview {n}")
+        for c, (m, label, _) in enumerate(METHODS):
+            img = d.pred(m, n)
+            pv = d.summary[m]["per_view"][n]
+            image_axis(axes[r, 1 + c], img, f"{label}\n{pv['psnr']:.2f} dB · SSIM {pv['ssim']:.3f}")
+            image_axis(axes[r, 3 + c], abs_err(img, gt), f"|error| {label}", cmap=SEQ, vmin=0, vmax=vmax)
+            im = axes[r, 3 + c].images[-1]
+    cb = fig.colorbar(im, ax=axes, orientation="horizontal", fraction=0.04, pad=0.01, shrink=0.5)
+    cb.set_label("mean absolute RGB error (0-1)", color=INK2)
+    cb.outline.set_visible(False)
+    fig.suptitle("Test views: ground truth, renders and error maps (same error scale everywhere)", x=0.01, ha="left", fontweight="bold")
+    save(fig, out, "01_test_views")
 
 
 def detail_crops(gt, size, k=2):
@@ -180,13 +187,12 @@ def fig_zoom(d, out):
 
 
 def fig_error_difference(d, out):
-    cols = 4
-    rows = int(np.ceil(len(d.names) / cols))
-    fig, axes = plt.subplots(rows, cols, figsize=(2.6 * cols, 4.8 * rows), squeeze=False, layout="constrained")
+    names = error_map_views(d)
+    fig, axes = plt.subplots(1, len(names), figsize=(2.9 * len(names), 5.6), squeeze=False, layout="constrained")
     lim = 0.1
     for ax in axes.flat:
         ax.axis("off")
-    for ax, n in zip(axes.flat, d.names):
+    for ax, n in zip(axes.flat, names):
         gt = d.gt(n)
         diff = gaussian_filter(abs_err(d.pred("3dgs", n), gt) - abs_err(d.pred("instant-ngp", n), gt), 2)
         ngp_better = float((diff > 0.01).mean() * 100)
@@ -194,12 +200,11 @@ def fig_error_difference(d, out):
         ax.axis("on")
         image_axis(ax, diff, f"view {n}\nNGP closer {ngp_better:.0f}% · 3DGS closer {gs_better:.0f}%", cmap=DIV, vmin=-lim, vmax=lim)
         im = ax.images[-1]
-    cb = fig.colorbar(im, ax=axes, orientation="horizontal", fraction=0.025, pad=0.01, shrink=0.7)
+    cb = fig.colorbar(im, ax=axes, orientation="horizontal", fraction=0.05, pad=0.02, shrink=0.9)
     cb.set_ticks([-lim, 0, lim])
-    cb.set_ticklabels(["3DGS closer to GT", "equal", "InstantNGP closer to GT"])
+    cb.set_ticklabels(["3DGS\ncloser", "equal", "InstantNGP\ncloser"])
     cb.outline.set_visible(False)
-    fig.suptitle("Per-pixel comparison: error(3DGS) − error(InstantNGP), blurred σ=2 px; percentages use a 0.01 margin",
-                 x=0.01, ha="left", fontweight="bold")
+    fig.suptitle("error(3DGS) − error(InstantNGP)", x=0.01, ha="left", fontweight="bold")
     save(fig, out, "03_error_difference")
 
 
@@ -228,6 +233,21 @@ def fig_per_view(d, out):
     fig.suptitle("Per-view quality on the 8 held-out views (thin lines = mean)", x=0.01, ha="left", fontweight="bold")
     fig.tight_layout()
     save(fig, out, "04_per_view_metrics")
+
+
+def fig_best_worst(d, out):
+    """Small GT | InstantNGP | 3DGS strip for the best and the worst test view (mean PSNR of both methods)."""
+    score = {n: np.mean([d.per_view(m, "psnr")[i] for m, _, _ in METHODS]) for i, n in enumerate(d.names)}
+    picks = [("best", max(score, key=score.get)), ("worst", min(score, key=score.get))]
+    fig, axes = plt.subplots(2, 3, figsize=(5.4, 6.4))
+    for row, (kind, n) in zip(axes, picks):
+        i = d.names.index(n)
+        image_axis(row[0], d.gt(n), f"Ground truth ({kind}: {n})")
+        for ax, (m, label, color) in zip(row[1:], METHODS):
+            image_axis(ax, d.pred(m, n), f"{label}  {d.per_view(m, 'psnr')[i]:.2f} dB")
+            ax.title.set_color(color)
+    fig.tight_layout(h_pad=0.6, w_pad=0.3)
+    save(fig, out, "04b_best_worst_views")
 
 
 def fig_convergence(d, out):
@@ -604,7 +624,7 @@ def main():
 
     d = Data(a)
     out = Path(a.fig_dir)
-    jobs = [fig_test_grid, fig_zoom, fig_error_difference, fig_per_view, fig_convergence, fig_efficiency,
+    jobs = [fig_test_grid, fig_zoom, fig_error_difference, fig_per_view, fig_best_worst, fig_convergence, fig_efficiency,
             fig_model_growth, fig_error_distribution, fig_extrapolation, fig_sharpness, fig_spectrum,
             fig_novel, fig_camera_paths, fig_gaussian_stats]
     skipped = []

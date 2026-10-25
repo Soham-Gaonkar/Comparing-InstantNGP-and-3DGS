@@ -11,6 +11,28 @@ Interactive 3DGS model in the browser:
 [open in viewer](https://antimatter15.com/splat/?url=https://raw.githubusercontent.com/Soham-Gaonkar/splat-host/main/model.splat)
 (drag to rotate, scroll to zoom; 37 MB, loads in a few seconds)
 
+## The two methods
+
+### 3D Gaussian Splatting
+
+![3DGS method overview](results/figures/paper_3dgs_overview.png)
+
+*3DGS overview (Kerbl et al. 2023, [arXiv:2308.04079](https://arxiv.org/abs/2308.04079), Fig. 2).
+The SfM points initialise a set of 3D Gaussians. Each iteration projects them into the camera,
+renders them with a differentiable tile rasteriser and back-propagates the image loss; adaptive
+density control adds and removes Gaussians during optimisation.*
+
+### InstantNGP
+
+![InstantNGP multiresolution hash encoding](results/figures/paper_instantngp_hash_encoding.png)
+
+*InstantNGP multiresolution hash encoding (Müller et al. 2022, [arXiv:2201.05989](https://arxiv.org/abs/2201.05989),
+Fig. 3), shown in 2D. (1) At each resolution level the corners of the voxel around **x** are hashed
+into a table of size T; (2) their F-dimensional feature vectors are looked up; (3) interpolated
+linearly; (4) concatenated over the L levels (plus auxiliary inputs ξ, e.g. the view direction);
+(5) decoded by a small MLP. In the NeRF setting the output is density and colour, which are
+volume-rendered along each ray.*
+
 ## Results
 
 RTX 4060 Laptop GPU. Test metrics are averaged over 8 held-out views.
@@ -28,11 +50,36 @@ RTX 4060 Laptop GPU. Test metrics are averaged over 8 held-out views.
 3DGS is better on all 8 test views (+1.9 to +3.6 dB PSNR) and renders 9x faster at the evaluated
 quality. InstantNGP trains 8.6x faster and its model is 11.6x smaller.
 
+### Time to reach the same test PSNR
+
+| Test PSNR reached | InstantNGP | 3DGS |
+|---|---|---|
+| 28 dB | **18 s** | 33 s |
+| 30 dB | **42 s** | 59 s |
+| 31 dB | **76 s** | 79 s |
+| 32 dB | 2.6 min | **107 s** |
+| 33 dB | 9.5 min | **2.6 min** |
+| 35 dB | not reached | 6.9 min |
+| 36 dB | not reached | 32.2 min |
+| Best reached | 33.05 dB at 13.9 min | 36.03 dB at 43.2 min |
+
+InstantNGP is ahead up to about 31 dB (the first ~1.3 min); from 32 dB on, 3DGS gets there
+first. Times are interpolated between saved checkpoints
+([`scripts/time_to_psnr.py`](scripts/time_to_psnr.py)), so they are estimates.
+
 ### Novel views (left: InstantNGP, right: 3DGS, identical cameras)
 
-| Captured path | Orbit ±30° | Camera moved up |
-|---|---|---|
-| ![trajectory](results/media/trajectory.gif) | ![orbit](results/media/orbit.gif) | ![shift up](results/media/shift_up.gif) |
+**Captured path** (smoothed camera path along the shelf, between the training views)
+
+![trajectory](results/media/trajectory.gif)
+
+**Orbit ±30°** (camera swings around the scene centre, beyond the captured viewing angles)
+
+![orbit](results/media/orbit.gif)
+
+**Camera moved up** (captured path shifted up by 0.15 × scene depth, showing regions never seen by the cameras)
+
+![shift up](results/media/shift_up.gif)
 
 ### Detail
 
@@ -110,6 +157,7 @@ bash scripts/run_all.sh                    # train, render, benchmark, evaluate,
 | `scripts/run_eval.sh` | PSNR / SSIM / LPIPS for every checkpoint, `results/summary.md`, all figures and videos |
 
 Iteration lists and environment names are set in `scripts/config.sh`.
+To rebuild the README GIFs: `python scripts/make_gifs.py --novel outputs/novel --out results/media`.
 To rebuild the PDF: `python scripts/build_report_pdf.py`.
 
 Data preparation (already done; outputs are in `data/scene/`):
