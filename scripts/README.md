@@ -5,9 +5,9 @@ All commands run from the assignment root (`assignment2/`).
 ## Laptop (done)
 | Script | What it did |
 |---|---|
-| `filter_frames.py` | sharpest frame per group -> `data/scene/input/` |
-| `prepare_ngp.py` | recentre `transforms.json`, every-8th split -> `transforms_{train,test}.json`, `results/{train,test}_list.txt` |
-| `make_novel_paths.py` | 7 novel camera paths -> `data/scene/novel/*.json` (both 3DGS and InstantNGP poses per frame, verified to project identically) |
+| `filter_frames.py` | keeps the sharpest frame per group in `data/scene/input/` |
+| `prepare_ngp.py` | recentre `transforms.json`, every-8th split; writes `transforms_{train,test}.json`, `results/{train,test}_list.txt` |
+| `make_novel_paths.py` | writes 7 novel camera paths to `data/scene/novel/*.json` (both 3DGS and InstantNGP poses per frame, verified to project identically) |
 
 ## Server
 Copy to the server (same folder layout):

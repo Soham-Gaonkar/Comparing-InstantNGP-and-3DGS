@@ -6,22 +6,13 @@ Name : Soham Gaonkar
 
 SR no.: 28875 
 
-## 1. Objective
+This report compares InstantNGP [1] and 3D Gaussian Splatting (3DGS) [2] on a self-captured
+static indoor scene, using the same images, camera poses, train/test split, resolution, GPU
+and metric code for both methods.
 
-Compare InstantNGP [1] and 3D Gaussian Splatting (3DGS) [2] on one self-captured static scene
-with respect to:
+## 1. Dataset
 
-1. reconstruction quality on held-out test views (PSNR, SSIM, LPIPS, visual inspection),
-2. rendering time,
-3. model size,
-4. training time.
-
-Both methods use the same images, camera poses, train/test split, resolution, GPU and
-evaluation code.
-
-## 2. Dataset
-
-### 2.1 Capture
+### 1.1 Capture
 
 - **Scene:** wall-mounted shelf with books, ornaments, plants and trophies (static, indoor)
 - **Device / mode:** phone camera, video
@@ -29,35 +20,21 @@ evaluation code.
 - **Camera motion:** one sideways pass along the shelf at constant height and distance, without rotating the camera
 - **Lighting:** indoor room lighting
 
-### 2.2 Frame selection
+### 1.2 Frame selection
 
-- **Extraction (ffmpeg):** 6 fps, resized to 720 x 1280 (Lanczos) → 186 candidate frames
-- **Sharpness filter:** variance of the Laplacian; the sharpest frame in each group of 3 consecutive frames is kept → 62 frames
-- **Visual inspection:** checked for blur, moving objects and the photographer's shadow → all 62 frames used
+- **Extraction (ffmpeg):** 6 fps, resized to 720 x 1280 (Lanczos), giving 186 candidate frames
+- **Sharpness filter:** variance of the Laplacian; the sharpest frame in each group of 3 consecutive frames is kept, giving 62 frames
+- **Visual inspection:** checked for blur, moving objects and the photographer's shadow; all 62 frames were kept
 
 <p align="center"><img src="results/figures/sharpness.png" alt="Frame sharpness" width="70%"></p>
 
 *Figure 1. Sharpness (variance of the Laplacian) of all candidate frames; kept frames highlighted.*
 
-### 2.3 Camera poses (COLMAP)
+### 1.3 Camera poses (COLMAP)
 
-COLMAP 4.2.0 (CPU) through the `convert.py` script of the 3DGS repository: SIFT features,
-exhaustive matching, incremental mapping with a single shared OPENCV camera, then undistortion
-to a PINHOLE model.
-
-| Quantity | Value |
-|---|---|
-| Registered images | 62 / 62 |
-| Sparse 3D points | 16,573 |
-| Mean reprojection error | 0.40 px |
-| Undistorted image size | 701 x 1249 |
-| Intrinsics (PINHOLE) | fx = 1147.75, fy = 1161.89, cx = 350.5, cy = 624.5 |
-| Camera path: spread along its 3 principal axes (std) | 3.70 / 0.23 / 0.05 (COLMAP units) |
-| Deviation of viewing directions from their mean | mean 4.1°, max 8.5° |
-| Path length / median scene depth | 12.58 / 6.22 (COLMAP units) |
-
-The camera centres lie on an almost straight horizontal line with nearly parallel viewing
-directions, as required by the capture protocol.
+Camera poses were estimated with COLMAP 4.2.0 (through the 3DGS `convert.py` script): all 62
+images registered, 16,573 sparse 3D points, mean reprojection error 0.40 px. The images were then
+undistorted to 701 x 1249, the resolution both methods train on.
 
 ![COLMAP sparse points](results/figures/colmap_sparse_preview.png)
 
@@ -66,9 +43,9 @@ directions, as required by the capture protocol.
 Every 8th image (sorted by name, the rule 3DGS uses with `--eval`) was held out for testing:
 54 training and 8 test images (0000, 0008, ..., 0056).
 
-## 3. Methods and settings
+## 2. Methods and settings
 
-### 3.1 3D Gaussian Splatting
+### 2.1 3D Gaussian Splatting
 
 | Setting | Value |
 |---|---|
@@ -80,7 +57,7 @@ Every 8th image (sorted by name, the rule 3DGS uses with `--eval`) was held out 
 | Other hyper-parameters | repository defaults (SH degree 3, loss 0.8·L1 + 0.2·D-SSIM) |
 | Checkpoints saved | 1k, 3k, 7k, 15k, 30k |
 
-### 3.2 InstantNGP
+### 2.2 InstantNGP
 
 | Setting | Value |
 |---|---|
@@ -99,7 +76,11 @@ volume. The poses were therefore recentred on the median of the COLMAP points an
 farthest camera is 1 unit from the centre. This is a similarity transform; image content,
 intrinsics and relative poses are unchanged.
 
-## 4. Evaluation protocol
+## 3. Evaluation protocol
+
+PSNR measures pixel-wise error, SSIM local structure and contrast, and LPIPS perceptual
+similarity (closer to human judgement of blur and texture), so together they cover both exact
+accuracy and visual quality.
 
 | Item | Protocol |
 |---|---|
@@ -113,9 +94,9 @@ intrinsics and relative poses are unchanged.
 
 Sizes are given in MB = 2^20 bytes.
 
-## 5. Results
+## 4. Results
 
-### 5.1 Summary
+### 4.1 Summary
 
 | | InstantNGP 35k | InstantNGP 100k | 3DGS 30k |
 |---|---|---|---|
@@ -138,7 +119,7 @@ sample, is the same at 35k. All quality numbers for InstantNGP are from 8 spp re
 
 *Figure 3. Training time, rendering speed (InstantNGP at 1 spp), model size and peak GPU memory.*
 
-### 5.2 Per-view quality
+### 4.2 Per-view quality
 
 | View | PSNR NGP | PSNR 3DGS | Δ PSNR | SSIM NGP | SSIM 3DGS | LPIPS-VGG NGP | LPIPS-VGG 3DGS |
 |---|---|---|---|---|---|---|---|
@@ -160,12 +141,7 @@ NGP = InstantNGP at 100k steps; 3DGS at 30k iterations; Δ = 3DGS − NGP.
 
 *Figure 4. Per-view PSNR, SSIM and LPIPS-VGG (horizontal lines: means).*
 
-<p align="center"><img src="results/figures/04b_best_worst_views.png" alt="Best and worst test views" width="50%"></p>
-
-*Figure 4b. Best (0056) and worst (0024) test view for both methods. View 0024 is the test view
-farthest from any training camera (Section 7).*
-
-### 5.3 Convergence
+### 4.3 Convergence
 
 | 3DGS iteration | 1k | 3k | 7k | 15k | 30k |
 |---|---|---|---|---|---|
@@ -218,7 +194,7 @@ Observations:
   40.30 dB on training views and 36.06 dB on test views (a 4.2 dB gap). The 36.06 dB is computed
   on float renders; our 36.03 dB is computed on the saved 8-bit PNGs.
 
-### 5.4 Rendering time
+### 4.4 Rendering time
 
 spp = samples per pixel: the number of slightly offset rays InstantNGP traces through each pixel
 and averages; more spp gives less noise but costs proportionally more time.
@@ -235,7 +211,7 @@ sampling noise than the 8 spp images that were evaluated. 3DGS rasterises 1.15 M
 InstantNGP marches rays through its occupancy grid and evaluates the hash encoding and two MLPs
 per sample.
 
-### 5.5 Model size
+### 4.5 Model size
 
 | | InstantNGP | 3DGS |
 |---|---|---|
@@ -257,7 +233,7 @@ during densification (Figure 6).
 
 *Figure 6. Model file size during training.*
 
-### 5.6 Visual comparison
+### 4.6 Visual comparison
 
 <p align="center"><img src="results/figures/01_test_views.png" alt="Test views with error maps" width="85%"></p>
 
@@ -281,35 +257,16 @@ Observations:
 - **Error maps:** both concentrate on edges and textured objects. The plain wall has near-zero
   error for both.
 
-<p align="center"><img src="results/figures/03_error_difference.png" alt="Error difference" width="50%"></p>
+### 4.7 Sharpness analysis (variance of the Laplacian)
 
-*Figure 9. Per-pixel error(3DGS) − error(InstantNGP), blurred with σ = 2 px, for the same two views.
-Orange: 3DGS closer to ground truth; blue: InstantNGP closer.*
+<p align="center"><img src="results/figures/10_sharpness.png" alt="Sharpness" width="46%"></p>
 
-Over all 8 test views, with a 0.01 margin, 3DGS is closer to the ground truth on 7–12 % of
-pixels per view and InstantNGP on 0–2 %. The remaining pixels (mostly the wall) are equal. The
-regions where InstantNGP is closer are small and mostly at image borders and the shelf's lower edge.
-
-### 5.7 Sharpness analysis
-
-**Sharpness** is measured as the variance of the Laplacian of the grey image, relative to the
-ground truth:
-
-```
-S(I) = Var( ∇²I ),   I = mean of the R, G, B channels,   ∇² = 3x3 Laplacian [0 1 0; 1 −4 1; 0 1 0]
-relative sharpness = S(render) / S(ground truth)          (1 = as sharp as the ground truth)
-```
-
-Edges and fine texture give large Laplacian values, so a blurred image has a lower variance.
-
-<p align="center"><img src="results/figures/10_sharpness.png" alt="Sharpness" width="55%"></p>
-
-*Figure 10. Relative sharpness of each test render.*
+*Figure 9. Relative sharpness of each test render.*
 
 InstantNGP renders keep 53 % of the ground-truth sharpness on average, 3DGS keeps 90 %. This is
 the loss of fine detail seen in Figure 8.
 
-### 5.8 Novel views away from the capture path
+### 4.8 Novel views away from the capture path
 
 Seven camera paths were rendered with identical cameras for both methods: the captured path
 (smoothed), the path shifted up and down by 0.15 x scene depth, a spiral around it, a dolly
@@ -317,7 +274,7 @@ along the viewing axis, a ±30° orbit around the scene centre, and a ±20° loo
 
 ![Novel views](results/figures/12_novel_overview.png)
 
-*Figure 11. One frame per path at its largest deviation from the captured views; top InstantNGP, bottom 3DGS, same camera.*
+*Figure 10. One frame per path at its largest deviation from the captured views; top InstantNGP, bottom 3DGS, same camera.*
 
 Per-path frame strips: `results/figures/13_novel_<path>.png`.
 
@@ -334,11 +291,11 @@ Per-path frame strips: `results/figures/13_novel_<path>.png`.
 - A single horizontal pass gives almost no vertical parallax, so neither method can recover
   surfaces that are hidden from the capture line (tops of books, the area behind objects).
 
-### 5.9 3DGS model statistics
+### 4.9 3DGS model statistics
 
 ![Gaussian statistics](results/figures/15_gaussian_stats.png)
 
-*Figure 12. Opacity, size and anisotropy of the 1,148,987 Gaussians at 30k iterations.*
+*Figure 11. Opacity, size and anisotropy of the 1,148,987 Gaussians at 30k iterations.*
 
 - **Count:** densification grew the 16,573 SfM points to 1,148,987 Gaussians (69x).
 - **Opacity:** median 0.06. Most Gaussians are nearly transparent and contribute through
@@ -347,7 +304,7 @@ Per-path frame strips: `results/figures/13_novel_<path>.png`.
 - **Shape:** the ratio of largest to smallest axis has its mode around 100:1. The scene is
   represented mostly by flat, disc- or needle-like splats aligned with surfaces.
 
-## 6. Summary
+## 5. Conclusion
 
 | Criterion | Better method | Margin on this scene |
 |---|---|---|
@@ -361,7 +318,7 @@ Per-path frame strips: `results/figures/13_novel_<path>.png`.
   number grew to 1.15 M exactly where the scene has detail (text, leaves, faceted objects), which
   gives sharp renders and high-frequency fidelity but a large model. InstantNGP stores a fixed
   hash grid (12.9 M parameters, shared through hashing) and two small MLPs. It is compact and
-  fast to train, but its renders lose fine detail (Figures 8, 10).
+  fast to train, but its renders lose fine detail (Figures 8, 9).
 - **Rendering.** Rasterising sorted Gaussians costs one pass per image. Volume rendering costs
   many network evaluations per ray, and InstantNGP needs several samples per pixel to reach the
   quality reported here.
@@ -371,7 +328,7 @@ Per-path frame strips: `results/figures/13_novel_<path>.png`.
 - **Extrapolation.** Both methods are reliable only near the captured line. Their failure modes
   differ: noise and empty space for InstantNGP, smeared splats for 3DGS.
 
-## 7. Limitations
+## 6. Limitations
 
 1. **Shadows and reflections.** The scene contains static soft shadows below the shelf and
    specular highlights on the ceramic, glass and metal objects. They are static and consistent
@@ -386,30 +343,12 @@ Per-path frame strips: `results/figures/13_novel_<path>.png`.
    quality was measured only at 8 spp.
 5. **One scene, one run per method.** No variance over random seeds was measured.
 
-## 8. Reproducibility
+## 7. Links
 
-| Item | Location |
-|---|---|
-| Code and data repository | [github.com/Soham-Gaonkar/Comparing-InstantNGP-and-3DGS](https://github.com/Soham-Gaonkar/Comparing-InstantNGP-and-3DGS) |
-| Interactive 3DGS model (browser) | [antimatter15 splat viewer](https://antimatter15.com/splat/?url=https://raw.githubusercontent.com/Soham-Gaonkar/splat-host/main/model.splat) |
-| Frames, COLMAP model, splits, novel paths | `data/scene/`, `results/train_list.txt`, `results/test_list.txt` |
-| Pipeline code | `scripts/` (`filter_frames.py`, `prepare_ngp.py`, `make_novel_paths.py`, `train_ngp.py`, `render_gs.py`, `render_ngp.py`, `eval_metrics.py`, `collect_results.py`, `make_figures.py`, `time_to_psnr.py`) |
-| Full run | `bash scripts/run_all.sh` (settings in `scripts/config.sh`) |
-| Raw results | `results/metrics/*.json`, `results/timing/*.json`, `results/summary.json`, `logs/` |
-| Model repositories | gaussian-splatting `54c035f7834b564019656c3e3fcc3646292f727d`, instant-ngp `abe236ee00cf90cfca6e36e65c00435d5b21f50a` |
-| COLMAP | 4.2.0; `convert.py` option names updated for COLMAP 4 (`scripts/patches/gs_convert_colmap4.patch`) |
-
-Main commands:
-
-```
-python repos/gaussian-splatting/convert.py -s data/scene --no_gpu        # COLMAP (run once)
-python scripts/prepare_ngp.py                                            # InstantNGP poses + split
-python repos/gaussian-splatting/train.py -s data/scene -m outputs/gs --eval -r 1 \
-       --iterations 30000 --save_iterations 1000 3000 7000 15000 30000 --disable_viewer
-python scripts/train_ngp.py --scene data/scene/transforms_train.json --out_dir outputs/ngp \
-       --checkpoints 1000 3000 7000 15000 35000 100000
-python scripts/eval_metrics.py --pred_dir outputs/eval/<method>/<checkpoint> --out results/metrics/<name>.json
-```
+- Code, data, results and setup instructions:
+  [github.com/Soham-Gaonkar/Comparing-InstantNGP-and-3DGS](https://github.com/Soham-Gaonkar/Comparing-InstantNGP-and-3DGS)
+- Interactive 3DGS model in the browser:
+  [antimatter15 splat viewer](https://antimatter15.com/splat/?url=https://raw.githubusercontent.com/Soham-Gaonkar/splat-host/main/model.splat)
 
 ## References
 

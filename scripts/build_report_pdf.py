@@ -12,22 +12,23 @@ from pathlib import Path
 import markdown
 
 CSS = """
-@page { size: A4; margin: 18mm 16mm 18mm 16mm; }
-body { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; font-size: 10pt; line-height: 1.45;
+@page { size: A4; margin: 18mm 16mm 18mm 16mm;
+        @bottom-right { content: counter(page); font-family: "Times New Roman", Times, serif; font-size: 10pt; color: #555; } }
+body { font-family: "Times New Roman", Times, serif; font-size: 11pt; line-height: 1.4;
        color: #111; max-width: 100%; }
 h1 { font-size: 18pt; margin: 0 0 10pt 0; }
-h2 { font-size: 13.5pt; margin: 18pt 0 6pt 0; border-bottom: 1px solid #ccc; padding-bottom: 2pt; }
+h2 { font-size: 13.5pt; margin: 18pt 0 6pt 0; }
 h3 { font-size: 11.5pt; margin: 12pt 0 4pt 0; }
 h2, h3 { break-after: avoid; }
 p, li { margin: 4pt 0; }
-table { border-collapse: collapse; margin: 6pt 0 10pt 0; font-size: 8.8pt; break-inside: avoid; }
+table { border-collapse: collapse; margin: 6pt 0 10pt 0; font-size: 9.8pt; break-inside: avoid; }
 th, td { border: 1px solid #c8c8c8; padding: 3pt 6pt; text-align: left; vertical-align: top; }
 th { background: #f0f0f0; }
 code { font-family: Consolas, "Courier New", monospace; font-size: 8.6pt; }
 pre { background: #f6f6f6; border: 1px solid #ddd; padding: 6pt; white-space: pre-wrap; break-inside: avoid; }
 p:has(> img) { text-align: center; margin: 8pt 0 2pt 0; break-inside: avoid; break-after: avoid; }
 img { max-width: 100%; max-height: 228mm; }
-p:has(> em:only-child) { font-size: 8.8pt; color: #444; margin-top: 0; break-before: avoid; }
+p:has(> em:only-child) { font-size: 9.8pt; color: #444; margin-top: 0; break-before: avoid; }
 """
 
 
