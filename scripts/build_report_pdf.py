@@ -22,6 +22,8 @@ h3 { font-size: 11.5pt; margin: 12pt 0 4pt 0; }
 h2, h3 { break-after: avoid; }
 p, li { margin: 4pt 0; }
 table { border-collapse: collapse; margin: 6pt 0 10pt 0; font-size: 9.8pt; break-inside: avoid; }
+tr { break-inside: avoid; }
+thead { display: table-header-group; }
 th, td { border: 1px solid #c8c8c8; padding: 3pt 6pt; text-align: left; vertical-align: top; }
 th { background: #f0f0f0; }
 code { font-family: Consolas, "Courier New", monospace; font-size: 8.6pt; }
